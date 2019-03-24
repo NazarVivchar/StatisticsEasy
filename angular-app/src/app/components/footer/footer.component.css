@@ -1,0 +1,34 @@
+#footer{
+  width: 100%;
+  font-size:1vw;
+  color: #919eba;
+  background-color:#141D2E;
+  position: fixed;
+
+  /*height: 20vh;*/
+ /*bottom: 0;*/
+  z-index: -2;
+
+  height: auto;
+  bottom: 0;
+}
+#about{
+  width: 70%;
+  padding: 5em 1em 1em 1em;
+}
+#credits{
+  width: 30%;
+  padding: 5em 1em 1em 1em;
+}
+
+#copyright{
+  background-color: #919eba;
+  text-decoration-line: underline;
+  width: 100%;
+  height: auto;
+  border-top: white dashed 0.2em;
+}
+.white-font{
+color: white;
+}
+

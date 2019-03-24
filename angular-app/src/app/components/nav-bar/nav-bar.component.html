@@ -1,0 +1,22 @@
+<nav  id="navbar" class="nav-colored d-flex justify-content-start align-items-center sticky-top" style="font-size:1.5vw;height:8vh; ">
+       <div class="nav-item d-flex align-items-center justify-content-center" routerLink="">
+              <h3>Home</h3>
+        </div>
+
+
+        <div class="nav-item " (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()" [ngClass]="{'dropdown-hover': hover}" style="position: relative" >
+
+            <div class=" d-flex align-items-center justify-content-center" style="width: 100%">
+              <h3>Available methods</h3>
+            </div>
+
+            <div id="drop" [ngClass]="{'dropdown-content':true, 'dropdown-content-hover': hover}" (click)="hideDropdown()" class ="drop-colored align-items-center d-flex flex-column">
+              <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/regression/">
+                 <a >Simple Regression</a>
+              </div>
+              <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/dnn/">
+                <a >DNN</a>
+              </div>
+            </div>
+          </div>
+      </nav>

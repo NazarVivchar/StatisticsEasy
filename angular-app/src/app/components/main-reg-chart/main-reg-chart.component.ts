@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {ApiService} from '../../api.service';
+
 @Component({
   selector: 'app-main-reg-chart',
   templateUrl: './main-reg-chart.component.html',

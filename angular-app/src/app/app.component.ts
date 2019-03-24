@@ -8,5 +8,5 @@ import {ApiService} from './api.service';
   providers: [ApiService]
 })
 export class AppComponent {
-  title = 'angular-app';
+  title = 'StatEasy';
 }

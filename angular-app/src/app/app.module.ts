@@ -15,8 +15,13 @@ import { MainRegChartComponent } from './components/main-reg-chart/main-reg-char
 import { MainDnnChartComponent } from './components/main-dnn-chart/main-dnn-chart.component';
 import { RegChartComponent } from './components/reg-chart/reg-chart.component';
 import { RegDnnComponent } from './components/reg-dnn/reg-dnn.component';
-import {RouterModule, Routes} from '@angular/router'
-
+import {RouterModule, Routes} from '@angular/router';
+import {NavBarComponent} from './components/nav-bar/nav-bar.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +34,22 @@ import {RouterModule, Routes} from '@angular/router'
     MainDnnChartComponent,
     RegChartComponent,
     RegDnnComponent,
-    
+    NavBarComponent,
+    FooterComponent,
+    AccordionComponent
   ],
   imports: [
+    // BsDropdownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FileUploadModule,
     ChartsModule,
     HighchartsChartModule,
-    RouterModule
+    RouterModule,
+    NgbModule,
+    BrowserAnimationsModule
+
 
 
   ],
