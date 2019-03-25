@@ -34,11 +34,13 @@
           </div>
       </nav>
 
-  <div class=" " style="background-image:url('assets/header1.jpeg'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;  position: relative; background-attachment: fixed;
-filter: blur(3px); display: block">
+  <div class=" " style="background-image:url('assets/header1.jpeg'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;
+filter: blur(3px); display: block; overflow: hidden">
     <!--filter: blur(0.35em); -->
   </div>
-
+<!--<div style=" height: 10000px;">-->
+    <!--&lt;!&ndash;filter: blur(0.35em); &ndash;&gt;-->
+  <!--</div>-->
 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh" class="d-flex justify-content-center align-items-center">
   <h1 id="title">
       Statistica <em>Easy</em></h1>
@@ -53,41 +55,46 @@ filter: blur(3px); display: block">
 
 
 
-<div id="main" class="d-flex flex-column " style="background-color:rgb(250,250,250); position: relative; z-index: 1; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white;">
+<div id="main" class="d-flex flex-column justify-content-start align-items-center " style="background-color:rgb(250,250,250); position: relative; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 200vh; transition: height linear; padding-top: 10vh">
 
-<div class="d-flex flex-column justify-content-around align-items-center" style=" margin-bottom: 20vh">
+<!--<div class="d-flex flex-column justify-content-around align-items-center" style=" ">-->
+
 <div id="anchor1" ></div>
-      <div [@enterAnimationTop] *ngIf="anc1">
+      <div [@enterAnimationTop] *ngIf="anchorsReached[0]">
           <h1><em>About project</em></h1>
           <h3>Our site provides essential tools for data analysis, including deep neural networks</h3>
           <hr>
 
        </div>
-        <div>
+  <div id="anchor2" ></div>
+        <div [@enterAnimationBottom] *ngIf="anchorsReached[1]">
           <h1 style=" margin: 2em">Examples</h1>
         </div>
-  <div id="anchor2"></div>
-       <div  @enterAnimationLeft] *ngIf="anc2" style=" margin: 2em" class="d-flex flex-column justify-content-center align-items-center">
+<div id="anchor3"></div>
+       <div  [@enterAnimationLeft] *ngIf="anchorsReached[2]" style=" margin: 2em; width: 100%" class="d-flex flex-column  align-items-center">
           <h4><em>Building of simple regression</em></h4>
-          <app-main-reg-chart></app-main-reg-chart>
+          <app-main-reg-chart style="width: 100%"></app-main-reg-chart>
           <a routerLink="/regression/"><button class="btn btn-dark btn-lg" ><h1 style="font-size:2vw">Build regression right now!</h1></button></a>
           <hr>
        </div>
-<div id="anchor3"></div>
-       <div @enterAnimationRight] *ngIf="anc3" style=" margin: 2em" class="d-flex flex-column justify-content-center align-items-center">
+
+<div id="anchor4"></div>
+       <div [@enterAnimationRight] *ngIf="anchorsReached[3]" style=" margin: 2em; width: 100%" class="d-flex flex-column align-items-center">
           <h4><em>Prediction of the time series with DNN</em></h4>
-          <app-main-dnn-chart></app-main-dnn-chart>
+          <app-main-dnn-chart style="width: 100%"></app-main-dnn-chart>
           <a routerLink="/dnn/" ><button class="btn btn-dark btn-lg" ><h1 style="font-size:2vw">Start using DNN!</h1></button></a>
           <hr>
         </div>
-</div>
-  <div id="anchor4" ></div>
-  <div  [@enterAnimationBottom] *ngIf="anc4">
+
+   <div id="anchor5" ></div>
+  <div  [@enterAnimationBottom] *ngIf="anchorsReached[4]" style="width: 100%">
     <h1>FAQ</h1>
     <app-accordion ></app-accordion>
   </div>
-
 </div>
+
+
+<!--</div>-->
 
 
 
