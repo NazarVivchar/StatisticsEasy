@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {forEach} from "@angular/router/src/utils/collection";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.css']
+  styleUrls: ['./accordion.component.css'],
+  animations: [
+  trigger(
+      'enterAnimationTop', [
+        state('true', style({transform: 'translateY(0) ', opacity: 1})),
+        state('false', style({transform: 'translateY(-300%) ', opacity: 0, display: 'none', height: '0'})),
+        transition('true => false', [  animate('1s ease-in-out')]),
+      transition('false => true', [  style({height: '0', display: 'block'}), animate('1s ease-in-out')]),
+      ]),
+    ]
 })
 export class AccordionComponent implements OnInit {
-private visible = new Array(4).fill(false);;
+private visible = new Array(4).fill(false);
   constructor() {}
 
   ngOnInit() {

@@ -41,9 +41,7 @@ nav{
   width: 100%;
   position: fixed;
 }
-div{
-  height: 100%;
-}
+
 .nav-transparent{
   background-color: transparent;
 }
@@ -104,4 +102,27 @@ div{
 }
 .padding-5{
   padding: 5%;
+}
+
+.my-card-outer {
+  width: 25%;
+  height: 400px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 5em;
+
+}
+
+.my-card-inner {
+  width: 100%;
+  height: 100%;
+
+  background: white;
+  box-shadow: 0 0.5em 0.5em 0 grey;
+}
+
+.cards {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
 }

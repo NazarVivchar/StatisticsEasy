@@ -1,24 +1,26 @@
 
-<div class="d-flex flex-column justify-content-center align-items-start" style="width: 100%
+<div id = "accordion" class="d-flex flex-column justify-content-center align-items-start" style="width: 100%
 ">
 
 
-  <div class="accordion-item">
-    <div class="accordion-head" (click)="changeVisibility(0)">
+  <div class="accordion-item" >
+    <div class="accordion-head" (click)="changeVisibility(0)" >
       <h4>Question 1</h4>
     </div>
-    <div class="accordion-drop" [hidden]="!visible[0]">
+    <div class="accordion-inner">
+    <div class="accordion-drop" [@enterAnimationTop]="visible[0]" >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
     </div>
   </div>
   <div class="accordion-item">
     <div class="accordion-head" (click)="changeVisibility(1)">
       <h4>Question 2</h4>
     </div>
-    <div class="accordion-drop" [hidden]="!visible[1]">
+    <div class="accordion-drop" [@enterAnimationTop]="visible[1] "  >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -29,7 +31,7 @@
     <div class="accordion-head" (click)="changeVisibility(2)">
       <h4>Question 3</h4>
     </div>
-    <div class="accordion-drop" [hidden]="!visible[2]">
+    <div class="accordion-drop" [@enterAnimationTop]="visible[2]" >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -37,14 +39,16 @@
     </div>
   </div>
 <div class="accordion-item">
-    <div class="accordion-head" (click)="changeVisibility(3)">
+    <div class="accordion-head" (click)="changeVisibility(3)" >
       <h4>Question 4</h4>
     </div>
-    <div class="accordion-drop" [hidden]="!visible[3]">
+  <div class="accordion-inner">
+    <div class="accordion-drop" [@enterAnimationTop]="visible[3]" >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
     </div>
   </div>
 

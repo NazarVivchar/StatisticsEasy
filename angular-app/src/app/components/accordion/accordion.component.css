@@ -2,11 +2,21 @@ div{
   width: 100%;
   font-size:1vw;
 }
+#accordion{
+  transition: margin-bottom ease-in-out;
+ }
 .accordion-item{
+
   width: 100%;
   margin-bottom: 1em;
+  overflow: hidden;
+  height: auto;
+  /*transition: height ease-in-out;*/
+  /*animation: 1s;*/
 }
 .accordion-head{
+  z-index: 1;
+  position: relative;
   border: #919eba solid 0.05em;
   padding: 1em;
   width: 100%;
@@ -14,16 +24,26 @@ div{
  box-shadow: 0 0.3em 0 0 #919eba;
   color: #141D2E;
   cursor: pointer;
+  background: white;
+  margin-bottom: 0.5em;
 }
 .accordion-head:hover{
+
   background-color: #919eba;
   box-shadow: 0 0.3em 0 0 #7282a7;
-  color: white;
 }
 .accordion-drop{
+overflow: hidden;
+  height: auto;
+z-index: -1;
+  display: block;
+  transform-origin: top center ;
 
   margin-bottom: 1em;
   padding: 3em;
-  box-shadow: 0 0.3em 0.7em 0 #919eba;
+  box-shadow: 0 0.3em 0.2em 0 #919eba;
   border-radius: 0.5em;
+}
+.accordion-inner{
+
 }

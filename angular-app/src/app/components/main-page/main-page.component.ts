@@ -1,7 +1,7 @@
 import {Component, HostListener, Inject, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {DOCUMENT} from '@angular/common';
-import {getRulesDirectories} from "tslint/lib/configuration";
+
 declare function headerMethod(): any;
 @Component({
   selector: 'app-main-page',
@@ -26,44 +26,44 @@ declare function headerMethod(): any;
       'enterAnimationLeft', [
         transition(':enter', [
           style({transform: 'translateX(-100%)', opacity: 0}),
-          animate('1s', style({transform: 'translateX(0)', opacity: 1}))
+          animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1 }))
         ]),
         transition(':leave', [
           style({transform: 'translateX(0)', opacity: 1}),
-          animate('1s', style({transform: 'translateX(100%)', opacity: 0}))
+          animate('2s', style({transform: 'translateX(-100%)', opacity: 0}))
         ])
       ]),
      trigger(
       'enterAnimationRight', [
         transition(':enter', [
           style({transform: 'translateX(100%)', opacity: 0}),
-          animate('1s', style({transform: 'translateX(0)', opacity: 1}))
+          animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1}))
         ]),
         transition(':leave', [
           style({transform: 'translateX(0)', opacity: 1}),
-          animate('1s', style({transform: 'translateX(100%)', opacity: 0}))
+          animate('2s', style({transform: 'translateX(100%)', opacity: 0}), )
         ])
       ]),
     trigger(
       'enterAnimationTop', [
         transition(':enter', [
           style({transform: 'translateY(-100%)', opacity: 0}),
-          animate('1s', style({transform: 'translateX(0)', opacity: 1}))
+          animate('2.5s ease-in', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('1s', style({transform: 'translateX(100%)', opacity: 0}))
+          style({transform: 'translateY(0)', opacity: 1}),
+          animate('2.5s', style({transform: 'translateY(-100%)', opacity: 0}))
         ])
       ]),
     trigger(
       'enterAnimationBottom', [
         transition(':enter', [
           style({transform: 'translateY(100%)', opacity: 0}),
-          animate('1s', style({transform: 'translateX(0)', opacity: 1}))
+          animate('1s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('1s', style({transform: 'translateX(100%)', opacity: 0}))
+          style({transform: 'translateY(0)', opacity: 1}),
+          animate('1.5s', style({transform: 'translateX(100%)', opacity: 0}))
         ])
       ])
     ]
@@ -75,14 +75,13 @@ export class MainPageComponent implements OnInit {
   private state1 = 'start';
   private state2 = 'start';
   private interval;
- private anchorsReached: boolean[];
- private anchorsNumber: number;
- private anc1 = true;
- private anc2 = true;
- private anc3 = true;
- private anc4 = true;
+  private anchorsReached: boolean[];
+  private anchorsNumber: number;
+
+ private allReached = false;
   constructor(@Inject(DOCUMENT) document) {
-    this.anchorsNumber = 4;
+    // this.anchorsNumber = 5;
+    this.anchorsNumber = 12;
     this.anchorsReached = new Array(this.anchorsNumber).fill(false);
   }
 
@@ -127,18 +126,41 @@ export class MainPageComponent implements OnInit {
        this.navVisibility = 'shown';
        drop.classList.remove('drop-colored');
        drop.classList.add('drop-transparent');
-       // this.anc1 = window.pageYOffset > document.getElementById('anchor1').offsetTop;
-       // console.log(document.documentElement.scrollTop);
-       // console.log(document.getElementById('anchor3').offsetTop + document.getElementById('anchor3').offsetHeight - window.outerHeight);
-       // this.anc2 =  document.documentElement.scrollTop > (document.getElementById('anchor3').offsetTop + document.getElementById('anchor3').offsetHeight );
-       // this.anc3 =  document.documentElement.scrollTop > document.getElementById('anchor3').offsetTop;
-       // this.anc4 =  document.documentElement.scrollTop > document.getElementById('anchor4').offsetTop;
-
-      //  for (let i = 0; i < this.anchorsNumber; ++i) {
-      //     this.anchorsReached[0] = (window.pageYOffset > document.getElementById('anchor' + (i + 1)).offsetTop);
-      //       console.log(window.pageYOffset > document.getElementById('anchor' + (i + 1)).offsetTop);
-      // }
      }
+     // if (!this.allReached) {
+       this.allReached = true;
+       for (let i = 0; i < this.anchorsNumber; ++i) {
+         const bool = (document.documentElement.scrollTop > document.getElementById('anchor' + (i + 1)).getBoundingClientRect().top + 200 * i);
+         this.allReached = this.allReached && bool;
+          if (!this.anchorsReached[i]) {
+            this.anchorsReached[i] = bool;
+            // this.anchorsReached[i] = (i > 0) ? bool && this.anchorsReached[i - 1] : bool;
+          }
+      }
+     // }
+
+     // this.anc1 = (document.documentElement.scrollTop) > document.getElementById('anchor1').offsetTop;
+       // console.log(1);
+       // console.log(document.documentElement.scrollTop);
+       // console.log(document.getElementById('anchor1').getBoundingClientRect().top - window.outerHeight);
+       // console.log(2);
+       // console.log(document.documentElement.scrollTop);
+       // console.log(document.getElementById('anchor2').getBoundingClientRect().top - window.outerHeight);
+       // console.log(3);
+       // console.log(document.documentElement.scrollTop);
+       // console.log(document.getElementById('anchor3').getBoundingClientRect().top - window.outerHeight);
+       // console.log(4);
+       // console.log(document.documentElement.scrollTop);
+       // console.log(document.getElementById('anchor2').offsetTop);
+       // console.log(document.documentElement.scrollTop > document.getElementById('anchor2').offsetTop);
+       console.log(window.pageYOffset);
+       console.log(document.getElementById('anchor2').offsetTop);
+       // console.log(document.getElementById('anchor2').getBoundingClientRect().top);
+       // console.log(document.getElementById('anchor3').getBoundingClientRect().top);
+       // console.log(document.getElementById('anchor4').getBoundingClientRect().top);
+       // this.anc2 =  (document.documentElement.scrollTop) > document.getElementById('anchor2').offsetTop;
+       // this.anc3 =  (document.documentElement.scrollTop) > document.getElementById('anchor3').offsetTop;
+       // this.anc4 =  (document.documentElement.scrollTop) > document.getElementById('anchor4').offsetTop;
   }
 
   anchorReached(id: number): boolean {
