@@ -59,7 +59,7 @@ declare function headerMethod(): any;
       'enterAnimationBottom', [
         transition(':enter', [
           style({transform: 'translateY(100%)', opacity: 0}),
-          animate('1.5s ease-in', style({transform: 'translateY(0)', opacity: 1}))
+          animate('1s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
           style({transform: 'translateY(0)', opacity: 1}),

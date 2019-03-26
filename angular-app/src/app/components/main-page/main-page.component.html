@@ -1,25 +1,16 @@
 <html>
 <head>
+  <title>StatEasy</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <style> 
-   #flip {
-    
-  }
-
-  #panel {
-   display: none;
-    width:60%;
-    height:400px;
-    background-color:black;
-  }
-  </style>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 </head>
 <body>
-<nav [@visibilityChanged]="navVisibility" id="navbar" class="nav-transparent d-flex justify-content-start align-items-center sticky-top" style="font-size:1.5vw;height:8vh; ">
-          <div class="nav-item " (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()" [ngClass]="{'dropdown-hover':hover}" style="position: relative" >
-            <div class=" d-flex align-items-center justify-content-center" style="width: 100%">
+<nav [@visibilityChanged]="navVisibility"
+     class="nav-transparent d-flex flex-row justify-content-start align-items-center sticky-top" id="navbar"
+     style="font-size:1.5vw;height:8vh; ">
+  <div (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()" [ngClass]="{'dropdown-hover':hover}" class="nav-item"
+       style="position: relative; ">
+    <div class=" d-flex align-items-center justify-content-center" style="width: 100%; height: 100%">
               <h3>Available methods</h3>
             </div>
 
@@ -34,7 +25,7 @@
           </div>
       </nav>
 
-  <div class=" " style="background-image:url('assets/header1.jpeg'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;
+<div class=" " style="background-image:url('/assets/header1.jpeg'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;
 filter: blur(3px); display: block; overflow: hidden">
     <!--filter: blur(0.35em); -->
   </div>
@@ -55,7 +46,7 @@ filter: blur(3px); display: block; overflow: hidden">
 
 
 <div class="d-flex flex-wrap justify-content-center align-items-center " id="main"
-     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 200vh; transition: height linear; ">
+     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 200vh; transition: height linear; padding-top: 5vh; padding-bottom: 5vh ">
 
 <!--<div class="d-flex flex-column justify-content-around align-items-center" style=" ">-->
 
@@ -85,16 +76,21 @@ filter: blur(3px); display: block; overflow: hidden">
   <!--<a routerLink="/dnn/" ><button class="btn btn-dark btn-lg" ><h1 style="font-size:2vw">Start using DNN!</h1></button></a>-->
   <!--<hr>-->
   <!--</div>-->
-  <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" class="my-card-outer">
-    <div id="anchor{{i}}"></div>
-    <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]
-         class="my-card-inner d-flex flex-column justify-content-around align-items-center ">
-      <h1 style="height:20%;">Method {{i}}</h1>
-      <div style="width: 90%; height: 60%; background: lightgrey"></div>
-      <button class="btn btn-dark btn-lg">Go to method</button>
+  <div class="cards d-flex flex-wrap justify-content-center align-items-center ">
+
+
+    <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" class="my-card-outer">
+
+      <div id="anchor{{i}}" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center ">
+        <h1 style="height:20%;">Method {{i}}</h1>
+        <div style="width: 90%; height: 60%; background: lightgrey"></div>
+        <button class="btn btn-dark btn-lg">Go to method</button>
+      </div>
     </div>
   </div>
-
    <div id="anchor5" ></div>
   <div  [@enterAnimationBottom] *ngIf="anchorsReached[4]" style="width: 100%">
     <h1>FAQ</h1>
