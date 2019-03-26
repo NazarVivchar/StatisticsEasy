@@ -1,8 +1,7 @@
 import {Component, HostListener, Inject, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {DOCUMENT} from '@angular/common';
-import {getRulesDirectories} from "tslint/lib/configuration";
-import {colorSets} from "@swimlane/ngx-charts/release/utils";
+
 declare function headerMethod(): any;
 @Component({
   selector: 'app-main-page',
@@ -81,7 +80,8 @@ export class MainPageComponent implements OnInit {
 
  private allReached = false;
   constructor(@Inject(DOCUMENT) document) {
-    this.anchorsNumber = 5;
+    // this.anchorsNumber = 5;
+    this.anchorsNumber = 12;
     this.anchorsReached = new Array(this.anchorsNumber).fill(false);
   }
 
