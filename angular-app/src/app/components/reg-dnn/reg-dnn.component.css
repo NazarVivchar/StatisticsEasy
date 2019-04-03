@@ -1,0 +1,22 @@
+body {
+  font-size: 150%;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+i.dark {
+  border: solid #919eba;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  padding: 0.8em;
+}
+
+i.dark:hover {
+  border: solid #141D2E;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  padding: 0.8em;
+}

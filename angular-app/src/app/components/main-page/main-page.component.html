@@ -25,28 +25,58 @@
           </div>
       </nav>
 
-<div class=" " style="background-image:url('/assets/header1.jpeg'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;
-filter: blur(3px); display: block; overflow: hidden">
-    <!--filter: blur(0.35em); -->
-  </div>
+
 <!--<div style=" height: 10000px;">-->
-    <!--&lt;!&ndash;filter: blur(0.35em); &ndash;&gt;-->
-  <!--</div>-->
-<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh" class="d-flex justify-content-center align-items-center">
-  <h1 id="title">
-      Statistica <em>Easy</em></h1>
-<div  style="position: absolute; bottom: 0; color: white" class="d-flex flex-column justify-content-end align-items-center ">
-    <p>Scroll down</p>
-    <p [@blink]="state1"><i class="arrow down white"></i></p>
-   <p [@blink]="state2"><i class="arrow  down white"></i></p>
+<!--&lt;!&ndash;filter: blur(0.35em); &ndash;&gt;-->
+<!--</div>-->
+
+
+<div class=" " style="background-image:url('/assets/headerBlured.png'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed;
+ display: block;  overflow: hidden;">
+  <div class="d-flex justify-content-center align-items-center"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh">
+    <h1 id="title">
+      Statistics <em>Easy</em></h1>
+    <div class="d-flex flex-column justify-content-end align-items-center "
+         style="position: absolute; bottom: 0; color: white">
+      <p>Scroll down</p>
+      <p [@blink]="state1"><i class="arrow down white"></i></p>
+      <p [@blink]="state2"><i class="arrow  down white"></i></p>
+    </div>
+
+  </div>
   </div>
 
+<div class="main-page-content d-flex align-items-center justify-content-center">
+  <h1>What is StatEasy?</h1>
+  <p class="information">
+
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
 </div>
+
+<div class=" " style="background-image:url('/assets/headerBlured.png'); height: 60vh; background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed;
+ display: block; overflow: hidden"></div>
 <!--</div>-->
 
 
 <div class="d-flex flex-wrap justify-content-center align-items-center " id="main"
-     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 200vh; transition: height linear; padding-top: 5vh; padding-bottom: 5vh ">
+     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 170vh; transition: height linear; padding-top: 5vh; padding-bottom: 5vh;">
 
 <!--<div class="d-flex flex-column justify-content-around align-items-center" style=" ">-->
 
@@ -76,26 +106,81 @@ filter: blur(3px); display: block; overflow: hidden">
   <!--<a routerLink="/dnn/" ><button class="btn btn-dark btn-lg" ><h1 style="font-size:2vw">Start using DNN!</h1></button></a>-->
   <!--<hr>-->
   <!--</div>-->
+  <h1>Available statistical methods</h1>
+
   <div class="cards d-flex flex-wrap justify-content-center align-items-center ">
+    <div class="my-card-outer">
+      <div id="anchor1" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[0]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Simple Regression</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example1.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/regression">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-card-outer">
+      <div id="anchor2" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[1]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>DNN</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example2.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/dnn">Go to method</button>
+        </div>
+      </div>
+    </div>
 
 
-    <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" class="my-card-outer">
-
+    <div *ngFor="let i of [3,4,5,6,7,8,9,10,11,12]" class="my-card-outer">
       <div id="anchor{{i}}" style="margin-bottom: 5em"></div>
 
       <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]
-           class="my-card-inner d-flex flex-column align-items-center ">
-        <h1 style="height:20%;">Method {{i}}</h1>
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Method {{i}}</h3>
+        </div>
+
         <div style="width: 90%; height: 60%; background: lightgrey"></div>
-        <button class="btn btn-dark btn-lg">Go to method</button>
+
+        <div>
+          <button class="btn btn-dark btn-lg">Go to method</button>
+        </div>
       </div>
     </div>
-  </div>
-   <div id="anchor5" ></div>
-  <div  [@enterAnimationBottom] *ngIf="anchorsReached[4]" style="width: 100%">
+
+
+    <div id="anchor13"></div>
+    <div *ngIf="anchorsReached[12]" [@enterAnimationBottom] style="width: 100%; margin-bottom: 5em">
     <h1>FAQ</h1>
     <app-accordion ></app-accordion>
   </div>
+</div>
+
+  <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
+    <p>Scroll for footer</p>
+    <p><i class="arrow down dark"></i></p>
+  </div>
+
+  <!--<div class="arrow-to-top d-flex align-items-center justify-content-center">-->
+
+  <!--</div>-->
+
+  <p (click)="toTop()" [hidden]="ttHidden" class="arrow-to-top"><i>&#8593;</i></p>
 </div>
 
 

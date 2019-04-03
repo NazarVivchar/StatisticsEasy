@@ -59,7 +59,7 @@ declare function headerMethod(): any;
       'enterAnimationBottom', [
         transition(':enter', [
           style({transform: 'translateY(100%)', opacity: 0}),
-          animate('1s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
+          animate('2s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
           style({transform: 'translateY(0)', opacity: 1}),
@@ -69,6 +69,7 @@ declare function headerMethod(): any;
     ]
 })
 export class MainPageComponent implements OnInit {
+  private ttHidden = true;
   private hover = false;
   private  visibility = 'hidden';
   private navVisibility = 'shown';
@@ -81,7 +82,7 @@ export class MainPageComponent implements OnInit {
  private allReached = false;
   constructor(@Inject(DOCUMENT) document) {
     // this.anchorsNumber = 5;
-    this.anchorsNumber = 12;
+    this.anchorsNumber = 13;
     this.anchorsReached = new Array(this.anchorsNumber).fill(false);
   }
 
@@ -118,7 +119,7 @@ export class MainPageComponent implements OnInit {
        navbar.classList.remove('nav-transparent');
        navbar.classList.remove('nav-colored');
        this.navVisibility = 'hidden';
-    } else {
+     } else {
        const navbar = document.getElementById('navbar');
        const drop = document.getElementById('drop');
        navbar.classList.remove('nav-colored');
@@ -127,18 +128,22 @@ export class MainPageComponent implements OnInit {
        drop.classList.remove('drop-colored');
        drop.classList.add('drop-transparent');
      }
-     // if (!this.allReached) {
-       this.allReached = true;
-       for (let i = 0; i < this.anchorsNumber; ++i) {
-         const bool = (document.documentElement.scrollTop > document.getElementById('anchor' + (i + 1)).getBoundingClientRect().top + 200 * i);
+      if (scrollposition > 2.5 * document.documentElement.clientHeight) {
+        this.ttHidden = false;
+      } else {
+        this.ttHidden = true;
+      }
+      // this.allReached = true;
+      // if (!this.allReached) {
+      for (let i = 0; i < this.anchorsNumber; ++i) {
+        const bool = (document.documentElement.scrollTop > document.getElementById('anchor' + (i + 1)).getBoundingClientRect().top + 300 * i);
          this.allReached = this.allReached && bool;
-          if (!this.anchorsReached[i]) {
-            this.anchorsReached[i] = bool;
-            // this.anchorsReached[i] = (i > 0) ? bool && this.anchorsReached[i - 1] : bool;
-          }
+        if (!this.anchorsReached[i]) {
+          this.anchorsReached[i] = bool;
+          // this.anchorsReached[i] = (i > 0) ? bool && this.anchorsReached[i - 1] : bool;
+        }
       }
      // }
-
      // this.anc1 = (document.documentElement.scrollTop) > document.getElementById('anchor1').offsetTop;
        // console.log(1);
        // console.log(document.documentElement.scrollTop);
@@ -153,18 +158,12 @@ export class MainPageComponent implements OnInit {
        // console.log(document.documentElement.scrollTop);
        // console.log(document.getElementById('anchor2').offsetTop);
        // console.log(document.documentElement.scrollTop > document.getElementById('anchor2').offsetTop);
-       console.log(window.pageYOffset);
-       console.log(document.getElementById('anchor2').offsetTop);
        // console.log(document.getElementById('anchor2').getBoundingClientRect().top);
        // console.log(document.getElementById('anchor3').getBoundingClientRect().top);
        // console.log(document.getElementById('anchor4').getBoundingClientRect().top);
        // this.anc2 =  (document.documentElement.scrollTop) > document.getElementById('anchor2').offsetTop;
        // this.anc3 =  (document.documentElement.scrollTop) > document.getElementById('anchor3').offsetTop;
        // this.anc4 =  (document.documentElement.scrollTop) > document.getElementById('anchor4').offsetTop;
-  }
-
-  anchorReached(id: number): boolean {
-    return window.pageYOffset > document.getElementById('anchor' + id).offsetTop;
   }
 
    offset(el) {
@@ -184,7 +183,11 @@ export class MainPageComponent implements OnInit {
   }
 
   toTop() {
-    scroll(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

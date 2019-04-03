@@ -24,45 +24,60 @@
 </head>
 <body>
 <app-nav-bar></app-nav-bar>
-<div>
+<div class="d-flex flex-column align-items-center justify-content-center"
+     style=" padding-top: 20vh; padding-bottom: 10vh; margin-bottom: 42vh; width: 100%; min-height: 150vh">
+
+  <div class="d-flex align-items-center justify-content-center"
+       style=" margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%">
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>DNN Prediction</em></h1>
+  </div>
 
 
-      <div style="padding-top:40px;margin-left: 75px;margin-top:30px;text-align:center;width:90%;
-    background-color:rgb(250,250,250);">
-     <h1><em>DNN Prediction</em></h1>
-     <h3>
-    
-      
-     
-     </h3>
-    <hr>
+  <div *ngIf="visible" [@enterAnimationBottom] class="d-flex  align-items-center justify-content-center"
+       style="width: 100%; height: 30vh;margin-bottom: 10vh; z-index: 1">
 
+    <div class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 100%; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
+      <h1>Step 1</h1>
+      <h3>Choose your .csv file with input data</h3>
+      <input (click)="upload()" [uploader]="uploader" accept=".csv" ng2FileSelect type="file"/>
+    </div>
 
+    <div class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 100%; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
+      <h1>Step 2</h1>
+      <h3>Build your chart</h3>
+      <button (click)="getDnn()" class="btn btn-dark" style="margin-left:10px;">Build!</button>
+    </div>
 
-    <input ng2FileSelect type="file" accept=".csv" [uploader]="uploader" (click)="upload()"/>
-    <button class ="btn btn-dark" (click)="getDnn()" style="margin-left:10px;">Build!</button>
+    <div class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 100%; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
+      <h1>Step 3</h1>
+      <h3>Predict 5 next points</h3>
+      <button (click)="predict()" class="btn btn-dark">Predict</button>
+    </div>
 
-    <button class ="btn btn-dark" (click)="predict()">Predict</button>
-    <highcharts-chart 
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center"
+       style="width: 90%; margin-bottom: 10vh; border: dashed 0.2em #919eba">
+    <div *ngIf="visible" [@enterAnimationBottom] style="z-index:0; position: absolute">
+      <h1 style="font-size: 2em">
+        Your chart will be displayed here
+      </h1>
+    </div>
+    <highcharts-chart
       [Highcharts]="Highcharts"
       [options]="chartOptions"
       [update]="updateFlag"
       style="width: 100%; height: 400px; display: block;">
       </highcharts-chart>
+  </div>
+  <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
+    <p>Scroll for footer</p>
+    <p><i class="arrow down dark"></i></p>
+  </div>
         </div>
-        </div>
-    
-
-    
-
-   
-
-    
-
-  
-
-
-
 
 
 <app-footer></app-footer>

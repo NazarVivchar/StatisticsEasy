@@ -1,18 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { FileUploader } from 'ng2-file-upload';
+import {Component, OnInit} from '@angular/core';
+import {FileUploader} from 'ng2-file-upload';
 import {ApiService} from '../../api.service';
 import * as Highcharts from 'highcharts';
+import {animate, style, transition, trigger} from "@angular/animations";
+import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-reg-dnn',
   templateUrl: './reg-dnn.component.html',
-  styleUrls: ['./reg-dnn.component.css']
+  styleUrls: ['./reg-dnn.component.css'],
+  animations: [
+    trigger(
+      'enterAnimationLeft', [
+        transition(':enter', [
+          style({transform: 'translateX(-100%)', opacity: 0}),
+          animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({transform: 'translateX(0)', opacity: 1}),
+          animate('2s', style({transform: 'translateX(-100%)', opacity: 0}))
+        ])
+      ]),
+    trigger(
+      'enterAnimationRight', [
+        transition(':enter', [
+          style({transform: 'translateX(100%)', opacity: 0}),
+          animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({transform: 'translateX(0)', opacity: 1}),
+          animate('2s', style({transform: 'translateX(100%)', opacity: 0}),)
+        ])
+      ]),
+    trigger(
+      'enterAnimationTop', [
+        transition(':enter', [
+          style({transform: 'translateY(-100%)', opacity: 0}),
+          animate('2s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({transform: 'translateY(0)', opacity: 1}),
+          animate('1.5s', style({transform: 'translateY(-100%)', opacity: 0}))
+        ])
+      ]),
+    trigger(
+      'enterAnimationBottom', [
+        transition(':enter', [
+          style({transform: 'translateY(100%)', opacity: 0}),
+          animate('2s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({transform: 'translateY(0)', opacity: 1}),
+          animate('1.5s', style({transform: 'translateX(100%)', opacity: 0}))
+        ])
+      ])
+  ]
 })
+
 export class RegDnnComponent implements OnInit {
 
   uploader: FileUploader = new FileUploader(
     { url: 'http://127.0.0.1:8000/regression_info/', removeAfterUpload: false, autoUpload: true
        }
     );
+  visible = false;
     info:any[];
     Highcharts = Highcharts;
     array: string = "";
@@ -56,7 +107,8 @@ export class RegDnnComponent implements OnInit {
     this.updateFlag = true;
     
   }
-  constructor(private api: ApiService) {
+
+  constructor(private api: ApiService, private router: Router) {
     this.api  = api;
    }
 
@@ -67,7 +119,7 @@ export class RegDnnComponent implements OnInit {
     this.api.getDnn().subscribe(
      (data: any[]) => {
            this.info = data;
-            console.log(this.info)
+       console.log(this.info);
             this.updateFlag = false;
             this.points = [];
             this.points_dnn = [];
@@ -82,7 +134,7 @@ export class RegDnnComponent implements OnInit {
               this.points.push([chart_x[i],chart_y[i]]);
               
             }
-            this.points_dnn.push([chart_x[chart_x.length-1],chart_y[chart_x.length-1]])
+       this.points_dnn.push([chart_x[chart_x.length - 1], chart_y[chart_x.length - 1]]);
             for(let i in chart_dnn_x)
             {
               this.points_dnn.push([chart_dnn_x[i],chart_dnn_y[i]]);
@@ -95,7 +147,7 @@ export class RegDnnComponent implements OnInit {
             for (let i of this.points){
               this.array += '['+i.join()+'],';
             }
-            console.log(this.points_dnn[0][0])
+       console.log(this.points_dnn[0][0]);
             console.log(this.array_dnn.slice(0,-1));
             let min = 
             this.optFromInputString = `
@@ -122,7 +174,12 @@ export class RegDnnComponent implements OnInit {
      }
    );
  }
+
   ngOnInit() {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      this.visible = true;
+    }, 10);
   }
 
 }
