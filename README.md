@@ -1,25 +1,4 @@
-# Statistica Easy
+# Statistics Easy
 
-## Installation
+Statistics Easy - coloborative projec, being developed by a group of university groupmates.
 
-```
-git clone https://github.com/Yaroslav00/StatisticaEasy.git
-```
-```
-source venv/bin/activate
-```
-```
-python manage.py makemigrations
-```
-```
-python manage.py migrate 
-```
-```
-python manage.py runserver
-```
-```
-cd angular-app
-```
-```
-ng serve
-```
