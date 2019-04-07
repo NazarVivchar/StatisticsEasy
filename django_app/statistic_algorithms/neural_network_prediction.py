@@ -14,15 +14,13 @@ def dnn_prediction(X,Y):
     for i in range(5):
 
         n = Y.shape[1]
-        print(n)
+
         testing = [Y[0][y_i] for y_i in range(Y.shape[1]-5,Y.shape[1])]
         inpt = np.array([testing])
         prediction = predictor.predict(
                 inpt
                 )
-        print(
-            prediction
-            )
+
         tmp = []
         for i in range(Y.shape[1]):
             tmp.append(Y[0][i])
@@ -34,8 +32,7 @@ def dnn_prediction(X,Y):
         np.round(Y)
         while len(x)!= len(Y[0]):
             x.append(x[len(x)-1]+1)
-        print(x)
-        print(Y[0])
+
 
     return x, Y[0]
 

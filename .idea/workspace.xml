@@ -2,21 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e18fffa5-62f2-4ac1-98f3-b37c256a2151" name="Default Changelist" comment="Added icon and change title.">
-      <change afterPath="$PROJECT_DIR$/angular-app/src/assets/Example1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/assets/Example2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/assets/headerBlured.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_app/statistic_algorithms/polynomial_regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/StatisticaEasy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StatisticaEasy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/accordion/accordion.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/accordion/accordion.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_app/statistic_algorithms/neural_network_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_app/statistic_algorithms/neural_network_prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Random.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Random_COXcnV0.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Random_OTFO2Ai.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Random_ZrA9s9y.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Random_eF0my8Q.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Random_qbZXFLn.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_3GYzmdE.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_6AQ8Jh5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_AVdUAty.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_CCXBzMf.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_CvMjMdx.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_ECeCwAR.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_FReot48.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_Ft71JAY.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_FtU6Sw8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_GH4l5Z7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_IHI7Zis.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_K4DJOUK.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_K5O6rkb.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_Nll4nwc.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_Nmt3HxF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_PvNnIrq.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_TgXtsQH.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_aU6TUNw.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_cDEQiBV.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_d50Hk2F.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_du2EWUy.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_jVVxwSd.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_qlSArDl.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset1_wseGgNo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset2_4WlshhM.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset2_geEU1Sa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset2_stIyVIb.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_0WysShl.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_0YisSHz.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_0kcpyFJ.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_0xUHkkO.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_1moatjU.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_4VdoYEI.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_4uZtyZw.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_5fuX9JJ.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_9yFLLmV.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_AiICIGJ.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_CtlebNQ.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_DvoX6uL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_FIIWuHt.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_Fde4anD.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_FyROMDr.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_GEnbFG9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_GXzfd6j.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_Hilx23x.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_JQxB9aq.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_JVhQqdM.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_JnRg4lG.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_N3hjEXb.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_Ocdzti2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_Oolwvx9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_QHRkZTZ.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_QmlLuci.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_QpnCehD.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_UuXA2Wa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_WqSncVy.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_XNBTj09.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_XX4F2Mb.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_Y3eA3Jp.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_Y7p8QpA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_ZopVahm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_aP1CtpM.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_b5rF8Ov.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_bY6der5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_fO3PYma.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_fWUxjuN.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_fYTNdxr.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_flyFahU.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_fuHvJ8Q.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_gD9kZYb.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_gm2tmiz.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_gmbP0JU.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_klHHe7D.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_l9RHsnm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_nPjVzhE.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_phTnyvp.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_rZWsNki.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_s6BDWO4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_sYIfgGt.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_ua8A2FG.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_vYdpnOZ.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_wfCi90I.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_wqNPdIV.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/dataset3_xpBL01M.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/monthly-lake-erie-levels-1921-19.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/monthly-lake-erie-levels-1921-19_QBsaOcc.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_0gbkKG3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_25Ok07p.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_6WgOXwB.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_Fa9HkT1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_Hthp1lT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_NKj0ig3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/sinus_mDDBXWh.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,135 +121,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#highcharts-chart#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#app-footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.ts">
+        <entry file="file://$PROJECT_DIR$/django_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="138" column="135" selection-start-line="138" selection-start-column="135" selection-end-line="138" selection-end-column="135" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="20" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media/dataset1_cDEQiBV.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media/dataset1.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="72" selection-start-line="72" selection-end-line="72" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#73#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="34" column="157" lean-forward="true" selection-start-line="34" selection-start-column="157" selection-end-line="34" selection-end-column="169" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state relative-caret-position="538">
+              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -161,12 +139,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.ts">
+        <entry file="file://$PROJECT_DIR$/django_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="173" selection-start-line="173" selection-end-line="173" />
+            <state relative-caret-position="165">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_app/statistic_algorithms/polynomial_regression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,6 +168,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -243,6 +234,11 @@
         <option value="$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.ts" />
         <option value="$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.ts" />
         <option value="$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.ts" />
+        <option value="$PROJECT_DIR$/django_app/models.py" />
+        <option value="$PROJECT_DIR$/django_app/statistic_algorithms/neural_network_prediction.py" />
+        <option value="$PROJECT_DIR$/django_app/urls.py" />
+        <option value="$PROJECT_DIR$/django_app/statistic_algorithms/polynomial_regression.py" />
+        <option value="$PROJECT_DIR$/django_app/views.py" />
       </list>
     </option>
   </component>
@@ -257,6 +253,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,41 +290,13 @@
             <path>
               <item name="StatisticaEasyMy" type="b2602c69:ProjectViewProjectNode" />
               <item name="StatisticaEasyMy" type="462c0819:PsiDirectoryNode" />
-              <item name="angular-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="main-page" type="462c0819:PsiDirectoryNode" />
+              <item name="django_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StatisticaEasyMy" type="b2602c69:ProjectViewProjectNode" />
               <item name="StatisticaEasyMy" type="462c0819:PsiDirectoryNode" />
-              <item name="angular-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="reg-chart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StatisticaEasyMy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StatisticaEasyMy" type="462c0819:PsiDirectoryNode" />
-              <item name="angular-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="reg-dnn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StatisticaEasyMy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StatisticaEasyMy" type="462c0819:PsiDirectoryNode" />
-              <item name="angular-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StatisticaEasyMy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StatisticaEasyMy" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="django_app" type="462c0819:PsiDirectoryNode" />
+              <item name="statistic_algorithms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StatisticaEasyMy" type="b2602c69:ProjectViewProjectNode" />
@@ -338,19 +307,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="C:\Users\SirStrash\PycharmProjects\StatisticaEasyMy\angular-app\node_modules\tslint" />
+    <property name="node.js.selected.package.tslint" value="C:/Users/SirStrash/PycharmProjects/StatisticaEasyMy/angular-app/node_modules/tslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="C:\Users\SirStrash\PycharmProjects\StatisticaEasyMy\angular-app\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/angular-app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -426,6 +396,7 @@
       <workItem from="1553628265846" duration="2860000" />
       <workItem from="1554213874979" duration="823000" />
       <workItem from="1554293361319" duration="13886000" />
+      <workItem from="1554611213811" duration="5198000" />
     </task>
     <task id="LOCAL-00001" summary="New Version">
       <created>1553458801756</created>
@@ -466,13 +437,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89769000" />
+    <option name="totallyTimeSpent" value="94967000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="67" y="27" width="1853" height="1173" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29317698" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29662424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -485,8 +456,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49840087" weight="0.32917964" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026652" side_tool="true" visible="true" weight="0.22222222" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49733475" visible="true" weight="0.22222222" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030437" side_tool="true" weight="0.3362319" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4969563" visible="true" weight="0.33556405" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32917964" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49946696" visible="true" weight="0.32917964" />
@@ -496,6 +467,31 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29662424" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917964" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49840087" weight="0.32917964" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030437" side_tool="true" weight="0.3362319" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4969563" visible="true" weight="0.33556405" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32917964" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49946696" visible="true" weight="0.32917964" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -513,60 +509,6 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular-app/src/tsconfig.spec.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-455" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/angular.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/footer/footer.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/nav-bar/nav-bar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="29" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-dnn-chart/main-dnn-chart.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#highcharts-chart#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/footer/footer.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -794,58 +736,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="34" column="157" lean-forward="true" selection-start-line="34" selection-start-column="157" selection-end-line="34" selection-end-column="169" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#highcharts-chart#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="1020">
           <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -872,51 +765,155 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="138" column="135" selection-start-line="138" selection-start-column="135" selection-end-line="138" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="20" selection-end-column="3" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="20" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/media/dataset1_cDEQiBV.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
+        <state relative-caret-position="15">
           <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/media/dataset1.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="652">
           <caret line="72" selection-start-line="72" selection-end-line="72" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-dnn/reg-dnn.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
+        <state relative-caret-position="537">
           <caret line="176" selection-start-line="176" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_app/statistic_algorithms/jik.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/tslint.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#highcharts-chart#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/reg-chart/reg-chart.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
+        <state relative-caret-position="360">
           <caret line="173" selection-start-line="173" selection-end-line="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_app/statistic_algorithms/simple_linear_regretion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/src/app/components/main-page/main-page.component.ts">
+    <entry file="file://$PROJECT_DIR$/django_app/statistic_algorithms/neural_network_prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="138" column="135" selection-start-line="138" selection-start-column="135" selection-end-line="138" selection-end-column="135" />
+        <state relative-caret-position="540">
+          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_app/statistic_algorithms/polynomial_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
