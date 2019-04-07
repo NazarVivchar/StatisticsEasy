@@ -1,4 +1,3 @@
-from rest_framework import permissions
 import os
 
 import numpy as np
@@ -191,4 +190,4 @@ class logistic_reg(APIView):
 
         # os.remove(file[0].get_file_name())
         # file[0].delete()
-        return Response([{'chart_reg': chart_reg}, {'reg_image': reg_image.data}])
+        return Response([{'reg_image': reg_image.data}])
