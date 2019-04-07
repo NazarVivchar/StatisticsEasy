@@ -11,7 +11,7 @@ from shutil import copyfile
 
 
 
-def func(file, pred_row):
+def func(file, pred_row='Survived'):
     train = pd.read_csv(file)
     X_train, X_test, y_train, y_test = train_test_split(train.drop(pred_row, axis=1),
                                                         train[pred_row], test_size=0.30,

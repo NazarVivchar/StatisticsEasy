@@ -78,6 +78,7 @@
          style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
       <h1>Step 2</h1>
       <h4>Preview your data</h4>
+      <input type="text"/>
       <button (click)="getReg()" class="btn btn-dark">Build</button>
     </div>
 
@@ -98,16 +99,12 @@
         Your chart will be displayed here
       </h1>
     </div>
-    <highcharts-chart
-      [Highcharts]="Highcharts"
-      [options]="chartOptions"
-      [update]="updateFlag"
-      style="width: 100%; height: 70vh; display: block; z-index: 1">
-    </highcharts-chart>
-  </div>
-  <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
-    <p>Scroll for footer</p>
-    <p><i class="arrow down dark"></i></p>
+    <img src = '../../../../../logistic_result.png' style="width: 100%; height: 70vh; display: block; z-index: 1"
+         alt="Mistake("/>
+    <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
+      <p>Scroll for footer</p>
+      <p><i class="arrow down dark"></i></p>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>
