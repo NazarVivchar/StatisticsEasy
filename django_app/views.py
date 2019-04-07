@@ -154,16 +154,16 @@ class polynomial_reg(APIView):
 
         x = []
         y = []
-        with open('media/dataset1.csv') as f:
+        with open(file[0].get_file_name()) as f:
             for line in f:
                 tmp = line.split(',')
                 x.append(float(tmp[0]))
                 y.append(float(tmp[1]))
 
-        chart_reg_y = polynomial_regression.func('media/dataset1.csv',3)
+        chart_reg_y = polynomial_regression.func(file[0].get_file_name(),3)
         chart_reg_x = x
-        # os.remove(file[0].get_file_name())
-        # file[0].delete()
+        os.remove(file[0].get_file_name())
+        file[0].delete()
         return Response([{'chart_reg_x': chart_reg_x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
 
 
@@ -182,10 +182,14 @@ class logistic_reg(APIView):
         file = DataFile.objects.all()
 
 
-        chart_reg = logistic_regression.func('media/example.csv','Survived')[2]
+        chart_reg = logistic_regression.func(file[0],request.GET.data)[2]
+        print(ImageFile.objects.all()[0].image)
         reg_image = ImageSerializer(ImageFile.objects.all()[0])
         print(reg_image.data)
 
-        # os.remove(file[0].get_file_name())
-        # file[0].delete()
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        image = ImageFile.objects.all()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
         return Response([{'chart_reg': chart_reg},{'reg_image': reg_image.data}])

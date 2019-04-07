@@ -19,9 +19,5 @@ class DataFile(models.Model):
 class ImageFile(models.Model):
     image = models.ImageField(blank=False, null=False, max_length=1000)
     def get_file_name(self):
-        return 'media/'+self.image.name
+        return self.image.name
 
-# class LinearRegresion(models.Model):
-#     alpha = models.FloatField()
-#     beta = models.FloatField()
-#     prediction = models.Field()

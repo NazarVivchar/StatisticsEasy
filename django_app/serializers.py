@@ -34,8 +34,3 @@ class ImageSerializer(serializers.ModelSerializer):
         fields=['image']
 
 
-
-# class PointGetSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = LinearRegresion
-#         fields = ['alpha']

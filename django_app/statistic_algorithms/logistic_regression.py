@@ -31,8 +31,9 @@ def func(file, pred_row):
     plt.tight_layout()
     plt.title('Confusion matrix', y=1.1)
 
-    plt.savefig('logistc_result.png')
-    copyfile('./logistc_result.png','media/logistc_result.png')
-    ImageFile.objects.create(image='media/logistc_result.png')
+    plt.savefig('logistic_result.png')
+    copyfile('./logistic_result.png','media/logistic_result.png')
+    ImageFile.objects.create(image='logistic_result.png')
+
     return X_test.head(), y_test[0:6], predictions[0:6], classification_report(y_test, predictions)
 
