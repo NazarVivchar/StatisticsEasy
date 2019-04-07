@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets,permissions
 from rest_framework.views import APIView,Response
-from .serializers import UserSerializer, GroupSerializer, PointSerializer,FileSerializer
-from .statistic_algorithms import simple_linear_regretion, neural_network_prediction,polynomial_regression
+from .serializers import UserSerializer, GroupSerializer, PointSerializer,FileSerializer, ImageSerializer
+from .statistic_algorithms import simple_linear_regretion, neural_network_prediction,polynomial_regression, \
+    logistic_regression
 from django.shortcuts import render
-from .models import Point, DataFile
+from .models import Point, DataFile, ImageFile
 import numpy as np
 import os
 
@@ -165,3 +166,26 @@ class polynomial_reg(APIView):
         # file[0].delete()
         return Response([{'chart_reg_x': chart_reg_x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
 
+
+class logistic_reg(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+
+        chart_reg = logistic_regression.func('media/example.csv','Survived')[2]
+        reg_image = ImageSerializer(ImageFile.objects.all()[0])
+        print(reg_image.data)
+
+        # os.remove(file[0].get_file_name())
+        # file[0].delete()
+        return Response([{'chart_reg': chart_reg},{'reg_image': reg_image.data}])
