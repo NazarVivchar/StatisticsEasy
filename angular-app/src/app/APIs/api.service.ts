@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -25,6 +25,16 @@ export class ApiService {
   }
   getDnn(): Observable<any> {
     return this.http.get(this.baseurl + '/dnn_info/',
+      {headers: this.httpHeaders});
+  }
+
+  getPolynomial(): Observable<any> {
+    return this.http.get(this.baseurl + '/poly_info/',
+      {headers: this.httpHeaders});
+  }
+
+  getLogistical(): Observable<any> {
+    return this.http.get(this.baseurl + '/log_info/',
       {headers: this.httpHeaders});
   }
 }

@@ -26,47 +26,101 @@
 
     <app-nav-bar></app-nav-bar>
     <div class="d-flex flex-column align-items-center justify-content-center"
-         style=" padding-top: 20vh; padding-bottom: 10vh; margin-bottom: 42vh; width: 100%; min-height: 150vh">
+         style=" padding-bottom: 10vh; margin-bottom: 45vh; width: 100%; min-height: 150vh">
 
       <div class="d-flex align-items-center justify-content-center"
-           style=" margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%">
-        <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 3em; padding-bottom: 1em"><em>Simple regression</em>
+           style=" padding-top: 20vh; margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
+        <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Simple regression</em>
         </h1>
       </div>
 
+      <div class="d-flex  align-items-center flex-column justify-content-center"
+           style="margin-bottom: 10vh; width: 90%; z-index: 2">
+        <button (click)="changeElement()" (mouseleave)="hover1 =false" (mouseover)="hover1 =true"
+                [ngClass]="{'btn-hover-active':(visible1 || hover1) && !hover2}" class="my-btn btn-lg btn-block">Details
+        </button>
+        <button (click)="changeElement()" (mouseleave)="hover2 =false" (mouseover)="hover2 =true"
+                [ngClass]="{'btn-hover-active':(visible2 || hover2) && !hover1}"
+                [style.background-color]="(visible2 || hover2) && !hover1? '#919eba':'white'"
+                class="my-btn btn-lg btn-block">Generation
+        </button>
+      </div>
 
-      <div *ngIf="visible" [@enterAnimationBottom] class="d-flex  align-items-center justify-content-center"
-           style="width: 100%; height: 34vh;margin-bottom: 10vh">
+      <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-start justify-content-center"
+           style=" width: 90%">
+        <p style="margin: 1em">
+          In statistics, simple linear regression is a linear regression model with a single explanatory variable. That
+          is, it concerns
+          two-dimensional sample points with one independent variable and one dependent variable (conventionally, the x
+          and y coordinates
+          in a Cartesian coordinate system) and finds a linear function (a non-vertical straight line) that, as
+          accurately as possible,
+          predicts the dependent variable values as a function of the independent variables. The adjective simple refers
+          to the fact that
+          the outcome variable is related to a single predictor.
+        </p>
+        <p style="margin: 1em">
+          It is common to make the additional stipulation that the ordinary least squares (OLS) method should be used:
+          the accuracy
+          of each predicted value is measured by its squared residual (vertical distance between the point of the data
+          set and the fitted
+          line), and the goal is to make the sum of these squared deviations as small as possible. Other regression
+          methods that can be used
+          in place of ordinary least squares include least absolute deviations (minimizing the sum of absolute values of
+          residuals) and the
+          Theil–Sen estimator (which chooses a line whose slope is the median of the slopes determined by pairs of
+          sample points). Deming
+          regression (total least squares) also finds a line that fits a set of two-dimensional sample points, but
+          (unlike ordinary least squares,
+          least absolute deviations, and median slope regression) it is not really an instance of simple linear
+          regression, because it does
+          not separate the coordinates into one dependent and one independent variable and could potentially return a
+          vertical line as its fit.
+        </p>
+        <p style="margin: 1em">
+          The remainder of the article assumes an ordinary least squares regression. In this case, the slope of the
+          fitted line is equal to the
+          correlation between y and x corrected by the ratio of standard deviations of these variables. The intercept of
+          the fitted line is such
+          that the line passes through the center of mass (x, y) of the data points.
+        </p>
+      </div>
 
-        <div class="d-flex flex-column align-items-center justify-content-around"
-             style="height: 100%; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
+
+      <div class="d-flex  align-items-center justify-content-center"
+           style="width: 100%; height: 34vh;margin-bottom: 10vh; ">
+
+        <div *ngIf="visible2" [@enterAnimationLeft] class="d-flex flex-column align-items-center justify-content-around"
+             style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
           <h1>Step 1</h1>
-          <h3>Choose your .csv file with input data</h3>
+          <h4>Choose your .csv file with input data</h4>
 
-          <input (click)="upload()" [uploader]="uploader" accept=".csv" class="input-group-text" ng2FileSelect
+          <input [uploader]="uploader" accept=".csv" class="input-group-text" ng2FileSelect
                  type="file"/>
 
         </div>
 
-        <div class="d-flex flex-column align-items-center justify-content-around"
-             style="height: 100%; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
+        <div *ngIf="visible2" [@enterAnimationTop] class="d-flex flex-column align-items-center justify-content-around"
+             style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
           <h1>Step 2</h1>
-          <h3>Build regular chart</h3>
+          <h4>Build regular chart</h4>
           <button (click)="getReg()" class="btn btn-dark">Build</button>
         </div>
 
-        <div class="d-flex flex-column align-items-center justify-content-around"
-             style="height: 100%; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
+        <div *ngIf="visible2" [@enterAnimationRight]
+             class="d-flex flex-column align-items-center justify-content-around"
+             style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
           <h1>Step 3</h1>
-          <h3>Build linear regression</h3>
+          <h4>Build linear regression</h4>
           <button (click)="predict()" class="btn btn-dark">Build</button>
         </div>
 
       </div>
 
-      <div class="d-flex flex-column justify-content-center align-items-center"
-           style="width: 90%; margin-bottom: 10vh; border: dashed 0.2em #919eba">
-        <div *ngIf="visible" [@enterAnimationLeft] style="z-index:0; position: absolute">
+      <div [hidden]="visible1" [style.border]="visible1?  'none' : 'dashed 0.2em #919eba' "
+           class="d-flex flex-column justify-content-center align-items-center"
+           style="width: 90%; margin-bottom: 10vh;">
+        <div *ngIf="visible2" [@enterAnimationLeft] style="z-index:0; position: absolute">
           <h1 style="font-size: 2em">
             Your chart will be displayed here
           </h1>

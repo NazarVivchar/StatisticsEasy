@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
-import {ApiService} from '../../api.service';
+import {ApiService} from '../../APIs/api.service';
+
 @Component({
   selector: 'app-main-dnn-chart',
   templateUrl: './main-dnn-chart.component.html',
@@ -55,8 +56,8 @@ export class MainDnnChartComponent implements OnInit {
            this.info = data;
            let chart_dnn_x:number[] = this.info[0].chart_dnn_x;
             let  chart_dnn_y:number[] = this.info[1].chart_dnn_y;
-            console.log(chart_dnn_x)
-            console.log(chart_dnn_y)
+       console.log(chart_dnn_x);
+       console.log(chart_dnn_y);
             let chart_x:number[]  = this.info[2].chart_x;
             let chart_y:number[] = this.info[3].chart_y;
             for(let i in chart_x)
@@ -64,7 +65,7 @@ export class MainDnnChartComponent implements OnInit {
               this.points.push([chart_x[i],chart_y[i]]);
               
             }
-            this.points_dnn.push([chart_x[chart_x.length-1],chart_y[chart_x.length-1]])
+       this.points_dnn.push([chart_x[chart_x.length - 1], chart_y[chart_x.length - 1]]);
             for(let i in chart_dnn_x)
             {
               this.points_dnn.push([chart_dnn_x[i],chart_dnn_y[i]]);
@@ -78,7 +79,7 @@ export class MainDnnChartComponent implements OnInit {
             for (let i of this.points){
               this.array += '['+i.join()+'],';
             }
-            console.log(this.points_dnn[0][0])
+       console.log(this.points_dnn[0][0]);
             console.log(this.array_dnn.slice(0,-1));
             this.optFromInputString = `
             {

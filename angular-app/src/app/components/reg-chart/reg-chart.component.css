@@ -20,3 +20,16 @@ i.dark:hover {
   display: inline-block;
   padding: 0.8em;
 }
+
+.my-btn {
+  color: #919eba;
+  background-color: white;
+}
+
+.btn-hover-active {
+  background-color: #919eba;
+  color: white;
+}
+
+
+

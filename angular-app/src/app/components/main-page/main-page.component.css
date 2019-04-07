@@ -9,9 +9,9 @@ body{
 }
 i.white{
   border: solid white;
-  border-width: 0 0.3em 0.3em 0;
+  border-width: 0 0.2em 0.2em 0;
   display: inline-block;
-  padding: 0.8em;
+  padding: 0.5em;
 }
 
 /*i.white:hover{*/

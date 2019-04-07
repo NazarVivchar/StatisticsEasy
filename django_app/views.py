@@ -1,13 +1,15 @@
-from django.contrib.auth.models import User, Group
-from rest_framework import viewsets,permissions
-from rest_framework.views import APIView,Response
-from .serializers import UserSerializer, GroupSerializer, PointSerializer,FileSerializer, ImageSerializer
-from .statistic_algorithms import simple_linear_regretion, neural_network_prediction,polynomial_regression, \
-    logistic_regression
-from django.shortcuts import render
-from .models import Point, DataFile, ImageFile
-import numpy as np
 import os
+
+import numpy as np
+from django.shortcuts import render
+from rest_framework import permissions
+from rest_framework.views import APIView, Response
+
+from .models import DataFile, ImageFile
+from .serializers import FileSerializer, ImageSerializer
+from .statistic_algorithms import simple_linear_regretion, neural_network_prediction, polynomial_regression, \
+    logistic_regression
+
 
 class regression_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -187,9 +189,15 @@ class logistic_reg(APIView):
         reg_image = ImageSerializer(ImageFile.objects.all()[0])
         print(reg_image.data)
 
+<<<<<<< HEAD
         os.remove(file[0].get_file_name())
         file[0].delete()
         image = ImageFile.objects.all()
         os.remove(image[0].get_file_name())
         image[0].delete()
         return Response([{'chart_reg': chart_reg},{'reg_image': reg_image.data}])
+=======
+        # os.remove(file[0].get_file_name())
+        # file[0].delete()
+        return Response([{'reg_image': reg_image.data}])
+>>>>>>> 555a464d9ff91909cd6199b59abe65a14e33ef4a
