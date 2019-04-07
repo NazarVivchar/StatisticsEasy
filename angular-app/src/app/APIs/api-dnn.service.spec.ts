@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ApiDnnService } from './api-dnn.service';
+import {ApiDnnService} from './api-dnn.service';
 
 describe('ApiDnnService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

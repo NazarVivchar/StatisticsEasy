@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
-import {ApiService} from '../../api.service';
+import {ApiService} from '../../APIs/api.service';
 
 @Component({
   selector: 'app-main-reg-chart',
@@ -15,10 +15,7 @@ export class MainRegChartComponent implements OnInit {
   points_reg: number[][] = [];
   points: number[][] = [];
   info: any[];
-  demoSet:number[][] = [
-
-
-  ]
+  demoSet:number[][] = [];
 
   optFromInputString: string;
   chartOptions: Highcharts.Options;
@@ -81,7 +78,7 @@ export class MainRegChartComponent implements OnInit {
             for (let i of this.points){
               this.array += '['+i.join()+'],';
             }
-            console.log(this.points_reg[0][0])
+       console.log(this.points_reg[0][0]);
             console.log(this.array_reg.slice(0,-1));
             this.optFromInputString = `
             {

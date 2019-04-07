@@ -21,6 +21,14 @@
               <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/dnn/">
                 <a >DNN</a>
               </div>
+              <div class="drop-item align-items-center d-flex justify-content-center"
+                   routerLink="/polynomial-regression/">
+                <a>Polynomial Regression</a>
+              </div>
+              <div class="drop-item align-items-center d-flex justify-content-center"
+                   routerLink="/logistical-regression/">
+                <a>Logistical Regression</a>
+              </div>
             </div>
           </div>
       </nav>
@@ -76,7 +84,7 @@
 
 
 <div class="d-flex flex-wrap justify-content-center align-items-center " id="main"
-     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 42vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 170vh; transition: height linear; padding-top: 5vh; padding-bottom: 5vh;">
+     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 46vh; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 170vh; transition: height linear; padding-top: 5vh; padding-bottom: 5vh;">
 
 <!--<div class="d-flex flex-column justify-content-around align-items-center" style=" ">-->
 
@@ -145,8 +153,26 @@
       </div>
     </div>
 
+    <div class="my-card-outer">
+      <div id="anchor3" style="margin-bottom: 5em"></div>
 
-    <div *ngFor="let i of [3,4,5,6,7,8,9,10,11,12]" class="my-card-outer">
+      <div *ngIf="anchorsReached[2]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Polynomial regression</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example3.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/polynomial-regression">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngFor="let i of [4,5,6,7,8,9,10,11,12]" class="my-card-outer">
       <div id="anchor{{i}}" style="margin-bottom: 5em"></div>
 
       <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]
@@ -187,12 +213,6 @@
 <!--</div>-->
 
 
-
-
-  
-
-
-
-<app-footer style="margin-top: 30vh"></app-footer>
+<app-footer></app-footer>
 </body>
 </html>

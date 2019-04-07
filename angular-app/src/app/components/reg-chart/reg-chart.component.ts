@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FileUploader} from 'ng2-file-upload';
-import {ApiService} from '../../api.service';
+import {ApiService} from '../../APIs/api.service';
 import * as Highcharts from 'highcharts';
 import {animate, style, transition, trigger} from "@angular/animations";
 import {Router} from "@angular/router";
@@ -17,8 +17,8 @@ import {Router} from "@angular/router";
           animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('2s', style({transform: 'translateX(-100%)', opacity: 0}))
+          style({transform: 'translateX(0)', opacity: 1, position: 'absolute'}),
+          animate('1s', style({transform: 'translateX(-100%)', opacity: 0}))
         ])
       ]),
     trigger(
@@ -28,8 +28,8 @@ import {Router} from "@angular/router";
           animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('2s', style({transform: 'translateX(100%)', opacity: 0}),)
+          style({transform: 'translateX(0)', opacity: 1, position: 'absolute'}),
+          animate('1s', style({transform: 'translateX(100%)', opacity: 0}),)
         ])
       ]),
     trigger(
@@ -39,8 +39,8 @@ import {Router} from "@angular/router";
           animate('2s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateY(0)', opacity: 1}),
-          animate('1.5s', style({transform: 'translateY(-100%)', opacity: 0}))
+          style({transform: 'translateY(0)', opacity: 1, position: 'absolute'}),
+          animate('1s', style({transform: 'translateY(-100%)', opacity: 0}))
         ])
       ]),
     trigger(
@@ -50,8 +50,8 @@ import {Router} from "@angular/router";
           animate('2s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
-          style({transform: 'translateY(0)', opacity: 1}),
-          animate('1.5s', style({transform: 'translateX(100%)', opacity: 0}))
+          style({transform: 'translateY(0)', opacity: 1, position: 'absolute'}),
+          animate('1s', style({transform: 'translateY(100%)', opacity: 0}))
         ])
       ])
   ]
@@ -62,6 +62,10 @@ export class RegChartComponent implements OnInit {
        }
     );
   visible: boolean;
+  visible1: boolean;
+  visible2: boolean;
+  hover1: boolean;
+  hover2: boolean;
     info:any[];
     Highcharts = Highcharts;
     array: string = "";
@@ -76,6 +80,10 @@ export class RegChartComponent implements OnInit {
   constructor(private api: ApiService, private router: Router) {
     this.api = api;
     this.visible = false;
+    this.visible1 = false;
+    this.visible2 = false;
+    this.hover1 = false;
+    this.hover2 = false;
   }
 
   predict() {
@@ -102,7 +110,7 @@ export class RegChartComponent implements OnInit {
     }
     `;
 
-
+    console.log(this.optFromInputString);
     this.chartOptions =
          JSON.parse(this.optFromInputString);
 
@@ -164,6 +172,7 @@ export class RegChartComponent implements OnInit {
               }]
             }
             `;
+       console.log(this.optFromInputString);
             this.chartOptions = JSON.parse(this.optFromInputString);
            
      },
@@ -176,8 +185,14 @@ export class RegChartComponent implements OnInit {
     window.scrollTo(0, 0);
     setTimeout(() => {
       this.visible = true;
+      this.visible1 = true;
     }, 10);
 
+  }
+
+  changeElement() {
+    this.visible1 = !this.visible1;
+    this.visible2 = !this.visible2;
   }
 
 

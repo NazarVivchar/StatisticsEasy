@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FileUploader } from 'ng2-file-upload';
-import {ApiService} from '../../api.service';
+import {Component, OnInit} from '@angular/core';
+import {FileUploader} from 'ng2-file-upload';
+import {ApiService} from '../../APIs/api.service';
 
 @Component({
   selector: 'app-test',
