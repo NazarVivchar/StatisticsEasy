@@ -1,5 +1,5 @@
 import os
-
+import base64
 import numpy as np
 from django.shortcuts import render
 from rest_framework import permissions
@@ -182,12 +182,17 @@ class logistic_reg(APIView):
 
     def get(self, request):
         file = DataFile.objects.all()
-
+        print(file)
 
         chart_reg = logistic_regression.func(file[0].get_file_name())[2]
         print(ImageFile.objects.all()[0].image)
-        reg_image = ImageSerializer(ImageFile.objects.all()[0])
-        print(reg_image.data)
+
+
+
+        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+
+        print(encoded_string)
 
 
         os.remove(file[0].get_file_name())
@@ -195,7 +200,7 @@ class logistic_reg(APIView):
         image = ImageFile.objects.all()
         os.remove(image[0].get_file_name())
         image[0].delete()
-        return Response([{'chart_reg': chart_reg},{'reg_image': reg_image.data}])
+        return Response([{'chart_reg': chart_reg},{'reg_image': encoded_string}])
 
 
 

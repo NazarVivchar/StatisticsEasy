@@ -4,7 +4,7 @@ import {ApiService} from '../../APIs/api.service';
 import * as Highcharts from 'highcharts';
 import {animate, style, transition, trigger} from "@angular/animations";
 import {Router} from "@angular/router";
-
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-log-reg',
   templateUrl: './log-reg.component.html',
@@ -76,8 +76,10 @@ export class LogRegComponent implements OnInit {
   hover2: boolean;
   optFromInputString: string;
   chartOptions: Highcharts.Options;
+  base64Image: string;
+  image_visible: boolean;
 
-  constructor(private api: ApiService, private router: Router) {
+  constructor(private api: ApiService, private router: Router, private sanitizer:DomSanitizer) {
     this.api = api;
     this.visible = false;
   }
@@ -123,19 +125,26 @@ export class LogRegComponent implements OnInit {
     this.api.getLogistical().subscribe(
       (data: any[]) => {
         console.log(data);
-        console.log(JSON.parse(data[0]));
+        // console.log(JSON.parse(data[0]));
+        this.base64Image = "data:image/png;base64, " +  data[1].reg_image;
+        console.log(this.base64Image);
+        this.image_visible = true;
       },
       error => {
         console.log(error);
       }
     );
   }
+   transform() {
+     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image);
+   }
 
   ngOnInit() {
     window.scrollTo(0, 0);
     setTimeout(() => {
       this.visible = true;
       this.visible1 = true;
+      this.image_visible = false;
     }, 10);
 
   }
