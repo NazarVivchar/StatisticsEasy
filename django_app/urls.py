@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import main_page, info_demo_regression, regression_info, dnn_demo_info, dnn_info, polynomial_reg, \
-    logistic_reg
+    logistic_reg, t_Sna,k_mean, h_claster
 
 urlpatterns = [
     path('', main_page.as_view(), name='main_page'),
@@ -11,5 +11,9 @@ urlpatterns = [
     path('dnn_info/', dnn_info.as_view(), name='dnn_info'),
     path('poly_info/', polynomial_reg.as_view(), name='poly_reg'),
     path('log_info/', logistic_reg.as_view(), name='log_reg'),
+    path('t_sna_info/', t_Sna.as_view(),name='t_sna'),
+    path('h_claster_info/', h_claster.as_view(),name='h_claster'),
+    path('k_means_info/', k_mean.as_view(),name='k_means'),
+
 
 ]

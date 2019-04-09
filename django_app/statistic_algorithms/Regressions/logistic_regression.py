@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn import metrics
 import seaborn as sns
 import numpy as np
-from ..models import ImageFile
+from django_app.models import ImageFile
 from shutil import copyfile
 
 

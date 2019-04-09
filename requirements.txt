@@ -34,6 +34,6 @@ scipy==1.2.1
 seaborn==0.9.0
 simplejson==3.16.0
 six==1.12.0
-sqlparse==0.3.0
+stats==0.1.2a0
 uritemplate==3.0.0
 urllib3==1.24.1

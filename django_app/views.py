@@ -6,9 +6,10 @@ from rest_framework import permissions
 from rest_framework.views import APIView, Response
 
 from .models import DataFile, ImageFile
-from .serializers import FileSerializer, ImageSerializer
-from .statistic_algorithms import simple_linear_regretion, neural_network_prediction, polynomial_regression, \
-    logistic_regression
+from .serializers import FileSerializer
+from .statistic_algorithms import neural_network_prediction
+from django_app.statistic_algorithms.Regressions import logistic_regression, polynomial_regression, \
+    simple_linear_regretion
 
 
 class regression_info(APIView):
@@ -33,7 +34,7 @@ class regression_info(APIView):
                 x.append(float(tmp[0]))
                 y.append(float(tmp[1]))
 
-        alpha,beta = simple_linear_regretion.least_squers_fit(x,y)
+        alpha,beta = simple_linear_regretion.least_squers_fit(x, y)
         chart_reg_y = [beta*point + alpha for point in x]
         chart_reg_x = [point for point in x]
         os.remove(file[0].get_file_name())
@@ -72,7 +73,7 @@ class info_demo_regression(APIView):
                 x.append(float(tmp[0]))
                 y.append(float(tmp[1]))
 
-        alpha,beta = simple_linear_regretion.least_squers_fit(x,y)
+        alpha,beta = simple_linear_regretion.least_squers_fit(x, y)
         chart_reg_y = [beta*point + alpha for point in x]
         chart_reg_x = [point for point in x]
         
@@ -162,7 +163,7 @@ class polynomial_reg(APIView):
                 x.append(float(tmp[0]))
                 y.append(float(tmp[1]))
 
-        chart_reg_y = polynomial_regression.func(file[0].get_file_name(),3)
+        chart_reg_y = polynomial_regression.func(file[0].get_file_name(), 3)
         chart_reg_x = x
         os.remove(file[0].get_file_name())
         file[0].delete()
@@ -201,6 +202,100 @@ class logistic_reg(APIView):
         os.remove(image[0].get_file_name())
         image[0].delete()
         return Response([{'chart_reg': chart_reg},{'reg_image': encoded_string}])
+
+
+class h_claster(APIView):
+    permission_classes = [permissions.AllowAny, ]
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+        print(file)
+
+        chart_reg = logistic_regression.func(file[0].get_file_name())[2]
+        print(ImageFile.objects.all()[0].image)
+
+
+
+        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+
+        print(encoded_string)
+
+
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        image = ImageFile.objects.all()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
+
+class k_mean(APIView):
+    permission_classes = [permissions.AllowAny, ]
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+        print(file)
+
+        chart_reg = logistic_regression.func(file[0].get_file_name())[2]
+        print(ImageFile.objects.all()[0].image)
+
+
+
+        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+
+        print(encoded_string)
+
+
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        image = ImageFile.objects.all()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
+
+class t_Sna(APIView):
+    permission_classes = [permissions.AllowAny, ]
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+        print(file)
+
+        chart_reg = logistic_regression.func(file[0].get_file_name())[2]
+        print(ImageFile.objects.all()[0].image)
+
+
+
+        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+
+        print(encoded_string)
+
+
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        image = ImageFile.objects.all()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
 
 
 
