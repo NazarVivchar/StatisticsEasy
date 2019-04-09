@@ -11,6 +11,8 @@ from .statistic_algorithms import neural_network_prediction
 from django_app.statistic_algorithms.Regressions import logistic_regression, polynomial_regression, \
     simple_linear_regretion
 
+from django_app.statistic_algorithms.MovingAverages import simple_ma
+
 
 class regression_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -299,5 +301,22 @@ class t_Sna(APIView):
         os.remove(image[0].get_file_name())
         image[0].delete()
 
+class simple_ma_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
 
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        x,chart_reg_y,y = simple_ma.main(file[0].get_file_name())
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
 
