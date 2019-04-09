@@ -150,17 +150,13 @@ p.information {
 .arrow-to-top {
   font-size: 4.5em;
   color: #919eba;
-  margin-bottom: 42vh;
   position: fixed;
   right: 0.5em;
-  bottom: 0;
+  bottom: 3.7em;
 
 }
 
 .arrow-to-top:hover {
   cursor: pointer;
-  position: fixed;
-  right: 0.5em;
-  bottom: 0;
   color: #141D2E;
 }
