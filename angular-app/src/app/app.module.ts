@@ -23,6 +23,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {AccordionComponent} from './components/accordion/accordion.component';
 import {PolynRegComponent} from './components/polyn-reg/polyn-reg.component';
 import {LogRegComponent} from './components/log-reg/log-reg.component';
+import { MovAvgComponent } from './components/mov-avg/mov-avg.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {LogRegComponent} from './components/log-reg/log-reg.component';
     FooterComponent,
     AccordionComponent,
     PolynRegComponent,
-    LogRegComponent
+    LogRegComponent,
+    MovAvgComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),

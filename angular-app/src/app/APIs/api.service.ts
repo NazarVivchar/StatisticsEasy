@@ -37,4 +37,8 @@ export class ApiService {
     return this.http.get(this.baseurl + '/log_info/',
       {headers: this.httpHeaders});
   }
+  getMovingAverages(): Observable<any> {
+    return this.http.get(this.baseurl + '/simple_ma_info/',
+      {headers: this.httpHeaders});
+  }
 }
