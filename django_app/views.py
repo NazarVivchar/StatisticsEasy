@@ -29,9 +29,11 @@ class regression_info(APIView):
         y = []
         with open(file[0].get_file_name()) as f:
             for line in f:
+                print(line)
                 tmp = line.split(',')
-                x.append(float(tmp[0]))
-                y.append(float(tmp[1]))
+                print(tmp)
+                x.append(int(tmp[0]))
+                y.append(int(tmp[1]))
 
         alpha,beta = simple_linear_regretion.least_squers_fit(x,y)
         chart_reg_y = [beta*point + alpha for point in x]
@@ -126,8 +128,8 @@ class dnn_info(APIView):
         with open(file[0].get_file_name()) as f:
             for line in f:
                 tmp = line.split(',')
-                x.append(float(tmp[0]))
-                y.append(float(tmp[1]))
+                x.append(int(tmp[0]))
+                y.append(int(tmp[1]))
 
         np_y = np.array([[*y]])
         np_x = x
