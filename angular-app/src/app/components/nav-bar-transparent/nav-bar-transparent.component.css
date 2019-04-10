@@ -1,0 +1,84 @@
+nav{
+  width: 100%;
+  font-size:1.5vw;
+  color: #919eba;
+  position: fixed;
+}
+div{
+  height: 100%;
+}
+.nav-transparent{
+  background-color: transparent;
+}
+.nav-colored{
+  background-color:#141D2E
+}
+
+.drop-transparent {
+  background-color: transparent;
+  border-bottom: white dashed 0.1em;
+  background-clip: padding-box;
+}
+
+.dropdown-content{
+  height: auto;
+  width:  100%;
+  visibility: hidden;
+  position: absolute;
+  overflow: visible;
+  opacity: 0;
+  border-radius: 0 0 1em 1em;
+  transition: opacity 200ms, visibility 200ms;
+
+}
+
+.dropdown-content-hover{
+  visibility: visible;
+  overflow: visible;
+  display: inline-block;
+  /*box-shadow: 0 1em 1em -0.2em #919eba;*/
+  opacity: 1;
+}
+.drop-item{
+  width: 100%;
+  padding-top:  5%;
+  padding-bottom:  5%;
+  color: #919eba;
+  border-radius: 0 0 2% 2%;
+  cursor: pointer;
+}
+.drop-item:hover{
+  /*background: #45526e;*/
+  color: white;
+}
+.nav-item{
+  padding-left: 2em;
+  height: 100%;
+  color: #919eba;
+  cursor: pointer;
+
+}
+.nav-text:hover{
+  border-left: white dashed 0.1em;
+  border-right: white dashed 0.1em;
+}
+.nav-item:hover{
+  /*background: #45526e;*/
+  color: white;
+}
+.padding-5{
+  padding: 5%;
+}
+.nav-transparent{
+  background-color: transparent;
+}
+
+
+.drop-transparent {
+  margin-top: 8vh;
+  background-color: transparent;
+  border-bottom: white dashed 0.1em;
+  border-left: white dashed 0.1em;
+  border-right: white dashed 0.1em;
+  background-clip: padding-box;
+}
