@@ -21,3 +21,6 @@ class ImageFile(models.Model):
     def get_file_name(self):
         return self.image.name
 
+class Distribution(models.Model):
+    n = models.IntegerField(blank=False, null=False)
+    distribution_type = models.TextField(blank=False, max_length=40)

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Point,DataFile,ImageFile
+from .models import Point,DataFile,ImageFile,Distribution
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -34,3 +34,7 @@ class ImageSerializer(serializers.ModelSerializer):
         fields=['image']
 
 
+class DistributionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Distribution
+        fields=['n','distribution_type']
