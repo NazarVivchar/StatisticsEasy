@@ -1,7 +1,9 @@
 from django.urls import path
 
 from .views import main_page, info_demo_regression, regression_info, dnn_demo_info, dnn_info, polynomial_reg, \
-    logistic_reg, t_Sna,k_mean, h_claster, simple_ma_info,distribution_info
+    logistic_reg, t_Sna,k_mean, h_claster, simple_ma_info,distribution_info,exp_ma_info,weighted_ma_info, \
+    running_ma_info
+
 
 urlpatterns = [
     path('', main_page.as_view(), name='main_page'),
@@ -16,6 +18,9 @@ urlpatterns = [
     path('k_means_info/', k_mean.as_view(),name='k_means'),
     path('simple_ma_info/', simple_ma_info.as_view(), name='simple_ma_info'),
     path('distribution_info/', distribution_info.as_view(), name='distribution_info'),
+    path('exp_ma_info/', exp_ma_info.as_view(), name='exponential_ma'),
+    path('running_ma_info/', running_ma_info.as_view(), name='running_ma'),
+    path('weighted_ma_info/', weighted_ma_info.as_view(), name='weighted_ma'),
 
 
 ]

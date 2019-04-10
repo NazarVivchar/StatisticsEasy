@@ -11,7 +11,7 @@ from .statistic_algorithms import neural_network_prediction
 from django_app.statistic_algorithms.Regressions import logistic_regression, polynomial_regression, \
     simple_linear_regretion
 
-from django_app.statistic_algorithms.MovingAverages import simple_ma
+from django_app.statistic_algorithms.MovingAverages import simple_ma,weighted,runing_mean,exponential
 from django_app.statistic_algorithms.Clasterization import k_means
 from django_app.statistic_algorithms.Distributions import anglit,arcsine,bernoulli,dweibull,expon,normal,triang,\
     uniform, wald
@@ -322,6 +322,9 @@ class simple_ma_info(APIView):
         file = DataFile.objects.all()
 
         x,chart_reg_y,y = simple_ma.main(file[0].get_file_name())
+        print(chart_reg_y)
+        print(y)
+
         os.remove(file[0].get_file_name())
         file[0].delete()
         return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
@@ -377,5 +380,93 @@ class distribution_info(APIView):
 
         return Response([{'result':result}])
 
+
+
+class weighted_ma_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        x = []
+        y = []
+        with open(file[0].get_file_name()) as f:
+            for words in f:
+                newlist = words.split(' ')
+                y = [float(i) for i in newlist]
+
+        chart_reg_y, x = weighted.weight_moving_average(y, 3)
+
+        os.remove(file[0].get_file_name())
+
+        file[0].delete()
+        return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
+
+class running_ma_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        x = []
+        y = []
+        with open(file[0].get_file_name()) as f:
+            for words in f:
+                newlist = words.split(' ')
+                y = [float(i) for i in newlist]
+
+        chart_reg_y, x = runing_mean.running_mean(y, 3)
+
+        os.remove(file[0].get_file_name())
+
+        file[0].delete()
+        return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
+
+
+class exp_ma_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+
+        x = []
+        y = []
+        with open(file[0].get_file_name()) as f:
+
+            for words in f:
+                newlist = words.split(' ')
+                y = [float(i) for i in newlist]
+
+
+        chart_reg_y,x = exponential.exponential(y, 3)
+
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
 
 

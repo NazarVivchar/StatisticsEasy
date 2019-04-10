@@ -124,14 +124,14 @@ export class MovAvgComponent implements OnInit {
     this.api.getMovingAverages().subscribe(
      (data: any[]) => {
            this.info = data;
-       console.log(this.info);
+            console.log(this.info);
             this.updateFlag = false;
             this.points = [];
             this.points_movavg = [];
             this.array = "";
             this.aray_movavg = "";
-           let chart_dnn_x:number[] = this.info[0].chart_dnn_x;
-            let  chart_dnn_y:number[] = this.info[1].chart_dnn_y;
+           let chart_reg_x:number[] = this.info[0].chart_reg_x;
+            let  chart_reg_y:number[] = this.info[1].chart_reg_y;
             let chart_x:number[]  = this.info[2].chart_x;
             let chart_y:number[] = this.info[3].chart_y;
             for(let i in chart_x)
@@ -140,9 +140,9 @@ export class MovAvgComponent implements OnInit {
 
             }
        this.points_movavg.push([chart_x[chart_x.length - 1], chart_y[chart_x.length - 1]]);
-            for(let i in chart_dnn_x)
+            for(let i in chart_reg_x)
             {
-              this.points_movavg.push([chart_dnn_x[i],chart_dnn_y[i]]);
+              this.points_movavg.push([chart_reg_x[i],chart_reg_y[i]]);
 
             }
             for (let i of this.points_movavg){
