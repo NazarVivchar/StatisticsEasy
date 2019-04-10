@@ -16,6 +16,7 @@ urlpatterns = [
     path('t_sne_info/', t_Sne.as_view(),name='t_sna'),
     path('h_claster_info/', h_claster.as_view(),name='h_claster'),
     path('k_means_info/', k_mean.as_view(),name='k_means'),
+
     path('simple_ma_info/', simple_ma_info.as_view(), name='simple_ma_info'),
     path('distribution_info/', distribution_info.as_view(), name='distribution_info'),
 

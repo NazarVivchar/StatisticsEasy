@@ -76,4 +76,28 @@
 
             </div>
           </div>
+
+  <div class="nav-item d-flex  justify-content-center" (mouseenter)="showDropdown(3)" (mouseleave)="hideDropdown(3)" [ngClass]="{'dropdown-hover': hover[3]}" style="position: relative" >
+
+          <div class=" d-flex align-items-center justify-content-center" style="width: 16vw; height: 100%">
+              <h3>Clusterization</h3>
+            </div>
+
+            <div  [ngClass]="{'dropdown-content':true, 'dropdown-content-hover': hover[3]}" (click)="hideDropdown(3)" class =" drop-transparent align-items-center d-flex flex-column">
+
+              <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/h-cluster/">
+                <a >H-Cluster</a>
+              </div>
+
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/k-means/">
+                <a>K-Means</a>
+              </div>
+
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/t-sne/">
+                <a> T-SNE</a>
+              </div>
+            </div>
+          </div>
       </nav>

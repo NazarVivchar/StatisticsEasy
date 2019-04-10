@@ -53,6 +53,19 @@ export class ApiService {
     return this.http.get(this.baseurl + '/running_ma_info/',
       {headers: this.httpHeaders});
   }
+  getHCluster(): Observable<any> {
+    return this.http.get(this.baseurl + '/h_claster_info/',
+      {headers: this.httpHeaders});
+  }
+  getTSNA(): Observable<any> {
+    return this.http.get(this.baseurl + '/t_sn/',
+      {headers: this.httpHeaders});
+  }
+  getLMeans(): Observable<any> {
+    return this.http.get(this.baseurl + '/k_means_info//',
+      {headers: this.httpHeaders});
+  }
+
   sendDistributionData(data): Observable<any> {
     return this.http.post(this.baseurl + '/distribution_info/',
       data,{headers: this.httpHeaders});

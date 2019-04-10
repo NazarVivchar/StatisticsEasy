@@ -30,6 +30,9 @@ import { RunMovAvgComponent } from './components/run-mov-avg/run-mov-avg.compone
 import { WeightMovAvgComponent } from './components/weight-mov-avg/weight-mov-avg.component';
 import { DisributionsComponent } from './components/disributions/disributions.component';
 import {FormsModule} from "@angular/forms";
+import { KMeansComponent } from './components/kmeans/kmeans.component';
+import { HClasterComponent } from './components/h-claster/h-claster.component';
+import {TSneComponent} from "./components/tsne/tsne.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import {FormsModule} from "@angular/forms";
     ExpMovAvgComponent,
     RunMovAvgComponent,
     WeightMovAvgComponent,
-    DisributionsComponent
+    DisributionsComponent,
+    KMeansComponent,
+    HClasterComponent,
+    TSneComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),

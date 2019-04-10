@@ -9,8 +9,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  private hover = new Array(2).fill(false);
-  private  visibility = new Array(2).fill('hidden');
+  private hover = new Array(4).fill(false);
+  private  visibility = new Array(4).fill('hidden');
 
   constructor() {
     this.hover.fill(false);
