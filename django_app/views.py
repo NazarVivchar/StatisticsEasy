@@ -399,20 +399,17 @@ class weighted_ma_info(APIView):
     def get(self, request):
         file = DataFile.objects.all()
 
-        x = []
-        y = []
-        with open(file[0].get_file_name()) as f:
-            for words in f:
-                newlist = words.split(' ')
-                y = [float(i) for i in newlist]
 
-        chart_reg_y, x = weighted.weight_moving_average(y, 3)
+        x,chart_reg_y,y = runing_mean.main(file[0].get_file_name())
+        chart_reg_y = chart_reg_y[4:-2]
+        x = x[4:-2]
+        y = y[4:-2]
+        print(chart_reg_y)
+        print(y)
 
         os.remove(file[0].get_file_name())
-
         file[0].delete()
         return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
-
 class running_ma_info(APIView):
     permission_classes = [permissions.AllowAny, ]
 
@@ -427,20 +424,17 @@ class running_ma_info(APIView):
     def get(self, request):
         file = DataFile.objects.all()
 
-        x = []
-        y = []
-        with open(file[0].get_file_name()) as f:
-            for words in f:
-                newlist = words.split(' ')
-                y = [float(i) for i in newlist]
 
-        chart_reg_y, x = runing_mean.running_mean(y, 3)
+        x,chart_reg_y,y = runing_mean.main(file[0].get_file_name())
+        chart_reg_y = chart_reg_y[4:-2]
+        x = x[4:-2]
+        y = y[4:-2]
+        print(chart_reg_y)
+        print(y)
 
         os.remove(file[0].get_file_name())
-
         file[0].delete()
         return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
-
 
 class exp_ma_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -457,19 +451,19 @@ class exp_ma_info(APIView):
         file = DataFile.objects.all()
 
 
-        x = []
-        y = []
-        with open(file[0].get_file_name()) as f:
-
-            for words in f:
-                newlist = words.split(' ')
-                y = [float(i) for i in newlist]
 
 
-        chart_reg_y,x = exponential.exponential(y, 3)
+        x,chart_reg_y,y = exponential.main(file[0].get_file_name())
+        chart_reg_y = chart_reg_y[4:-2]
+        x = x[4:-2]
+        y = y[4:-2]
+        print(chart_reg_y)
+        print(y)
 
         os.remove(file[0].get_file_name())
         file[0].delete()
         return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
+
+
 
 
