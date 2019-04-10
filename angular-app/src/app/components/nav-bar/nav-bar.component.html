@@ -13,11 +13,24 @@
             <div [ngClass]="{'dropdown-content':true, 'dropdown-content-hover': hover[0]}" (click)="hideDropdown(0)" class =" drop-colored d-flex align-items-center justify-content-center  flex-column">
               <div class="drop-item d-flex align-items-center justify-content-center"
                    routerLink="/simple-moving-averages/">
-                <a>Simple moving averages</a>
+                <a>Simple</a>
+              </div>
+
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/exponential-moving-averages/">
+                <a>Exponential</a>
+              </div>
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/weighted-moving-averages/">
+                <a>Weighted</a>
+              </div>
+
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/running-moving-averages/">
+                <a>Running</a>
               </div>
             </div>
-          </div>
-
+</div>
 
    <div class="nav-item  d-flex  justify-content-center" (mouseenter)="showDropdown(1)" (mouseleave)="hideDropdown(1)" [ngClass]="{'dropdown-hover': hover[1]}" style="position: relative " >
 
@@ -27,17 +40,17 @@
 
             <div [ngClass]="{'dropdown-content':true, 'dropdown-content-hover': hover[1]}" (click)="hideDropdown(1)" class =" drop-colored d-flex align-items-center justify-content-center  flex-column">
               <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/regression/">
-                 <a >Simple Regression</a>
+                 <a >Simple</a>
               </div>
 
               <div class="drop-item align-items-center d-flex justify-content-center"
                    routerLink="/polynomial-regression/">
-                <a>Polynomial Regression</a>
+                <a>Polynomial</a>
               </div>
 
               <div class="drop-item align-items-center d-flex justify-content-center"
                    routerLink="/logistic-regression/">
-                <a>Logistic Regression</a>
+                <a>Logistic</a>
               </div>
 
             </div>

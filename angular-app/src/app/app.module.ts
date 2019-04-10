@@ -24,6 +24,10 @@ import {AccordionComponent} from './components/accordion/accordion.component';
 import {PolynRegComponent} from './components/polyn-reg/polyn-reg.component';
 import {LogRegComponent} from './components/log-reg/log-reg.component';
 import { MovAvgComponent } from './components/mov-avg/mov-avg.component';
+import { NavBarTransparentComponent } from './components/nav-bar-transparent/nav-bar-transparent.component';
+import { ExpMovAvgComponent } from './components/exp-mov-avg/exp-mov-avg.component';
+import { RunMovAvgComponent } from './components/run-mov-avg/run-mov-avg.component';
+import { WeightMovAvgComponent } from './components/weight-mov-avg/weight-mov-avg.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { MovAvgComponent } from './components/mov-avg/mov-avg.component';
     AccordionComponent,
     PolynRegComponent,
     LogRegComponent,
-    MovAvgComponent
+    MovAvgComponent,
+    NavBarTransparentComponent,
+    ExpMovAvgComponent,
+    RunMovAvgComponent,
+    WeightMovAvgComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),

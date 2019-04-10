@@ -80,7 +80,9 @@ export class MainPageComponent implements OnInit {
   private anchorsNumber: number;
   private methodName: string[];
   private methodUrl: string[];
- private allReached = false;
+  private allReached = false;
+  private navVisible = true;
+  private navTransparent = true;
   constructor(@Inject(DOCUMENT) document) {
     // this.anchorsNumber = 5;
     this.anchorsNumber = 13;
@@ -107,28 +109,14 @@ export class MainPageComponent implements OnInit {
 
      const scrollposition = window.pageYOffset;
      if (scrollposition > document.documentElement.clientHeight) {
-       const navbar = document.getElementById('navbar');
-       const drop = document.getElementById('drop');
-       navbar.classList.remove('nav-transparent');
-       navbar.classList.add('nav-colored');
-       this.navVisibility = 'shown';
-       drop.classList.remove('drop-transparent');
-       drop.classList.add('drop-colored');
+       this.navVisible = true;
+       this.navTransparent = false;
      } else if (scrollposition > 0.08 * document.documentElement.clientHeight &&
        window.pageYOffset < document.documentElement.clientHeight) {
-       const navbar = document.getElementById('navbar');
-       const drop = document.getElementById('drop');
-       navbar.classList.remove('nav-transparent');
-       navbar.classList.remove('nav-colored');
-       this.navVisibility = 'hidden';
+       this.navVisible = false;
      } else {
-       const navbar = document.getElementById('navbar');
-       const drop = document.getElementById('drop');
-       navbar.classList.remove('nav-colored');
-       navbar.classList.add('nav-transparent');
-       this.navVisibility = 'shown';
-       drop.classList.remove('drop-colored');
-       drop.classList.add('drop-transparent');
+       this.navVisible =  true;
+       this.navTransparent = true;
      }
       if (scrollposition > 2.5 * document.documentElement.clientHeight) {
         this.ttHidden = false;

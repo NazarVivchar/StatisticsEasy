@@ -6,6 +6,9 @@ import {RegDnnComponent} from './components/reg-dnn/reg-dnn.component';
 import {PolynRegComponent} from "./components/polyn-reg/polyn-reg.component";
 import {LogRegComponent} from "./components/log-reg/log-reg.component";
 import {MovAvgComponent} from "./components/mov-avg/mov-avg.component";
+import {ExpMovAvgComponent} from "./components/exp-mov-avg/exp-mov-avg.component";
+import {WeightMovAvgComponent} from "./components/weight-mov-avg/weight-mov-avg.component";
+import {RunMovAvgComponent} from "./components/run-mov-avg/run-mov-avg.component";
 
 const routes: Routes = [
   {path:'', component:MainPageComponent},
@@ -13,7 +16,10 @@ const routes: Routes = [
   {path: 'dnn', component: RegDnnComponent},
   {path: 'polynomial-regression', component: PolynRegComponent},
   {path: 'logistic-regression', component: LogRegComponent},
-  {path: 'simple-moving-averages', component: MovAvgComponent}
+  {path: 'simple-moving-averages', component: MovAvgComponent},
+  {path: 'exponential-moving-averages', component: ExpMovAvgComponent},
+  {path: 'weighted-moving-averages', component: WeightMovAvgComponent},
+  {path: 'running-moving-averages', component: RunMovAvgComponent}
 ];
 
 @NgModule({

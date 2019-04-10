@@ -87,6 +87,13 @@ export class PolynRegComponent implements OnInit {
     {
       "title": { "text": "Highcharts chart" },
       "xAxis": {"min":${this.points[0][0]}},
+      "plotOptions": {
+              "series": {
+                   "marker": {
+                      "enabled": false
+                }
+            }
+             },
       "series":[{
         "data": [${this.array.slice(0, this.array.lastIndexOf('[') - 1)}],
         "zones": [{
@@ -153,8 +160,15 @@ export class PolynRegComponent implements OnInit {
         let min =
           this.optFromInputString = `
             {
-              "title": { "text": "Highcharts chart" },
+              "title": { "text": "Polynomial regression" },
               "xAxis": {"min":${this.points[0][0]}},
+              "plotOptions": {
+              "series": {
+                   "marker": {
+                      "enabled": false
+                }
+            }
+             },
               "series": [{
                 "data": [${this.array.slice(0, -1)}],
                 "zones": [{

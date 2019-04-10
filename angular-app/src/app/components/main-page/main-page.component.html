@@ -6,45 +6,8 @@
 </head>
 <body>
 
-
-
-<nav [@visibilityChanged]="navVisibility"
-     class="nav-transparent d-flex flex-row justify-content-start align-items-center sticky-top" id="navbar"
-     style="font-size:1.5vw;height:8vh; ">
-  <div (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()" [ngClass]="{'dropdown-hover':hover}" class="nav-item"
-       style="position: relative; ">
-    <div class=" d-flex align-items-center justify-content-center" style="width: 100%; height: 100%">
-              <h3>Available methods</h3>
-            </div>
-
-            <div id="drop" [ngClass]="{'dropdown-content':true, 'dropdown-content-hover': hover}" (click)="hideDropdown()" class ="drop-transparent align-items-center d-flex flex-column">
-              <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/regression/">
-                 <a >Simple Regression</a>
-              </div>
-              <div class="drop-item align-items-center d-flex justify-content-center" routerLink="/dnn/">
-                <a >DNN</a>
-              </div>
-              <div class="drop-item align-items-center d-flex justify-content-center"
-                   routerLink="/polynomial-regression/">
-                <a>Polynomial Regression</a>
-              </div>
-              <div class="drop-item align-items-center d-flex justify-content-center"
-                   routerLink="/logistic-regression/">
-                <a>Logistic Regression</a>
-              </div>
-              <div class="drop-item align-items-center d-flex justify-content-center"
-                   routerLink="/simple-moving-averages/">
-                <a>Simple moving averages</a>
-              </div>
-            </div>
-          </div>
-      </nav>
-
-
-<!--<div style=" height: 10000px;">-->
-<!--&lt;!&ndash;filter: blur(0.35em); &ndash;&gt;-->
-<!--</div>-->
-
+<app-nav-bar [hidden]="!navVisible||navTransparent"></app-nav-bar>
+<app-nav-bar-transparent [hidden]="!navVisible||!navTransparent"></app-nav-bar-transparent>
 
 <div class=" " style="background-image:url('/assets/headerBlured.png'); background-size: cover;min-height: 100vh; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; overflow: hidden; position: relative">
   <div class="d-flex justify-content-center align-items-center"

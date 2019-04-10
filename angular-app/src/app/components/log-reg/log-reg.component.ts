@@ -84,39 +84,6 @@ export class LogRegComponent implements OnInit {
     this.visible = false;
   }
 
-  predict() {
-    this.optFromInputString = `
-    {
-      "title": { "text": "Highcharts chart" },
-      "xAxis": {"min":${this.points[0][0]}},
-      "series":[{
-        "data": [${this.array.slice(0, this.array.lastIndexOf('[') - 1)}],
-        "zones": [{
-          "value": 1000,
-          "dashStyle": "solid",
-          "color": "black"
-        }]
-  
-      },{
-        "data": [${this.array_reg.slice(0, this.array_reg.lastIndexOf('[') - 1)}],
-        "zones": [{
-          "value": 1000,
-          "dashStyle": "solid",
-          "color": "red"
-        }]
-      }]
-    }
-    `;
-
-    console.log(this.optFromInputString);
-    this.chartOptions =
-      JSON.parse(this.optFromInputString);
-
-
-    this.updateFlag = true;
-
-  }
-
   getReg() {
     this.getSomeInfo();
   }

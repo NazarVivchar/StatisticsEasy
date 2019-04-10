@@ -41,4 +41,16 @@ export class ApiService {
     return this.http.get(this.baseurl + '/simple_ma_info/',
       {headers: this.httpHeaders});
   }
+  getExpMovingAverages(): Observable<any> {
+    return this.http.get(this.baseurl + '/exp_ma_info/',
+      {headers: this.httpHeaders});
+  }
+  getWeightMovingAverages(): Observable<any> {
+    return this.http.get(this.baseurl + '/weighted_ma_info/',
+      {headers: this.httpHeaders});
+  }
+  getRunningMovingAverages(): Observable<any> {
+    return this.http.get(this.baseurl + '/running_ma_info/',
+      {headers: this.httpHeaders});
+  }
 }
