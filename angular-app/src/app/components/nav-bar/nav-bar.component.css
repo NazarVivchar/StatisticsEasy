@@ -20,6 +20,7 @@ div{
   background-clip: padding-box;
 }
 .drop-colored{
+  margin-top: 8vh;
   background: #141D2E;
   border: none;
 }

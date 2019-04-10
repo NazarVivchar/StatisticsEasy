@@ -5,6 +5,9 @@
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 </head>
 <body>
+
+
+
 <nav [@visibilityChanged]="navVisibility"
      class="nav-transparent d-flex flex-row justify-content-start align-items-center sticky-top" id="navbar"
      style="font-size:1.5vw;height:8vh; ">
@@ -30,8 +33,8 @@
                 <a>Logistic Regression</a>
               </div>
               <div class="drop-item align-items-center d-flex justify-content-center"
-                   routerLink="/moving-averages/">
-                <a>Moving averages</a>
+                   routerLink="/simple-moving-averages/">
+                <a>Simple moving averages</a>
               </div>
             </div>
           </div>
@@ -153,8 +156,26 @@
       </div>
     </div>
 
+    <div class="my-card-outer">
+      <div id="anchor5" style="margin-bottom: 5em"></div>
 
-    <div *ngFor="let i of [5,6,7,8,9,10,11,12]" class="my-card-outer">
+      <div *ngIf="anchorsReached[4]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Simple moving averages</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example5.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/simple-moving-averages">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngFor="let i of [6,7,8,9,10,11,12]" class="my-card-outer">
       <div id="anchor{{i}}" style="margin-bottom: 5em"></div>
 
       <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]

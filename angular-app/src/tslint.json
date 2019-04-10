@@ -1,5 +1,5 @@
 {
-  "extends": "tslint.json",
+  "extends": "angular-app/src/tslint.json",
   "rules": {
     "directive-selector": [
       true,

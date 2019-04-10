@@ -9,23 +9,25 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  private hover = false;
-  private  visibility = 'hidden';
+  private hover = new Array(2).fill(false);
+  private  visibility = new Array(2).fill('hidden');
 
-  constructor() { }
+  constructor() {
+    this.hover.fill(false);
+  }
 
   ngOnInit() {
   }
 
-  hideDropdown() {
-    this.hover = false;
-    this.visibility = 'hidden';
+  hideDropdown(id:number) {
+    this.hover[id] = false;
+    this.visibility[id] = 'hidden';
     console.log(1);
   }
 
-  showDropdown() {
-    this.hover = true;
-    this.visibility = 'visible';
+  showDropdown(id:number) {
+    this.hover[id] = true;
+    this.visibility[id] = 'visible';
     console.log(2);
   }
 

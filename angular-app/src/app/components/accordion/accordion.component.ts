@@ -9,13 +9,13 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   trigger(
       'enterAnimationTop', [
         state('true', style({transform: 'translateY(0) ', opacity: 1})),
-      state('false', style({transform: 'translateY(-300%) ', opacity: 0, display: 'none',})),
-      transition('true => false', [style({display: 'none'}), animate('1s ease-in-out')]),
+      state('false', style({transform: 'translateY(-200%) ', opacity: 0, display: 'none',})),
+      transition('true => false', [style({display: 'none'}), animate('0.5s ease-in-out')]),
       transition('false => true', [style({
         height: '0',
         display: 'block',
         position: 'absolute'
-      }), animate('1s ease-in-out')]),
+      }), animate('0.5s ease-in-out')]),
       ]),
     ]
 })

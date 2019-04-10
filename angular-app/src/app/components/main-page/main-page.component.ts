@@ -78,12 +78,14 @@ export class MainPageComponent implements OnInit {
   private interval;
   private anchorsReached: boolean[];
   private anchorsNumber: number;
-
+  private methodName: string[];
+  private methodUrl: string[];
  private allReached = false;
   constructor(@Inject(DOCUMENT) document) {
     // this.anchorsNumber = 5;
     this.anchorsNumber = 13;
     this.anchorsReached = new Array(this.anchorsNumber).fill(false);
+
   }
 
   ngOnInit() {
@@ -140,30 +142,8 @@ export class MainPageComponent implements OnInit {
          this.allReached = this.allReached && bool;
         if (!this.anchorsReached[i]) {
           this.anchorsReached[i] = bool;
-          // this.anchorsReached[i] = (i > 0) ? bool && this.anchorsReached[i - 1] : bool;
         }
       }
-     // }
-     // this.anc1 = (document.documentElement.scrollTop) > document.getElementById('anchor1').offsetTop;
-       // console.log(1);
-       // console.log(document.documentElement.scrollTop);
-       // console.log(document.getElementById('anchor1').getBoundingClientRect().top - window.outerHeight);
-       // console.log(2);
-       // console.log(document.documentElement.scrollTop);
-       // console.log(document.getElementById('anchor2').getBoundingClientRect().top - window.outerHeight);
-       // console.log(3);
-       // console.log(document.documentElement.scrollTop);
-       // console.log(document.getElementById('anchor3').getBoundingClientRect().top - window.outerHeight);
-       // console.log(4);
-       // console.log(document.documentElement.scrollTop);
-       // console.log(document.getElementById('anchor2').offsetTop);
-       // console.log(document.documentElement.scrollTop > document.getElementById('anchor2').offsetTop);
-       // console.log(document.getElementById('anchor2').getBoundingClientRect().top);
-       // console.log(document.getElementById('anchor3').getBoundingClientRect().top);
-       // console.log(document.getElementById('anchor4').getBoundingClientRect().top);
-       // this.anc2 =  (document.documentElement.scrollTop) > document.getElementById('anchor2').offsetTop;
-       // this.anc3 =  (document.documentElement.scrollTop) > document.getElementById('anchor3').offsetTop;
-       // this.anc4 =  (document.documentElement.scrollTop) > document.getElementById('anchor4').offsetTop;
   }
 
    offset(el) {

@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'dnn', component: RegDnnComponent},
   {path: 'polynomial-regression', component: PolynRegComponent},
   {path: 'logistic-regression', component: LogRegComponent},
-  {path: 'moving-averages', component: MovAvgComponent}
+  {path: 'simple-moving-averages', component: MovAvgComponent}
 ];
 
 @NgModule({

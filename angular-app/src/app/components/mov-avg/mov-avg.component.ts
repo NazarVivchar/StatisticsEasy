@@ -89,7 +89,7 @@ export class MovAvgComponent implements OnInit {
         "zones": [{
           "value": 1000,
           "dashStyle": "solid",
-          "color": "black"
+          "color": "#919eba"
         }]
   
       },{
@@ -148,10 +148,13 @@ export class MovAvgComponent implements OnInit {
             for (let i of this.points_movavg){
               this.aray_movavg += '['+i.join()+'],';
             }
-
+            this.aray_movavg = this.aray_movavg.slice(this.aray_movavg.indexOf(']')+2,this.aray_movavg.length)
             for (let i of this.points){
               this.array += '['+i.join()+'],';
             }
+
+       console.log('This Array');
+       console.log(this.array);
        console.log(this.points_movavg[0][0]);
             console.log(this.aray_movavg.slice(0,-1));
             let min =
@@ -164,7 +167,7 @@ export class MovAvgComponent implements OnInit {
                 "zones": [{
                   "value": 1000,
                   "dashStyle": "solid",
-                  "color": "black"
+                  "color": "#141D2E"
                 }]
               }, {
                 "data": []
