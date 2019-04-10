@@ -61,7 +61,7 @@ export class MovAvgComponent implements OnInit {
 
   uploader: FileUploader = new FileUploader(
     {
-      url: 'http://127.0.0.1:8000/dnn_info/', removeAfterUpload: false, autoUpload: true
+      url: 'http://127.0.0.1:8000/simple_ma_info/', removeAfterUpload: false, autoUpload: true
        }
     );
   visible = false;

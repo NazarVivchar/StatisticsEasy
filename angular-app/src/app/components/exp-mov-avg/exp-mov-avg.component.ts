@@ -61,7 +61,7 @@ export class ExpMovAvgComponent implements OnInit {
 
   uploader: FileUploader = new FileUploader(
     {
-      url: 'http://127.0.0.1:8000/dnn_info/', removeAfterUpload: false, autoUpload: true
+      url: 'http://127.0.0.1:8000/exp_ma_info/', removeAfterUpload: false, autoUpload: true
        }
     );
   visible = false;
@@ -82,7 +82,7 @@ export class ExpMovAvgComponent implements OnInit {
     predict(){
       this.optFromInputString = `
     {
-      "title": { "text": "Simple moving averages" },
+      "title": { "text": "Exponential moving averages" },
       "xAxis": {"min":${this.points[0][0]}},
       "plotOptions": {
               "series": {
@@ -167,7 +167,7 @@ export class ExpMovAvgComponent implements OnInit {
             let min =
             this.optFromInputString = `
             {
-              "title": { "text": "Highcharts chart" },
+              "title": { "text": "Exponential moving averages" },
               "xAxis": {"min":${this.points[0][0]}},
               "plotOptions": {
               "series": {
