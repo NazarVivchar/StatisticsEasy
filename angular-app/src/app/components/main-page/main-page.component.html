@@ -26,8 +26,8 @@
                 <a>Polynomial Regression</a>
               </div>
               <div class="drop-item align-items-center d-flex justify-content-center"
-                   routerLink="/logistical-regression/">
-                <a>Logistical Regression</a>
+                   routerLink="/logistic-regression/">
+                <a>Logistic Regression</a>
               </div>
               <div class="drop-item align-items-center d-flex justify-content-center"
                    routerLink="/moving-averages/">
@@ -43,10 +43,9 @@
 <!--</div>-->
 
 
-<div class=" " style="background-image:url('/assets/headerBlured.png'); height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed;
- display: block;  overflow: hidden; position: relative">
+<div class=" " style="background-image:url('/assets/headerBlured.png'); background-size: cover;min-height: 100vh; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; overflow: hidden; position: relative">
   <div class="d-flex justify-content-center align-items-center"
-       style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh">
+       style="position: absolute; top: 0; left: 0; width: 100%; min-height: 100vh">
     <h1 id="title">
       Statistics <em>Easy</em></h1>
     <div class="d-flex flex-column justify-content-end align-items-center "
@@ -77,7 +76,7 @@
 
 
 <div class="d-flex flex-wrap justify-content-center align-items-center " id="main"
-     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 18em; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden; min-height: 170vh; transition: height linear; padding-top: 5vh; padding-bottom: 5vh;">
+     style="background-color:rgb(250,250,250); position: relative; margin-bottom: 18em; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden;  transition: height linear; padding-top: 5vh; padding-bottom: 5vh;">
 
   <h1>Available statistical methods</h1>
 
@@ -136,8 +135,26 @@
       </div>
     </div>
 
+    <div class="my-card-outer">
+      <div id="anchor4" style="margin-bottom: 5em"></div>
 
-    <div *ngFor="let i of [4,5,6,7,8,9,10,11,12]" class="my-card-outer">
+      <div *ngIf="anchorsReached[3]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Logistic regression</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example4.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/logistic-regression">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngFor="let i of [5,6,7,8,9,10,11,12]" class="my-card-outer">
       <div id="anchor{{i}}" style="margin-bottom: 5em"></div>
 
       <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]
@@ -155,17 +172,19 @@
     </div>
 
 
-    <div id="anchor13"></div>
-    <div *ngIf="anchorsReached[12]" [@enterAnimationBottom] style="width: 100%; margin-bottom: 5em">
-    <h1>FAQ</h1>
-    <app-accordion ></app-accordion>
-  </div>
-</div>
 
+
+<div id="anchor13"></div>
+<div *ngIf="anchorsReached[12]" [@enterAnimationBottom] style="width: 100%; margin-bottom: 5em">
+ <h1>FAQ</h1>
+    <app-accordion ></app-accordion>
   <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
     <p>Scroll for footer</p>
     <p><i class="arrow down dark"></i></p>
   </div>
+  </div>
+</div>
+
 
   <!--<div class="arrow-to-top d-flex align-items-center justify-content-center">-->
 

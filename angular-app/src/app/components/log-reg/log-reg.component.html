@@ -74,38 +74,29 @@
 
     </div>
 
-    <div *ngIf="visible2" [@enterAnimationTop] class="d-flex flex-column align-items-center justify-content-around"
-         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
-      <h1>Step 2</h1>
-      <h4>Preview your data</h4>
-      <input type="text"/>
-      <button (click)="getReg()" class="btn btn-dark">Build</button>
-    </div>
-
     <div *ngIf="visible2" [@enterAnimationRight] class="d-flex flex-column align-items-center justify-content-around"
          style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
-      <h1>Step 3</h1>
-      <h4>Build polynomial regression</h4>
-      <button (click)="predict()" class="btn btn-dark">Build</button>
+      <h1>Step 2</h1>
+      <h4>Build regression</h4>
+      <button (click)="getReg()" class="btn btn-dark">Build</button>
     </div>
-
   </div>
 
   <div [hidden]="visible1" [style.border]="visible1?  'none' : 'dashed 0.2em #919eba' "
        class="d-flex flex-column justify-content-center align-items-center"
-       style="width: 90%; margin-bottom: 10vh; z-index: 0">
-    <div *ngIf="visible2" [@enterAnimationLeft] style="z-index:0; position: absolute">
+       style="width: 90%; margin-bottom: 10vh; z-index: 0; min-height: 70vh">
+    <div *ngIf="visible2" [hidden]="image_visible" [@enterAnimationLeft] style="z-index:0; ">
       <h1 style="font-size: 2em">
         Your chart will be displayed here
       </h1>
     </div>
-    <img *ngIf="image_visible" [src] = "transform()" style="width: 100%; height: 70vh; display: block; z-index: 1"
+    <img *ngIf="image_visible" [src] = "transform()" style=" 70vh; display: block; z-index: 1"
          alt="Mistake("/>
-    <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
+  </div>
+  <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
       <p>Scroll for footer</p>
       <p><i class="arrow down dark"></i></p>
     </div>
-  </div>
 </div>
 <app-footer></app-footer>
 </body>

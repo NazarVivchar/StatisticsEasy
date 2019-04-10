@@ -7,12 +7,7 @@ div{
  }
 .accordion-item{
 
-  width: 100%;
-  margin-bottom: 1em;
-  overflow: hidden;
-  height: auto;
-  /*transition: height ease-in-out;*/
-  /*animation: 1s;*/
+
 }
 .accordion-head{
   z-index: 1;
@@ -35,17 +30,15 @@ div{
   box-shadow: 0 0.3em 0 0 #7282a7;
 }
 .accordion-drop{
-overflow: hidden;
-  height: auto;
-z-index: -1;
-  display: block;
+  overflow: hidden;
+  z-index: -1;
   transform-origin: top center ;
-
-  margin-bottom: 1em;
+  margin: 1em;
   padding: 3em;
   box-shadow: 0 0.3em 0.2em 0 #919eba;
   border-radius: 0.5em;
 }
 .accordion-inner{
+  height: auto;
 
 }

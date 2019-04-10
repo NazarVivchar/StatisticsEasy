@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'regression', component:RegChartComponent},
   {path: 'dnn', component: RegDnnComponent},
   {path: 'polynomial-regression', component: PolynRegComponent},
-  {path: 'logistical-regression', component: LogRegComponent},
+  {path: 'logistic-regression', component: LogRegComponent},
   {path: 'moving-averages', component: MovAvgComponent}
 ];
 
