@@ -12,7 +12,7 @@ from django_app.statistic_algorithms.Regressions import logistic_regression, pol
     simple_linear_regretion
 
 from django_app.statistic_algorithms.MovingAverages import simple_ma,weighted,runing_mean,exponential
-from django_app.statistic_algorithms.Clasterization import k_means
+from django_app.statistic_algorithms.Clasterization import k_means, hierarcial_clasterization,t_sne
 from django_app.statistic_algorithms.Distributions import anglit,arcsine,bernoulli,dweibull,expon,normal,triang,\
     uniform, wald
 
@@ -223,23 +223,34 @@ class h_claster(APIView):
     def get(self, request):
         file = DataFile.objects.all()
         print(file)
-
-        chart_reg = logistic_regression.func(file[0].get_file_name())[2]
-        print(ImageFile.objects.all()[0].image)
-
-
-
+        hierarcial_clasterization.main(file[0].get_file_name())
         with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read())
 
         print(encoded_string)
 
+        with open(ImageFile.objects.all()[1].get_file_name(), "rb") as image_file:
+            encoded_string1 = base64.b64encode(image_file.read())
+
+        print(encoded_string1)
+
+
+        with open(ImageFile.objects.all()[2].get_file_name(), "rb") as image_file:
+            encoded_string2 = base64.b64encode(image_file.read())
+
+        print(encoded_string2)
 
         os.remove(file[0].get_file_name())
         file[0].delete()
         image = ImageFile.objects.all()
         os.remove(image[0].get_file_name())
-        image[0].delete()
+        image[1].delete()
+        os.remove(image[1].get_file_name())
+        image[1].delete()
+        os.remove(image[2].get_file_name())
+        image[2].delete()
+        return Response([{'hierarcial_preview': encoded_string}, {'hierarcial_dendrogram.': encoded_string1},
+                         {'hierarcial_result': encoded_string2}])
 
 class k_mean(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -276,7 +287,7 @@ class k_mean(APIView):
         return Response([{'result_image': encoded_string1},{'preview_image': encoded_string}])
 
 
-class t_Sna(APIView):
+class t_Sne(APIView):
     permission_classes = [permissions.AllowAny, ]
     def post(self, request):
         file_serializer = FileSerializer(data=request.data)
@@ -400,7 +411,7 @@ class weighted_ma_info(APIView):
         file = DataFile.objects.all()
 
 
-        x,chart_reg_y,y = runing_mean.main(file[0].get_file_name())
+        x,chart_reg_y,y = weighted.main(file[0].get_file_name())
         chart_reg_y = chart_reg_y[4:-2]
         x = x[4:-2]
         y = y[4:-2]
