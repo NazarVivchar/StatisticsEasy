@@ -322,6 +322,9 @@ class simple_ma_info(APIView):
         file = DataFile.objects.all()
 
         x,chart_reg_y,y = simple_ma.main(file[0].get_file_name())
+        print(chart_reg_y)
+        print(y)
+
         os.remove(file[0].get_file_name())
         file[0].delete()
         return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
