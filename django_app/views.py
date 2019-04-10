@@ -322,6 +322,9 @@ class simple_ma_info(APIView):
         file = DataFile.objects.all()
 
         x,chart_reg_y,y = simple_ma.main(file[0].get_file_name())
+        chart_reg_y = chart_reg_y[4:-2]
+        x = x[4:-2]
+        y = y[4:-2]
         print(chart_reg_y)
         print(y)
 
