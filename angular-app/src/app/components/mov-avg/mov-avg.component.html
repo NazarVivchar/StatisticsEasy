@@ -1,0 +1,123 @@
+<html>
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#flip").click(function(){
+      $("#panel").slideDown("slow");
+    });
+  });
+  </script>
+  <style>
+   #flip {
+
+  }
+
+  #panel {
+   display: none;
+    width:60%;
+    height:400px;
+    background-color:black;
+  }
+  </style>
+</head>
+<body>
+<app-nav-bar></app-nav-bar>
+<div class="d-flex flex-column align-items-center justify-content-center"
+     style="  padding-bottom: 10vh; margin-bottom: 19em; box-shadow: 0 0.3em 0.2em 0 white; width: 100%; ">
+
+  <div class="d-flex align-items-center justify-content-center"
+       style=" padding-top: 20vh; margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Moving Averages</em></h1>
+  </div>
+
+  <div class="d-flex  align-items-center flex-column justify-content-center"
+       style="margin-bottom: 10vh; width: 90%; z-index: 2">
+    <button (click)="changeElement()" (mouseleave)="hover1 =false" (mouseover)="hover1 =true"
+            [ngClass]="{'btn-hover-active':(visible1 || hover1) && !hover2}" class="my-btn btn-lg btn-block">Details
+    </button>
+    <button (click)="changeElement()" (mouseleave)="hover2 =false" (mouseover)="hover2 =true"
+            [ngClass]="{'btn-hover-active':(visible2 || hover2) && !hover1}"
+            [style.background-color]="(visible2 || hover2) && !hover1? '#919eba':'white'"
+            class="my-btn btn-lg btn-block">Generation
+    </button>
+  </div>
+
+  <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-start justify-content-center"
+       style=" width: 90%">
+    <p style="margin: 1em">
+      Deep learning (also known as deep structured learning or hierarchical learning) is part of a broader family of
+      machine
+      learning methods based on learning data representations, as opposed to task-specific algorithms. Learning can be
+      supervised,
+      semi-supervised or unsupervised.
+    </p>
+    <p style="margin: 1em">
+      Deep learning architectures such as deep neural networks, deep belief networks and recurrent neural networks have
+      been applied
+      to fields including computer vision, speech recognition, natural language processing, audio recognition, social
+      network filtering,
+      machine translation, bioinformatics, drug design, medical image analysis, material inspection and board game
+      programs, where they
+      have produced results comparable to and in some cases superior to human experts.
+    </p>
+    <p style="margin: 1em">
+      In our case, DNN is used to predict most probable next values, based on the data provided. It can be used for high
+      credibility
+      assumptions about value of any possible variable, that changes based on unknown rule.
+    </p>
+  </div>
+
+  <div class="d-flex  align-items-center justify-content-center"
+       style="width: 100%; height: 30vh;margin-bottom: 10vh;">
+
+    <div *ngIf="visible2" [@enterAnimationLeft] class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
+      <h1>Step 1</h1>
+      <h4>Choose your .csv file with input data</h4>
+      <input [uploader]="uploader" accept=".txt" class="input-group-text" ng2FileSelect
+             type="file"/>
+    </div>
+
+    <div *ngIf="visible2" [@enterAnimationTop] class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
+      <h1>Step 2</h1>
+      <h4>Preview your chart</h4>
+      <button (click)="getDnn()" class="btn btn-dark" style="margin-left:10px;">Build!</button>
+    </div>
+
+    <div *ngIf="visible2" [@enterAnimationRight] class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
+      <h1>Step 3</h1>
+      <h4>Build final chart</h4>
+      <button (click)="predict()" class="btn btn-dark">Build</button>
+    </div>
+
+  </div>
+
+  <div [hidden]="visible1" [style.border]="visible1?  'none' : 'dashed 0.2em #919eba' "
+       class="d-flex flex-column justify-content-center align-items-center"
+       style="width: 90%; margin-bottom: 10vh;">
+    <div *ngIf="visible2" [@enterAnimationBottom] style="z-index:0; position: absolute">
+      <h1 style="font-size: 2em">
+        Your chart will be displayed here
+      </h1>
+    </div>
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      [update]="updateFlag"
+      style="width: 100%; height: 70vh; display: block;">
+      </highcharts-chart>
+  </div>
+  <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
+    <p>Scroll for footer</p>
+    <p><i class="arrow down dark"></i></p>
+  </div>
+        </div>
+
+
+<app-footer></app-footer>
+</body>
+</html>
