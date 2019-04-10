@@ -5,5 +5,8 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <secret-storage>forget</secret-storage>
     </data-source>
+    <data-source name="Django default" uuid="0f6c2f85-a45d-46a3-bb2c-bbf66f42bf3e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
   </component>
 </project>
