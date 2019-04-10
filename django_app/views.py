@@ -354,6 +354,7 @@ class distribution_info(APIView):
             response.append('high')
             response.append('low')
         return Response([{'features': response}])
+
     def get(self, request):
         distribution = Distribution.objects.all()[0]
         print(type(request.data.get('scale')))
@@ -370,18 +371,18 @@ class distribution_info(APIView):
             result = expon.expon(distribution.n)
         elif distribution.distribution_type in 'normal':
             print('##########################################')
-            result = normal.normal(10,2,2)
+            result = normal.normal(10, 2, 2)
             print('##########################################')
         elif distribution.distribution_type in 'triang':
-            result = triang.triang(distribution.n, int(request.data.get('c')),int(request.data.get('location')),
+            result = triang.triang(distribution.n, int(request.data.get('c')), int(request.data.get('location')),
                                     int(request.data.get('scale')))
         elif distribution.distribution_type in 'uniform':
-            result = uniform.uniform(distribution.n, float(request.data.get('high')),float(request.data.get('low')))
+            result = uniform.uniform(distribution.n, float(request.data.get('high')), float(request.data.get('low')))
         else:
             result = wald.wald(distribution.n, int(request.data.get('location')), int(request.data.get('scale')))
         distribution.delete()
 
-        return Response([{'result':result}])
+        return Response([{'result': result}])
 
 
 

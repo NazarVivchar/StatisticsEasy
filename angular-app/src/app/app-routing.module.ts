@@ -9,6 +9,7 @@ import {MovAvgComponent} from "./components/mov-avg/mov-avg.component";
 import {ExpMovAvgComponent} from "./components/exp-mov-avg/exp-mov-avg.component";
 import {WeightMovAvgComponent} from "./components/weight-mov-avg/weight-mov-avg.component";
 import {RunMovAvgComponent} from "./components/run-mov-avg/run-mov-avg.component";
+import {DisributionsComponent} from "./components/disributions/disributions.component";
 
 const routes: Routes = [
   {path:'', component:MainPageComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'simple-moving-averages', component: MovAvgComponent},
   {path: 'exponential-moving-averages', component: ExpMovAvgComponent},
   {path: 'weighted-moving-averages', component: WeightMovAvgComponent},
-  {path: 'running-moving-averages', component: RunMovAvgComponent}
+  {path: 'running-moving-averages', component: RunMovAvgComponent},
+  {path: 'distributions', component: DisributionsComponent}
 ];
 
 @NgModule({

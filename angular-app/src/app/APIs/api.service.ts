@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -52,5 +52,13 @@ export class ApiService {
   getRunningMovingAverages(): Observable<any> {
     return this.http.get(this.baseurl + '/running_ma_info/',
       {headers: this.httpHeaders});
+  }
+  sendDistributionData(data): Observable<any> {
+    return this.http.post(this.baseurl + '/distribution_info/',
+      data,{headers: this.httpHeaders});
+  }
+  getDistributionData(httpParams:HttpParams): Observable<any> {
+    return this.http.get(this.baseurl + '/distribution_info/',
+      {params: httpParams,headers: this.httpHeaders});
   }
 }

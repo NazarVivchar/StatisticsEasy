@@ -28,6 +28,8 @@ import { NavBarTransparentComponent } from './components/nav-bar-transparent/nav
 import { ExpMovAvgComponent } from './components/exp-mov-avg/exp-mov-avg.component';
 import { RunMovAvgComponent } from './components/run-mov-avg/run-mov-avg.component';
 import { WeightMovAvgComponent } from './components/weight-mov-avg/weight-mov-avg.component';
+import { DisributionsComponent } from './components/disributions/disributions.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { WeightMovAvgComponent } from './components/weight-mov-avg/weight-mov-av
     NavBarTransparentComponent,
     ExpMovAvgComponent,
     RunMovAvgComponent,
-    WeightMovAvgComponent
+    WeightMovAvgComponent,
+    DisributionsComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),
@@ -61,8 +64,8 @@ import { WeightMovAvgComponent } from './components/weight-mov-avg/weight-mov-av
     HighchartsChartModule,
     RouterModule,
     NgbModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    FormsModule
 
 
   ],
