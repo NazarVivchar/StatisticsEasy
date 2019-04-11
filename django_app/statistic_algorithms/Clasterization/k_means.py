@@ -18,7 +18,7 @@ def class_to_color(features):
 
 def main(row_argument1 = 'weightlbs',row_argument2= 'year', row_feature='brand',filename = 'clastering.csv'):
     data = pd.read_csv(filename)
-    print(data)
+
     x = data[row_argument1]
     y = data[row_argument2].values
     map(float,x)
@@ -40,11 +40,11 @@ def main(row_argument1 = 'weightlbs',row_argument2= 'year', row_feature='brand',
 
     # fit kmeans object to data
 
-    print(points)
+
     kmeans.fit(points)
 
     # print location of clusters learned by kmeans object
-    print(kmeans.cluster_centers_)
+
     plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:,1], c ='red',cmap='viridis', s=[100,100,100])
 
     plt.savefig('k_means_preview.png')

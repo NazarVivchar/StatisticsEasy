@@ -95,9 +95,9 @@ export class TSneComponent implements OnInit {
       (data: any[]) => {
         console.log(data);
         // console.log(JSON.parse(data[0]));
-        this.base64Image = "data:image/png;base64, " +  data[0].hierarcial_preview;
-        this.base64Image1 = "data:image/png;base64, " +  data[1].hierarcial_dendrogram;
-        this.base64Image2 = "data:image/png;base64, " +  data[2].hierarcial_result;
+        this.base64Image = "data:image/png;base64, " +  data[1].preview_image;
+        this.base64Image1 = "data:image/png;base64, " +  data[0].result_image;
+
         console.log(this.base64Image);
         this.image_visible = true;
       },
@@ -112,9 +112,7 @@ export class TSneComponent implements OnInit {
    transform1() {
      return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image1);
    }
-   transform2() {
-     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image2);
-   }
+
 
   ngOnInit() {
     window.scrollTo(0, 0);
