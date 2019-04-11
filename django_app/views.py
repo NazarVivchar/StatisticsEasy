@@ -15,6 +15,7 @@ from django_app.statistic_algorithms.MovingAverages import simple_ma,weighted,ru
 from django_app.statistic_algorithms.Clasterization import k_means, hierarcial_clasterization,t_sne
 from django_app.statistic_algorithms.Distributions import anglit,arcsine,bernoulli,dweibull,expon,normal,triang,\
     uniform, wald
+from django_app.statistic_algorithms.Filters import kalman
 
 class regression_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -388,7 +389,7 @@ class distribution_info(APIView):
         elif distribution.distribution_type in 'Bernoulli':
             result = bernoulli.test(distribution.n, float(request.GET.get('probability')))
         elif distribution.distribution_type in 'Double Weibull':
-            result = dweibull.dweibull(distribution.n, int(request.GET.get('c')),int(request.GET.get('location')),
+            result = dweibull.dweibull(distribution.n, float(request.GET.get('c')),int(request.GET.get('location')),
                                     float(request.GET.get('scale')))
         elif distribution.distribution_type in 'Exponential':
             result = expon.expon(distribution.n)
@@ -397,10 +398,10 @@ class distribution_info(APIView):
             result = normal.normal(distribution.n, float(request.GET.get('location')), float(request.GET.get('scale')))
             print('##########################################')
         elif distribution.distribution_type in 'Triangular':
-            result = triang.triang(distribution.n, int(request.GET.get('c')), int(request.GET.get('location')),
-                                    int(request.GET.get('scale')))
+            result = triang.triang(distribution.n,  loc = int(request.GET.get('location')),
+                                    scale = int(request.GET.get('scale')))
         elif distribution.distribution_type in 'Uniform':
-            result = uniform.uniform(distribution.n, float(request.GET.get('high')), float(request.GET.get('low')))
+            result = uniform.uniform(distribution.n)
         else:
             result = wald.wald(distribution.n, int(request.GET.get('location')), int(request.GET.get('scale')))
         distribution.delete()
@@ -491,3 +492,36 @@ class exp_ma_info(APIView):
 
 
 
+class kalman_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        kalman.main()
+        print(ImageFile.objects.all()[0].image)
+
+
+
+        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+
+        print(encoded_string)
+
+
+
+
+        image = ImageFile.objects.all()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'reg_image': encoded_string}])

@@ -55,7 +55,7 @@ def centr_mean(centr_freq):
         res += float(key) * centr_freq[key]
 
     return res / sum(centr_freq.values())
-def uniform(n = 100, low = 0, high = 1):
+def uniform(n = 100, low = 0, high = 10):
     '''
     uniform distribution
 
@@ -166,5 +166,5 @@ def uniform(n = 100, low = 0, high = 1):
 
     ex = st.kurtosis(sample)
     result.append(ex)
-
+    print(result)
     return result

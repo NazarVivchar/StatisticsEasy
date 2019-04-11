@@ -4,6 +4,7 @@ import {ApiService} from '../../APIs/api.service';
 import {animate, style, transition, trigger} from "@angular/animations";
 import {Router} from "@angular/router";
 import {HttpParams} from "@angular/common/http";
+import * as Highcharts from "highcharts";
 
 @Component({
   selector: 'app-disributions',
@@ -67,6 +68,7 @@ export class DisributionsComponent implements OnInit {
   visible = false;
   visible1 = false;
   visible2 = false;
+  visible4 = true;
   hover1: boolean;
   hover2: boolean;
   distributions = new Array(9);
@@ -76,6 +78,16 @@ export class DisributionsComponent implements OnInit {
   valueToSend1: number;
   valueToSend2: number;
   valueToSend3: number;
+   info:any[];
+    Highcharts = Highcharts;
+    array: string = "";
+    array_reg: string = "";
+    updateFlag:boolean;
+    points_reg: number[][] = [];
+    points: number[][] = [];
+
+    optFromInputString: string;
+    chartOptions: Highcharts.Options;
 
    distributiosForBackend = ["bernoulli", "anglit", "arcsine", "dweibull", "norm", "triang", "wald", "uniform", 'expon'];
 
@@ -103,6 +115,7 @@ export class DisributionsComponent implements OnInit {
     setTimeout(() => {
       this.visible = true;
       this.visible1 = true;
+      this.visible4 = true;
     }, 10);
   }
 
@@ -147,7 +160,56 @@ else {
 }
 console.log(httpParams.keys());
 this.api.getDistributionData(httpParams).subscribe((data)=>{
-  console.log(data);
+              this.info = data;
+
+              this.updateFlag = false;
+              this.points = [];
+              this.points_reg = [];
+              this.array = "";
+              this.array_reg = "";
+
+              let chart_x:number[]  = this.info[0].result[1];
+              let chart_y:number[] = this.info[0].result[2];
+              console.log(chart_x);
+               console.log(chart_y);
+              for(let i in chart_x)
+              {
+                this.points.push([chart_x[i],chart_y[i]]);
+
+              }
+
+
+              for (let i of this.points){
+                this.array += '['+i.join()+'],';
+              }
+
+              this.updateFlag = true;
+
+              this.optFromInputString = `
+              {
+                "title": { "text": "Highcharts chart" },
+                "xAxis": {"min":${this.points[0][0]}},
+                "plotOptions": {
+                "series": {
+                     "marker": {
+                        "enabled": false
+                  }
+              }
+               },
+                "series": [{
+                  "data": [${this.array.slice(0,-1)}],
+                  "zones": [{
+                    "value": 1000,
+                    "dashStyle": "solid",
+                    "color": "black"
+                  }]
+                }, {
+                  "data": []
+                }]
+              }
+              `;
+              console.log(this.optFromInputString);
+              this.chartOptions = JSON.parse(this.optFromInputString);
 });
   }
 }
