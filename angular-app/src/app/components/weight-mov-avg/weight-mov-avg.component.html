@@ -26,26 +26,24 @@
 
   <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-start justify-content-center"
        style=" width: 90%">
-    <p style="margin: 1em">
-      Deep learning (also known as deep structured learning or hierarchical learning) is part of a broader family of
-      machine
-      learning methods based on learning data representations, as opposed to task-specific algorithms. Learning can be
-      supervised,
-      semi-supervised or unsupervised.
+     <p style="margin: 1em">
+      Moving averages are one of the core indicators in technical analysis, and there are a variety of different
+      versions. SMA is the easiest moving average to construct. It is simply the average price over the specified
+      period. The average is called "moving" because it is plotted on the chart bar by bar, forming a line that moves
+      along the chart as the average value changes.
     </p>
     <p style="margin: 1em">
-      Deep learning architectures such as deep neural networks, deep belief networks and recurrent neural networks have
-      been applied
-      to fields including computer vision, speech recognition, natural language processing, audio recognition, social
-      network filtering,
-      machine translation, bioinformatics, drug design, medical image analysis, material inspection and board game
-      programs, where they
-      have produced results comparable to and in some cases superior to human experts.
+      SMAs are often used to determine trend direction. If the SMA is moving up, the trend is up. If the SMA is moving
+      down, the trend is down. A 200-bar SMA is common proxy for the long term trend. 50-bar SMAs are typically used to
+      gauge the intermediate trend. Shorter period SMAs can be used to determine shorter term trends.
     </p>
     <p style="margin: 1em">
-      In our case, DNN is used to predict most probable next values, based on the data provided. It can be used for high
-      credibility
-      assumptions about value of any possible variable, that changes based on unknown rule.
+     SMAs are commonly used to smooth price data and technical indicators. The longer the period of the SMA, the smoother
+      the result, but the more lag that is introduced between the SMA and the source.
+    </p>
+    <p style="margin: 1em">
+      Price crossing SMA is often used to trigger trading signals. When prices cross above the SMA, you might want to go
+      long or cover short; when they cross below the SMA, you might want to go short or exit long.
     </p>
   </div>
 
