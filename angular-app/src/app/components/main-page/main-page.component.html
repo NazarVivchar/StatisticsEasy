@@ -20,13 +20,14 @@
       <p [@blink]="state1"><i class="arrow down white"></i></p>
       <p [@blink]="state2"><i class="arrow  down white"></i></p>
     </div>
-
+    <div id="anchor15"></div>
   </div>
   </div>
 
 <div class="main-page-content d-flex align-items-center justify-content-center">
-  <h1>What is Statistics Easy?</h1>
-  <p class="information">
+
+  <h1 *ngIf="anchorsReached[14]" [@enterAnimationLeft]>What is Statistics Easy?</h1>
+  <p class="information" *ngIf="anchorsReached[14]" [@enterAnimationRight]>
     <em>Statistics Easy </em>(or simply <em>StatEasy</em>) is collaborative project, being developed by a group of
     university groupmates.
     Our main goal is to provide useful Mathematical and Statistical tools, that might come in
@@ -41,52 +42,42 @@
 <!--</div>-->
 
 
-<div class="d-flex flex-wrap justify-content-center align-items-center " id="main"
+<div class="d-flex flex-column justify-content-center align-items-center " id="main"
      style="background-color:rgb(250,250,250); position: relative; margin-bottom: 18em; box-shadow: 0 0.3em 0.2em 0 white; overflow: hidden;  transition: height linear; padding-top: 5vh; padding-bottom: 5vh;">
 
   <h1>Available statistical methods</h1>
 
+
+
+
+
+<!--  Regressions-->
+  <h1> Regressions</h1>
+
   <div class="cards d-flex flex-wrap justify-content-center align-items-center ">
-    <div class="my-card-outer">
+      <div class="my-card-outer">
       <div id="anchor1" style="margin-bottom: 5em"></div>
 
       <div *ngIf="anchorsReached[0]" [@enterAnimationBottom]
            class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
         <div class="d-flex align-items-center justify-content-center" style="height:20%;">
-          <h3>Simple Regression</h3>
+          <h3>Simple regression</h3>
         </div>
 
         <div
-          style="width: 90%; height: 60%; background-image: url('/assets/Example1.png'); background-size: cover; background-repeat: no-repeat"></div>
+          style="width: 90%; height: 60%; background-image: url('/assets/Example3.png'); background-size: cover; background-repeat: no-repeat"></div>
 
         <div>
-          <button class="btn btn-dark btn-lg" routerLink="/regression">Go to method</button>
+          <button class="btn btn-dark btn-lg" routerLink="/simple-regression">Go to method</button>
         </div>
       </div>
     </div>
+
 
     <div class="my-card-outer">
       <div id="anchor2" style="margin-bottom: 5em"></div>
 
       <div *ngIf="anchorsReached[1]" [@enterAnimationBottom]
-           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
-        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
-          <h3>DNN Prediction</h3>
-        </div>
-
-        <div
-          style="width: 90%; height: 60%; background-image: url('/assets/Example2.png'); background-size: cover; background-repeat: no-repeat"></div>
-
-        <div>
-          <button class="btn btn-dark btn-lg" routerLink="/dnn">Go to method</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="my-card-outer">
-      <div id="anchor3" style="margin-bottom: 5em"></div>
-
-      <div *ngIf="anchorsReached[2]" [@enterAnimationBottom]
            class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
         <div class="d-flex align-items-center justify-content-center" style="height:20%;">
           <h3>Polynomial regression</h3>
@@ -101,10 +92,15 @@
       </div>
     </div>
 
-    <div class="my-card-outer">
-      <div id="anchor4" style="margin-bottom: 5em"></div>
 
-      <div *ngIf="anchorsReached[3]" [@enterAnimationBottom]
+
+
+
+
+    <div class="my-card-outer">
+      <div id="anchor3" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[2]" [@enterAnimationBottom]
            class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
         <div class="d-flex align-items-center justify-content-center" style="height:20%;">
           <h3>Logistic regression</h3>
@@ -118,18 +114,23 @@
         </div>
       </div>
     </div>
+</div>
 
+    <!--Moving averages-->
+
+<h1>Moving averages</h1>
+<div class="cards d-flex flex-wrap justify-content-center align-items-center ">
     <div class="my-card-outer">
-      <div id="anchor5" style="margin-bottom: 5em"></div>
+      <div id="anchor4" style="margin-bottom: 5em"></div>
 
-      <div *ngIf="anchorsReached[4]" [@enterAnimationBottom]
+      <div *ngIf="anchorsReached[3]" [@enterAnimationBottom]
            class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
         <div class="d-flex align-items-center justify-content-center" style="height:20%;">
           <h3>Simple moving averages</h3>
         </div>
 
         <div
-          style="width: 90%; height: 60%; background-image: url('/assets/Example5.png'); background-size: cover; background-repeat: no-repeat"></div>
+          style="width: 90%; height: 60%; background-image: url('/assets/Example3.png'); background-size: cover; background-repeat: no-repeat"></div>
 
         <div>
           <button class="btn btn-dark btn-lg" routerLink="/simple-moving-averages">Go to method</button>
@@ -137,29 +138,199 @@
       </div>
     </div>
 
+     <div class="my-card-outer">
+      <div id="anchor5" style="margin-bottom: 5em"></div>
 
-    <div *ngFor="let i of [6,7,8,9,10,11,12]" class="my-card-outer">
-      <div id="anchor{{i}}" style="margin-bottom: 5em"></div>
-
-      <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]
+      <div *ngIf="anchorsReached[4]" [@enterAnimationBottom]
            class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
         <div class="d-flex align-items-center justify-content-center" style="height:20%;">
-          <h3>Method {{i}}</h3>
+          <h3>Exponential moving averages</h3>
         </div>
 
-        <div style="width: 90%; height: 60%; background: lightgrey"></div>
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example1.png'); background-size: cover; background-repeat: no-repeat"></div>
 
         <div>
-          <button class="btn btn-dark btn-lg">Go to method</button>
+          <button class="btn btn-dark btn-lg" routerLink="/exponential-moving-averages">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="my-card-outer">
+      <div id="anchor6" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[5]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Running moving averages</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example4.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/running-moving-averages">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="my-card-outer">
+      <div id="anchor7" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[6]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Weighted moving averages</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example3.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/weighted-moving-averages">Go to method</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--Clusterizations-->
+<h1>Clusterizations</h1>
+  <div class="cards d-flex flex-wrap justify-content-center align-items-center ">
+<div class="my-card-outer">
+      <div id="anchor8" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[7]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Hierarchical Clusterization</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example2.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/h-cluster">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="my-card-outer">
+      <div id="anchor9" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[8]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>K-means</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example4.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/k-means">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="my-card-outer">
+      <div id="anchor10" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[9]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>T-SNE</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example3.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/t-sne/">Go to method</button>
+        </div>
+      </div>
+    </div>
+</div>
+    <!--Other methods-->
+    <h1>Other methods</h1>
+  <div class="cards d-flex flex-wrap justify-content-center align-items-center ">
+<div class="my-card-outer">
+      <div id="anchor11" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[10]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>DNN</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example1.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/dnn/">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="my-card-outer">
+      <div id="anchor12" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[11]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Distributions</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example5.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/sdistributions/">Go to method</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="my-card-outer">
+      <div id="anchor13" style="margin-bottom: 5em"></div>
+
+      <div *ngIf="anchorsReached[12]" [@enterAnimationBottom]
+           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">
+        <div class="d-flex align-items-center justify-content-center" style="height:20%;">
+          <h3>Kalman's filter</h3>
+        </div>
+
+        <div
+          style="width: 90%; height: 60%; background-image: url('/assets/Example2.png'); background-size: cover; background-repeat: no-repeat"></div>
+
+        <div>
+          <button class="btn btn-dark btn-lg" routerLink="/kalmans-filter/">Go to method</button>
         </div>
       </div>
     </div>
 
 
 
+<!--    <div *ngFor="let i of [6,7,8,9,10,11,12]" class="my-card-outer">-->
+<!--      <div id="anchor{{i}}" style="margin-bottom: 5em"></div>-->
 
-<div id="anchor13"></div>
-<div *ngIf="anchorsReached[12]" [@enterAnimationBottom] style="width: 100%; margin-bottom: 5em">
+<!--      <div *ngIf="anchorsReached[i - 1]" [@enterAnimationBottom]-->
+<!--           class="my-card-inner d-flex flex-column align-items-center justify-content-around ">-->
+<!--        <div class="d-flex align-items-center justify-content-center" style="height:20%;">-->
+<!--          <h3>Method {{i}}</h3>-->
+<!--        </div>-->
+
+<!--        <div style="width: 90%; height: 60%; background: lightgrey"></div>-->
+
+<!--        <div>-->
+<!--          <button class="btn btn-dark btn-lg">Go to method</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+
+<div id="anchor14"></div>
+<div *ngIf="anchorsReached[13]" [@enterAnimationBottom] style="width: 100%; margin-bottom: 5em">
  <h1>FAQ</h1>
     <app-accordion ></app-accordion>
   <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
@@ -180,6 +351,6 @@
 <!--</div>-->
 
 
-<app-footer></app-footer>
+<app-footer style="z-index: -1"></app-footer>
 </body>
 </html>

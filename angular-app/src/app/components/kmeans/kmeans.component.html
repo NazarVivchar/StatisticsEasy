@@ -30,7 +30,7 @@
 
   <div class="d-flex align-items-center justify-content-center"
        style=" padding-top: 20vh; margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
-    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Logistic regression</em>
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>K-means</em>
     </h1>
   </div>
 
@@ -46,19 +46,21 @@
     </button>
   </div>
 
-  <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-center justify-content-center"
+  <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex align-items-start justify-content-center"
        style=" width: 90%">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua.
-    Vitae turpis massa sed elementum tempus egestas sed sed. Maecenas sed enim ut sem viverra aliquet.
-    Lectus proin nibh nisl condimentum id venenatis.
-    Ultrices in iaculis nunc sed augue lacus viverra vitae congue. Nunc sed augue lacus viverra vitae congue.
-    Sollicitudin nibh sit amet commodo nulla facilisi nullam. Urna molestie at elementum eu. A iaculis at erat
-    pellentesque.
-    Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Velit aliquet sagittis id
-    consectetur purus ut faucibus pulvinar elementum.
-    Et ligula ullamcorper malesuada proin libero. Augue mauris augue neque gravida in fermentum et. Ipsum faucibus vitae
-    aliquet nec ullamcorper sit amet.
+    <p style="margin: 1em">
+      k-means clustering is a method of vector quantization, originally from signal processing, that is popular
+      for cluster analysis in data mining. k-means clustering aims to partition n observations into k clusters
+      in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster.
+      This results in a partitioning of the data space into Voronoi cells.
+    </p>
+    <p style="margin: 1em">
+      The problem is computationally difficult (NP-hard); however, efficient heuristic algorithms converge quickly to
+      a local optimum. These are usually similar to the expectation-maximization algorithm for mixtures of Gaussian
+      distributions via an iterative refinement approach employed by both k-means and Gaussian mixture modeling. They
+      both use cluster centers to model the data; however, k-means clustering tends to find clusters of comparable spatial
+      extent, while the expectation-maximization mechanism allows clusters to have different shapes.
+    </p>
   </div>
 
   <div class="d-flex  align-items-center justify-content-center"

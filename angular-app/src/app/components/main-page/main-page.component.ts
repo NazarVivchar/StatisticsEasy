@@ -26,7 +26,7 @@ declare function headerMethod(): any;
       'enterAnimationLeft', [
         transition(':enter', [
           style({transform: 'translateX(-100%)', opacity: 0}),
-          animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1 }))
+          animate('2s ease-in-out', style({transform: 'translateX(0)', opacity: 1 }))
         ]),
         transition(':leave', [
           style({transform: 'translateX(0)', opacity: 1}),
@@ -37,7 +37,7 @@ declare function headerMethod(): any;
       'enterAnimationRight', [
         transition(':enter', [
           style({transform: 'translateX(100%)', opacity: 0}),
-          animate('2s ease-in', style({transform: 'translateX(0)', opacity: 1}))
+          animate('2.5s ease-in-out', style({transform: 'translateX(0)', opacity: 1}))
         ]),
         transition(':leave', [
           style({transform: 'translateX(0)', opacity: 1}),
@@ -48,7 +48,7 @@ declare function headerMethod(): any;
       'enterAnimationTop', [
         transition(':enter', [
           style({transform: 'translateY(-100%)', opacity: 0}),
-          animate('2.5s ease-in', style({transform: 'translateY(0)', opacity: 1}))
+          animate('2.5s ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ]),
         transition(':leave', [
           style({transform: 'translateY(0)', opacity: 1}),
@@ -85,7 +85,7 @@ export class MainPageComponent implements OnInit {
   private navTransparent = true;
   constructor(@Inject(DOCUMENT) document) {
     // this.anchorsNumber = 5;
-    this.anchorsNumber = 13;
+    this.anchorsNumber = 15;
     this.anchorsReached = new Array(this.anchorsNumber).fill(false);
 
   }
@@ -117,6 +117,7 @@ export class MainPageComponent implements OnInit {
      } else {
        this.navVisible =  true;
        this.navTransparent = true;
+       this.anchorsReached[14]=true;
      }
       if (scrollposition > 2.5 * document.documentElement.clientHeight) {
         this.ttHidden = false;
