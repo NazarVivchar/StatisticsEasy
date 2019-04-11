@@ -83,8 +83,8 @@
         </div>
 
         <div *ngIf="selectedValue === 'Bernoulli'" class="d-flex flex-column align-items-center justify-content-around" >
-        <label [(ngModel)]="valueToSend1" for="probability">C</label>
-        <input [(ngModel)]="valueToSend2" id="probability" type="number" >
+        <label  for="probability">Probability</label>
+        <input [(ngModel)]="valueToSend1" id="probability" type="number" >
         </div>
         <div *ngIf="selectedValue === 'Double Weibull'" class="d-flex flex-column align-items-center justify-content-around" >
         <label for="c">C</label>

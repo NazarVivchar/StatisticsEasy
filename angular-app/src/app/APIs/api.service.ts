@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 export class ApiService {
 
   baseurl = 'http://127.0.0.1:8000';
-  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json', 'Accept':'application/json'});
   constructor(private http: HttpClient) {
   }
   getDemoRegression(): Observable<any> {
@@ -72,6 +72,6 @@ export class ApiService {
   }
   getDistributionData(httpParams:HttpParams): Observable<any> {
     return this.http.get(this.baseurl + '/distribution_info/',
-      {params: httpParams,headers: this.httpHeaders});
+      {params: httpParams,headers: this.httpHeaders });
   }
 }

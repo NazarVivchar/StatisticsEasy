@@ -17,7 +17,7 @@ def main():
     plt.savefig('t_sne_preview.png')
     copyfile('./t_sne_preview.png', 'media/t_sne_preview.png')
     ImageFile.objects.create(image='t_sne_preview.png')
-
+    plt.close()
     iris_df = datasets.load_iris()
 
     # Определяем модель и скорость обучения

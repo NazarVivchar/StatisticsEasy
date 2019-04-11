@@ -24,7 +24,7 @@ def main(filename='media/input.txt'):
 
 
     outlist = [int(i) for i in outlist if int(i)>100000]
-    print(outlist)
+
     out = []
     for i in range(len(outlist)):
         out.append(i)

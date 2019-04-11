@@ -50,7 +50,7 @@ def main(row_argument1 = 'weightlbs',row_argument2= 'year', row_feature='brand',
     plt.savefig('k_means_preview.png')
     copyfile('./k_means_preview.png', 'media/k_means_preview.png')
     ImageFile.objects.create(image='k_means_preview.png')
-
+    plt.close()
     y_km = kmeans.fit_predict(points)
 
     plt.scatter(points[y_km == 0, 0], points[y_km == 0, 1], s=100, c='green')

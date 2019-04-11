@@ -77,6 +77,8 @@ export class HClasterComponent implements OnInit {
   optFromInputString: string;
   chartOptions: Highcharts.Options;
   base64Image: string;
+  base64Image1: string;
+  base64Image2: string;
   image_visible: boolean;
 
   constructor(private api: ApiService, private router: Router, private sanitizer:DomSanitizer) {
@@ -89,11 +91,13 @@ export class HClasterComponent implements OnInit {
   }
 
   getSomeInfo() {
-    this.api.getLogistical().subscribe(
+    this.api.getHCluster().subscribe(
       (data: any[]) => {
         console.log(data);
         // console.log(JSON.parse(data[0]));
-        this.base64Image = "data:image/png;base64, " +  data[1].reg_image;
+        this.base64Image = "data:image/png;base64, " +  data[0].hierarcial_preview;
+        this.base64Image1 = "data:image/png;base64, " +  data[1].hierarcial_dendrogram;
+        this.base64Image2 = "data:image/png;base64, " +  data[2].hierarcial_result;
         console.log(this.base64Image);
         this.image_visible = true;
       },
@@ -104,6 +108,12 @@ export class HClasterComponent implements OnInit {
   }
    transform() {
      return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image);
+   }
+   transform1() {
+     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image1);
+   }
+   transform2() {
+     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image2);
    }
 
   ngOnInit() {

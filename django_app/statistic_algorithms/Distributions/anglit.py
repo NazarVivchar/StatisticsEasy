@@ -1,5 +1,5 @@
 from  matplotlib import mlab
-from stats import *
+
 import math
 import pandas as pd
 import numpy as np
@@ -69,7 +69,7 @@ def anglit(n = 100, loc = 0, scale = 1):
     distribution = st.anglit(loc=loc, scale=scale)
     sample = list(distribution.rvs(size = n))
 
-    for i in range(len(sample)):
+    for i in range(0,len(sample)):
         sample[i] = round(sample[i], 2)
      
     var = list(sample)

@@ -82,12 +82,12 @@ export class DisributionsComponent implements OnInit {
   constructor(private api: ApiService, private router: Router) {
     this.distributions[0] = 'Bernoulli';
     this.selectedValue = this.distributions[0];
-    this.distributions[1] = 'Arcsine';
-    this.distributions[2] = 'Double Weibull';
-    this.distributions[3] = 'Normal';
-    this.distributions[4] = 'Triangular';
-    this.distributions[5] = 'Wald';
-    this.distributions[6] = 'Anglit';
+    this.distributions[1] = 'Anglit';
+    this.distributions[2] = 'Arcsine';
+    this.distributions[3] = 'Double Weibull';
+    this.distributions[4] = 'Normal';
+    this.distributions[5] = 'Triangular';
+    this.distributions[6] = 'Wald';
     this.distributions[7] = 'Uniform';
 
     this.distributions[8] = 'Exponential';
@@ -121,30 +121,31 @@ export class DisributionsComponent implements OnInit {
 
   }
   submit2() {
-    const httpParams = new HttpParams();
+     let httpParams = new HttpParams();
 if(this.selectedValue==='Uniform') {
-  httpParams
+  httpParams = httpParams
     .set('high', this.valueToSend1.toString())
     .set('low', this.valueToSend2.toString());
 }
 else if(this.selectedValue==='Double Weibull')
 {
-  httpParams
+  httpParams = httpParams
     .set('location', this.valueToSend1.toString())
     .set('scale', this.valueToSend2.toString())
     .set('c', this.valueToSend3.toString());
 }
 else if(this.selectedValue==='Bernoulli')
 {
-  httpParams
+  httpParams = httpParams
     .set('probability', this.valueToSend1.toString())
 }
 else {
-  httpParams
+  httpParams = httpParams
     .set('location', this.valueToSend1.toString())
     .set('scale', this.valueToSend2.toString())
 
 }
+console.log(httpParams.keys());
 this.api.getDistributionData(httpParams).subscribe((data)=>{
   console.log(data);
 });
