@@ -29,8 +29,8 @@
      style=" padding-bottom: 10vh; margin-bottom: 45vh; width: 100%; min-height: 150vh">
 
   <div class="d-flex align-items-center justify-content-center"
-       style=" padding-top: 20vh; margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
-    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Hierarchical clustering</em>
+       style=" padding-top: 20vh; margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('../../../assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Hierarchical cluster</em>
     </h1>
   </div>
 
@@ -86,14 +86,17 @@
        class="d-flex flex-column justify-content-center align-items-center"
        style="width: 90%; margin-bottom: 10vh; z-index: 0; min-height: 70vh">
     <div *ngIf="visible2" [hidden]="image_visible" [@enterAnimationLeft] style="z-index:0; ">
-      <h1 style="font-size: 2em">
+      <h1  style="font-size: 2em" >
         Your chart will be displayed here
       </h1>
     </div>
+    <h2 *ngIf="image_visible" style="font-size: 1.4em">Result Image</h2>
     <img *ngIf="image_visible" [src] = "transform()" style=" 70vh; display: block; z-index: 1"
          alt="Mistake("/>
+    <h2  *ngIf="image_visible" style="font-size: 1.4em">Preview Image</h2>
     <img *ngIf="image_visible" [src] = "transform1()" style=" 70vh; display: block; z-index: 1"
          alt="Mistake("/>
+    <h2 *ngIf="image_visible" style="font-size: 1.4em">Hierarchical result</h2>
     <img *ngIf="image_visible" [src] = "transform2()" style=" 70vh; display: block; z-index: 1"
          alt="Mistake("/>
   </div>

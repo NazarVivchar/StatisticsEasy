@@ -90,8 +90,10 @@
         Your chart will be displayed here
       </h1>
     </div>
+    <h2 *ngIf="image_visible" style="font-size: 1.4em">Preview Image</h2>
     <img *ngIf="image_visible" [src] = "transform()" style=" 70vh; display: block; z-index: 1"
          alt="Mistake("/>
+    <h2 *ngIf="image_visible" style="font-size: 1.4em">Result Image</h2>
     <img *ngIf="image_visible" [src] = "transform1()" style=" 70vh; display: block; z-index: 1"
          alt="Mistake("/>
 

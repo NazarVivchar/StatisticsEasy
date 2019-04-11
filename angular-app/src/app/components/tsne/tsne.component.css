@@ -30,3 +30,6 @@ i.dark:hover {
   background-color: #919eba;
   color: white;
 }
+[hidden] {
+    display: none !important;
+}
