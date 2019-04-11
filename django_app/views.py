@@ -273,13 +273,12 @@ class k_mean(APIView):
         with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read())
 
-
+        print(encoded_string)
 
         with open(ImageFile.objects.all()[1].get_file_name(), "rb") as image_file:
             encoded_string1 = base64.b64encode(image_file.read())
 
-
-
+        print(encoded_string1)
 
         os.remove(file[0].get_file_name())
         file[0].delete()

@@ -61,8 +61,8 @@ export class ApiService {
     return this.http.get(this.baseurl + '/t_sn/',
       {headers: this.httpHeaders});
   }
-  getLMeans(): Observable<any> {
-    return this.http.get(this.baseurl + '/k_means_info//',
+  getKMeans(): Observable<any> {
+    return this.http.get(this.baseurl + '/k_means_info/',
       {headers: this.httpHeaders});
   }
 
