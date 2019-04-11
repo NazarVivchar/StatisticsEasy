@@ -65,7 +65,10 @@ export class ApiService {
     return this.http.get(this.baseurl + '/k_means_info/',
       {headers: this.httpHeaders});
   }
-
+  getKalman(): Observable<any> {
+    return this.http.get(this.baseurl + '/kalman_info/',
+      {headers: this.httpHeaders});
+  }
   sendDistributionData(data): Observable<any> {
     return this.http.post(this.baseurl + '/distribution_info/',
       data,{headers: this.httpHeaders});
