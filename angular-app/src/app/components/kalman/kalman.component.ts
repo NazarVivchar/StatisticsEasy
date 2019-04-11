@@ -91,13 +91,13 @@ export class KalmanComponent implements OnInit {
   }
 
   getSomeInfo() {
-    this.api.getHCluster().subscribe(
+    this.api.getKalman().subscribe(
       (data: any[]) => {
         console.log(data);
         // console.log(JSON.parse(data[0]));
-        this.base64Image = "data:image/png;base64, " +  data[0].result_image;
-        this.base64Image1 = "data:image/png;base64, " +  data[1].preview_image;
-        this.base64Image2 = "data:image/png;base64, " +  data[2].hierarcial_result;
+        this.base64Image = "data:image/png;base64, " +  data[0].reg_image;
+
+
         console.log(this.base64Image);
         this.image_visible = true;
       },
@@ -109,9 +109,7 @@ export class KalmanComponent implements OnInit {
    transform() {
      return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image);
    }
-   transform1() {
-     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image1);
-   }
+
 
   ngOnInit() {
     window.scrollTo(0, 0);
