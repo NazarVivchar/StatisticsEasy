@@ -64,6 +64,7 @@ def main(row_argument1 = 'weightlbs',row_argument2= 'year', row_feature='brand',
     plt.legend(['USA', 'Japan', 'Europe'])
 
     plt.savefig('k_means_result.png')
+    plt.close()
     copyfile('./k_means_result.png', 'media/k_means_result.png')
     ImageFile.objects.create(image='k_means_result.png')
 

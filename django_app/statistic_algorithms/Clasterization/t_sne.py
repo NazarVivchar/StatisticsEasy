@@ -33,5 +33,6 @@ def main():
     plt.scatter(x_axis, y_axis, c=iris_df.target)
 
     plt.savefig('t_sne_result.png')
+    plt.close()
     copyfile('./t_sne_result.png', 'media/t_sne_result.png')
     ImageFile.objects.create(image='t_sne_result.png')
