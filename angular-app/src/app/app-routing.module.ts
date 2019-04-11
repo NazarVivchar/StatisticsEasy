@@ -13,6 +13,7 @@ import {DisributionsComponent} from "./components/disributions/disributions.comp
 import {HClasterComponent} from "./components/h-claster/h-claster.component";
 import {KMeansComponent} from "./components/kmeans/kmeans.component";
 import {TSneComponent} from "./components/tsne/tsne.component";
+import {KalmanComponent} from "./components/kalman/kalman.component";
 
 const routes: Routes = [
   {path:'', component:MainPageComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'h-cluster', component: HClasterComponent},
   {path: 'k-means', component: KMeansComponent},
   {path: 't-sne', component: TSneComponent},
+  {path: 'kalmans-filter', component: KalmanComponent}
 
 ];
 
