@@ -57,8 +57,8 @@ export class ApiService {
     return this.http.get(this.baseurl + '/h_claster_info/',
       {headers: this.httpHeaders});
   }
-  getTSNA(): Observable<any> {
-    return this.http.get(this.baseurl + '/t_sn/',
+  getTSNE(): Observable<any> {
+    return this.http.get(this.baseurl + '/t_sne_info/',
       {headers: this.httpHeaders});
   }
   getKMeans(): Observable<any> {
