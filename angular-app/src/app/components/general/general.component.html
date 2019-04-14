@@ -91,10 +91,13 @@
       </h1>
     </div>
    <h2 *ngIf="data_visible" style="font-size: 1.4em">Input data</h2>
-    <div class="d-flex align-items-center justify-content-center flex-wrap" style="padding: 3em">
-      <p *ngFor="let data of output_data" style="width: 2em">
-        {{data}}
+    <div class="d-flex flex-column align-items-center justify-content-center" style="padding: 3em">
+      <div *ngFor="let data of output_data" class="d-flex align-items-center justify-content-center flex-wrap">
+      <p  *ngFor="let d of data" style="width: 2em">
+        {{d}}
       </p>
+      </div>
+
     </div>
 
     <h2 *ngIf="data_visible" style="font-size: 1.4em">Result</h2>

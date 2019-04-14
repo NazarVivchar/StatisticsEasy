@@ -102,6 +102,7 @@ export class GeneralComponent implements OnInit {
       this.visible = true;
       this.visible1 = true;
       this.data_visible = false;
+      this.output_data=[[1,2,3,4],[1,2,3,4],[1,2,3,4]]
 
        }, 10);
 
