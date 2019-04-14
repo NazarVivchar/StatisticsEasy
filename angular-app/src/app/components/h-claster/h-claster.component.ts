@@ -89,7 +89,7 @@ export class HClasterComponent implements OnInit {
   }
 
   getSomeInfo() {
-    this.api.getLogistical().subscribe(
+    this.api.getHCluster().subscribe(
       (data: any[]) => {
         console.log(data);
         // console.log(JSON.parse(data[0]));
