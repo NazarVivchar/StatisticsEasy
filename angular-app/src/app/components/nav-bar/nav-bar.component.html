@@ -1,4 +1,4 @@
-<nav  id="navbar" class="nav-colored d-flex justify-content-start align-items-center sticky-top" style="font-size:1.5vw;height:8vh; ">
+<nav  id="navbar" class="nav-colored d-flex justify-content-start align-items-around sticky-top" style="font-size:1.5vw;height:8vh; ">
        <div class="nav-item d-flex align-items-center justify-content-center" routerLink="" style="width: 16vw; height: 100%">
               <h3>Home</h3>
         </div>
@@ -119,4 +119,27 @@
               </div>
             </div>
           </div>
+
+   <div class="nav-item d-flex  justify-content-center" (mouseenter)="showDropdown(4)" (mouseleave)="hideDropdown(4)" [ngClass]="{'dropdown-hover': hover[4]}" style="position: relative" >
+
+          <div class=" d-flex align-items-center justify-content-center" style="width: 16vw; height: 100%">
+              <h3>Classifications</h3>
+            </div>
+
+            <div  [ngClass]="{'dropdown-content':true, 'dropdown-content-hover': hover[4]}" (click)="hideDropdown(4)" class =" drop-colored align-items-center d-flex flex-column">
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/tree/">
+                <a>Tree</a>
+              </div>
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/sgd/">
+                <a>SGD</a>
+              </div>
+              <div class="drop-item d-flex align-items-center justify-content-center"
+                   routerLink="/svm/" style="border-radius: 0 0 1em 1em;">
+                <a>SVM</a>
+              </div>
+            </div>
+          </div>
+
       </nav>
