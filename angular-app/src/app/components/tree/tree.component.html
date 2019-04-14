@@ -100,7 +100,9 @@
     </div>
     <h2 *ngIf="data_visible" style="font-size: 1.4em">Result</h2>
     <div class="d-flex align-items-center justify-content-center flex-wrap" style="padding: 3em">
-      <h2>{{result}}</h2>
+      <p  *ngFor="let r of result" style="width: 2em">
+        {{r}}
+      </p>
     </div>
 
   </div>
