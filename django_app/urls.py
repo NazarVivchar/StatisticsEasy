@@ -28,7 +28,7 @@ urlpatterns = [
     path('svm_info/', svm_info.as_view(), name='svm_info'),
 
     path('general_info/', general_info.as_view(), name='general_info'),
-    path('tree_info', tree_info.as_view(), name='tree_info'),
+    path('tree_info/', tree_info.as_view(), name='tree_info'),
 
 
 ]

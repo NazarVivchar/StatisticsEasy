@@ -54,17 +54,4 @@ def predict(values: list):
 ##   [1,12,3,3,5,6,7,8,9,'Ivan'],
 ##   [1,2,3,4,0,6,7,8,5,'Petro'],
 ##   [1,2,3,6,5,6,7,8,9,'Ivan']]
-##fit(a)
-##print(predict([1,2,3,4,5,8,7,8,100]))
-##def show_tree():
-##    import graphviz
-##    dot_data = tree.export_graphviz(classifier, out_file=None)
-##    graph = graphviz.Source(dot_data)
-##    graph.render("points")
-##    dot_data = tree.export_graphviz(classifier, out_file=None,
-##                        feature_names=None,
-##                        class_names=opt_dict.values(),
-##                        filled=True, rounded=True,
-##                        special_characters=True)
-##    graph = graphviz.Source(dot_data)
-##    graph
+
