@@ -37,6 +37,7 @@ import { KalmanComponent } from './components/kalman/kalman.component';
 import { TreeComponent } from './components/tree/tree.component';
 import { SGDComponent } from './components/sgd/sgd.component';
 import { SVMComponent } from './components/svm/svm.component';
+import { GeneralComponent } from './components/general/general.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { SVMComponent } from './components/svm/svm.component';
     KalmanComponent,
     TreeComponent,
     SGDComponent,
-    SVMComponent
+    SVMComponent,
+    GeneralComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),

@@ -17,6 +17,7 @@ import {KalmanComponent} from "./components/kalman/kalman.component";
 import {TreeComponent} from "./components/tree/tree.component";
 import {SVMComponent} from "./components/svm/svm.component";
 import {SGDComponent} from "./components/sgd/sgd.component";
+import {GeneralComponent} from "./components/general/general.component";
 
 const routes: Routes = [
   {path:'', component:MainPageComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path: 'tree', component: TreeComponent},
   {path: 'svm', component: SVMComponent},
   {path: 'sgd', component: SGDComponent},
-  {path: 'kalmans-filter', component: KalmanComponent}
+  {path: 'kalmans-filter', component: KalmanComponent},
+  {path: 'general', component: GeneralComponent}
 
 ];
 

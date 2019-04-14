@@ -159,7 +159,7 @@ else {
 
 }
 console.log(httpParams.keys());
-this.api.getDistributionData(httpParams).subscribe((data)=>{
+this.api.sendDistributionData(httpParams).subscribe((data)=>{
               this.info = data;
 
               this.updateFlag = false;
