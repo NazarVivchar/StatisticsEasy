@@ -73,8 +73,22 @@ export class ApiService {
     return this.http.post(this.baseurl + '/distribution_info/',
       data,{headers: this.httpHeaders});
   }
-  getDistributionData(httpParams:HttpParams): Observable<any> {
-    return this.http.get(this.baseurl + '/distribution_info/',
-      {params: httpParams,headers: this.httpHeaders });
+  getSVMData(): Observable<any> {
+    return this.http.get(this.baseurl + '/svm_info/',
+      {headers: this.httpHeaders });
   }
+  getSGDData(): Observable<any> {
+    return this.http.get(this.baseurl + '/sgd_info/',
+      {headers: this.httpHeaders });
+  }
+  getTreeData(): Observable<any> {
+    return this.http.get(this.baseurl + '/tree_info/',
+      {headers: this.httpHeaders });
+  }
+
+
+
 }
+ // path('sgd_info/', sgd_info.as_view(), name='sgd_info'),
+ //    path('svm_info/', svm_info.as_view(), name='svm_info'),
+ //    path('tree_info', tree_info.as_view(), name='tree_info'),

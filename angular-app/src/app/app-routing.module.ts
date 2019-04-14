@@ -14,6 +14,9 @@ import {HClasterComponent} from "./components/h-claster/h-claster.component";
 import {KMeansComponent} from "./components/kmeans/kmeans.component";
 import {TSneComponent} from "./components/tsne/tsne.component";
 import {KalmanComponent} from "./components/kalman/kalman.component";
+import {TreeComponent} from "./components/tree/tree.component";
+import {SVMComponent} from "./components/svm/svm.component";
+import {SGDComponent} from "./components/sgd/sgd.component";
 
 const routes: Routes = [
   {path:'', component:MainPageComponent},
@@ -29,6 +32,9 @@ const routes: Routes = [
   {path: 'h-cluster', component: HClasterComponent},
   {path: 'k-means', component: KMeansComponent},
   {path: 't-sne', component: TSneComponent},
+  {path: 'tree', component: TreeComponent},
+  {path: 'svm', component: SVMComponent},
+  {path: 'sgd', component: SGDComponent},
   {path: 'kalmans-filter', component: KalmanComponent}
 
 ];

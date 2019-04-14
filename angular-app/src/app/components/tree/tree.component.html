@@ -29,8 +29,8 @@
      style=" padding-bottom: 10vh; margin-bottom: 18em; width: 100%; min-height: 150vh; box-shadow: 0 0.3em 0.2em 0 white;">
 
   <div class="d-flex align-items-center justify-content-center"
-       style=" padding-top: 20vh; margin-bottom: 2em; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('../../../assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
-    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Kalmans filter</em>
+       style=" padding-top: 20vh; margin-bottom: 2em; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Tree</em>
     </h1>
   </div>
 
@@ -46,27 +46,19 @@
     </button>
   </div>
 
-  <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-start justify-content-center"
+  <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-center justify-content-center"
        style=" width: 90%">
-   <p style="margin: 1em">
-       In statistics and control theory, Kalman filtering, also known as linear quadratic estimation (LQE), is an
-     that uses a series of measurements observed over time, containing statistical noise and other inaccuracies,
-     and produces estimates of unknown variables that tend to be more accurate than those based on a single measurement
-     alone, by estimating a joint probability distribution over the variables for each timeframe. The filter is named
-     after Rudolf E. Kálmán, one of the primary developers of its theory.
-   </p>
-    <p style="margin: 1em">
-      The Kalman filter has numerous applications in technology. A common application is for guidance, navigation,
-    and control of vehicles, particularly aircraft and spacecraft. Furthermore, the Kalman filter is a widely
-    applied concept in time series analysis used in fields such as signal processing and econometrics. Kalman filters
-    also are one of the main topics in the field of robotic motion planning and control, and they are sometimes included
-    in trajectory optimization. The Kalman filter also works for modeling the central nervous system's control of movement.
-    Due to the time delay between issuing motor commands and receiving sensory feedback, use of the Kalman filter supports
-    a realistic model for making estimates of the current state of the motor
-    system and issuing updated commands.
-    </p>
-
-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+    Vitae turpis massa sed elementum tempus egestas sed sed. Maecenas sed enim ut sem viverra aliquet.
+    Lectus proin nibh nisl condimentum id venenatis.
+    Ultrices in iaculis nunc sed augue lacus viverra vitae congue. Nunc sed augue lacus viverra vitae congue.
+    Sollicitudin nibh sit amet commodo nulla facilisi nullam. Urna molestie at elementum eu. A iaculis at erat
+    pellentesque.
+    Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Velit aliquet sagittis id
+    consectetur purus ut faucibus pulvinar elementum.
+    Et ligula ullamcorper malesuada proin libero. Augue mauris augue neque gravida in fermentum et. Ipsum faucibus vitae
+    aliquet nec ullamcorper sit amet.
   </div>
 
   <div class="d-flex  align-items-center justify-content-center"
@@ -85,22 +77,29 @@
     <div *ngIf="visible2" [@enterAnimationRight] class="d-flex flex-column align-items-center justify-content-around"
          style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
       <h1>Step 2</h1>
-      <h4>Build regression</h4>
-      <button (click)="getReg()" class="btn btn-dark">Build</button>
+      <h4>Calculate your result</h4>
+      <button (click)="getReg()" class="btn btn-dark">Calculate</button>
     </div>
   </div>
 
   <div [hidden]="visible1" [style.border]="visible1?  'none' : 'dashed 0.2em #919eba' "
        class="d-flex flex-column justify-content-center align-items-center"
        style="width: 90%; margin-bottom: 10vh; z-index: 0; min-height: 70vh">
-    <div *ngIf="visible2" [hidden]="image_visible" [@enterAnimationLeft] style="z-index:0; ">
+    <div *ngIf="visible2" [hidden]="data_visible" [@enterAnimationLeft] style="z-index:0; ">
       <h1 style="font-size: 2em">
-        Your chart will be displayed here
+        Resulting data will be displayed here
       </h1>
     </div>
-    <h2 *ngIf="image_visible" style="font-size: 1.4em">Result Image</h2>
-    <img *ngIf="image_visible" [src] = "transform()" style="70vh; display: block; z-index: 1"
-         alt="Mistake("/>
+    <h2 *ngIf="data_visible" style="font-size: 1.4em">Input data</h2>
+    <div class="d-flex align-items-center justify-content-center flex-wrap" style="padding: 3em">
+      <p *ngFor="let data of output_data" style="width: 2em">
+        {{data}}
+      </p>
+    </div>
+    <h2 *ngIf="data_visible" style="font-size: 1.4em">Result</h2>
+    <div class="d-flex align-items-center justify-content-center flex-wrap" style="padding: 3em">
+      <h2>{{result}}</h2>
+    </div>
 
   </div>
   <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">

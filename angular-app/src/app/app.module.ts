@@ -34,6 +34,9 @@ import { KMeansComponent } from './components/kmeans/kmeans.component';
 import { HClasterComponent } from './components/h-claster/h-claster.component';
 import {TSneComponent} from "./components/tsne/tsne.component";
 import { KalmanComponent } from './components/kalman/kalman.component';
+import { TreeComponent } from './components/tree/tree.component';
+import { SGDComponent } from './components/sgd/sgd.component';
+import { SVMComponent } from './components/svm/svm.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { KalmanComponent } from './components/kalman/kalman.component';
     KMeansComponent,
     HClasterComponent,
     TSneComponent,
-    KalmanComponent
+    KalmanComponent,
+    TreeComponent,
+    SGDComponent,
+    SVMComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),
