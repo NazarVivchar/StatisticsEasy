@@ -1,11 +1,13 @@
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 # from sklearn import datasets
-from sklearn import svm
+from sklearn import linear_model
 
-classifier = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
-                     decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
-                     max_iter=-1, probability=False, random_state=None, shrinking=True,
-                     tol=0.001, verbose=False)
+classifier = linear_model.SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+                                        early_stopping=False, epsilon=0.1, eta0=0.0, fit_intercept=True,
+                                        l1_ratio=0.15, learning_rate='optimal', loss='hinge', max_iter=1000,
+                                        n_iter=None, n_iter_no_change=5, n_jobs=None, penalty='l2',
+                                        power_t=0.5, random_state=None, shuffle=True, tol=1e-3,
+                                        validation_fraction=0.1, verbose=1, warm_start=False)
 
 opt_dict = {}
 features = []
@@ -42,7 +44,7 @@ def predict(values: list):
     return opt_dict[result_list[0]]
 
 
-# test
+##test
 # a = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 'Ivan'],
 #      [1, 2, 3, 4, 5, 6, 7, 7, 5, 'Petro'],
 #      [1, 2, 3, 4, 5, 6, 7, 8, 9, 'Ivan'],

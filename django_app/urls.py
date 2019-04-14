@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import main_page, info_demo_regression, regression_info, dnn_demo_info, dnn_info, polynomial_reg, \
     logistic_reg, t_Sne,k_mean, h_claster, simple_ma_info,distribution_info,exp_ma_info,weighted_ma_info, \
-    running_ma_info,kalman_info
+    running_ma_info,kalman_info, sgd_info, svm_info, general_info, tree_info
 
 
 urlpatterns = [
@@ -23,7 +23,12 @@ urlpatterns = [
     path('exp_ma_info/', exp_ma_info.as_view(), name='exponential_ma'),
     path('running_ma_info/', running_ma_info.as_view(), name='running_ma'),
     path('weighted_ma_info/', weighted_ma_info.as_view(), name='weighted_ma'),
-    path('kalman_info/',kalman_info.as_view(),name='kanman_info')
+    path('kalman_info/',kalman_info.as_view(),name='kanman_info'),
+    path('sgd_info/', sgd_info.as_view(), name='sgd_info'),
+    path('svm_info/', svm_info.as_view(), name='svm_info'),
+
+    path('general_info/', general_info.as_view(), name='general_info'),
+    path('tree_info', tree_info.as_view(), name='tree_info'),
 
 
 ]

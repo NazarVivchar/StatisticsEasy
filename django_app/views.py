@@ -16,6 +16,8 @@ from django_app.statistic_algorithms.Clasterization import k_means, hierarcial_c
 from django_app.statistic_algorithms.Distributions import anglit,arcsine,bernoulli,dweibull,expon,normal,triang,\
     uniform, wald
 from django_app.statistic_algorithms.Filters import kalman
+from django_app.statistic_algorithms.Classifiers import tree, sgd, svm_2
+from django_app.statistic_algorithms import generals
 
 class regression_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -524,3 +526,130 @@ class kalman_info(APIView):
         os.remove(file[0].get_file_name())
         file[0].delete()
         return Response([{'reg_image': encoded_string}])
+
+
+
+
+class svm_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        data = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                for i in range(len(tmp) - 1):
+                    tmp[i] = int(tmp[i])
+                data.append(tmp)
+        inpt = data.pop(len(data) - 1)
+        svm_2.fit(data)
+        answer = svm_2.predict(inpt)
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'data': data},{'answer': answer}])
+
+
+
+
+
+class sgd_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        data = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                for i in range(len(tmp) - 1):
+                    tmp[i] = int(tmp[i])
+                data.append(tmp)
+        inpt = data.pop(len(data) - 1)
+        sgd.fit(data)
+        answer = sgd.predict(inpt)
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'data': data}, {'answer': answer}])
+
+
+
+
+class general_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+
+        x = []
+        y = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                x.append(float(tmp[0]))
+                y.append(float(tmp[1]))
+
+        chart_reg_y = polynomial_regression.func(file[0].get_file_name(), 3)
+        chart_reg_x = x
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'chart_reg_x': chart_reg_x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
+
+
+class tree_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+
+        data = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                for i in range(len(tmp)-1):
+                    tmp[i] = int(tmp[i])
+                data.append(tmp)
+        inpt = data.pop(len(data)-1)
+        tree.fit(data)
+        answer = tree.predict(inpt)
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'data': data},{'answer': answer}])
+
+
