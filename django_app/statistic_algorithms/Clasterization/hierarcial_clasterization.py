@@ -11,9 +11,9 @@ def class_to_color(features):
     classes =[]
     for i in features:
         if i == 'Europe.':
-            classes.append('green')
-        elif i == 'US.':
             classes.append('black')
+        elif i == 'US.':
+            classes.append('red')
         else:
             classes.append('blue')
     return classes
@@ -39,13 +39,15 @@ def main(row_argument1 = 'weightlbs',row_argument2= 'year', row_feature='brand',
     plt.savefig('hierarcial_preview.png')
     copyfile('./hierarcial_preview.png', 'media/hierarcial_preview.png')
     ImageFile.objects.create(image='hierarcial_preview.png')
+    plt.close()
 
     dendrogram = sch.dendrogram(sch.linkage(points, method='ward'))
+
     plt.savefig('hierarcial_dendrogram.png')
     copyfile('./hierarcial_dendrogram.png', 'media/hierarcial_dendrogram.png')
     ImageFile.objects.create(image='hierarcial_dendrogram.png')
 
-
+    plt.close()
     hc = AgglomerativeClustering(n_clusters=3, affinity='euclidean', linkage='ward')
 
     # save clusters for chart
@@ -60,8 +62,10 @@ def main(row_argument1 = 'weightlbs',row_argument2= 'year', row_feature='brand',
 
 
     plt.savefig('hierarcial_result.png')
+    plt.close()
     copyfile('./hierarcial_result.png', 'media/hierarcial_result.png')
     ImageFile.objects.create(image='hierarcial_result.png')
+    print(1)
 
 
 

@@ -32,6 +32,7 @@ def func(file, pred_row='Survived'):
     plt.title('Confusion matrix', y=1.1)
 
     plt.savefig('logistic_result.png')
+    plt.close()
     copyfile('./logistic_result.png','media/logistic_result.png')
     ImageFile.objects.create(image='logistic_result.png')
 

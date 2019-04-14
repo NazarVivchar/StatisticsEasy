@@ -4,7 +4,7 @@ import numpy as np
 from django.shortcuts import render
 from rest_framework import permissions
 from rest_framework.views import APIView, Response
-
+from rest_framework.parsers import JSONParser
 from .models import DataFile, ImageFile,Distribution
 from .serializers import FileSerializer, DistributionSerializer
 from .statistic_algorithms import neural_network_prediction
@@ -15,6 +15,9 @@ from django_app.statistic_algorithms.MovingAverages import simple_ma,weighted,ru
 from django_app.statistic_algorithms.Clasterization import k_means, hierarcial_clasterization,t_sne
 from django_app.statistic_algorithms.Distributions import anglit,arcsine,bernoulli,dweibull,expon,normal,triang,\
     uniform, wald
+from django_app.statistic_algorithms.Filters import kalman
+from django_app.statistic_algorithms.Classifiers import tree, sgd, svm_2
+from django_app.statistic_algorithms import generals
 
 class regression_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -222,34 +225,37 @@ class h_claster(APIView):
 
     def get(self, request):
         file = DataFile.objects.all()
-        print(file)
-        hierarcial_clasterization.main(file[0].get_file_name())
-        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+
+        print(file[0].get_file_name())
+
+        hierarcial_clasterization.main(filename=file[0].get_file_name())
+        images = ImageFile.objects.all()
+
+        with open(images[0].get_file_name(), "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read())
 
-        print(encoded_string)
 
-        with open(ImageFile.objects.all()[1].get_file_name(), "rb") as image_file:
+
+        with open(images[1].get_file_name(), "rb") as image_file:
             encoded_string1 = base64.b64encode(image_file.read())
 
-        print(encoded_string1)
 
 
-        with open(ImageFile.objects.all()[2].get_file_name(), "rb") as image_file:
+        with open(images[2].get_file_name(), "rb") as image_file:
             encoded_string2 = base64.b64encode(image_file.read())
 
-        print(encoded_string2)
+
 
         os.remove(file[0].get_file_name())
         file[0].delete()
-        image = ImageFile.objects.all()
-        os.remove(image[0].get_file_name())
-        image[1].delete()
-        os.remove(image[1].get_file_name())
-        image[1].delete()
-        os.remove(image[2].get_file_name())
-        image[2].delete()
-        return Response([{'hierarcial_preview': encoded_string}, {'hierarcial_dendrogram.': encoded_string1},
+
+        os.remove(images[0].get_file_name())
+        images[0].delete()
+        os.remove(images[0].get_file_name())
+        images[0].delete()
+        os.remove(images[0].get_file_name())
+        images[0].delete()
+        return Response([{'hierarcial_preview': encoded_string}, {'hierarcial_dendrogram': encoded_string1},
                          {'hierarcial_result': encoded_string2}])
 
 class k_mean(APIView):
@@ -265,7 +271,7 @@ class k_mean(APIView):
     def get(self, request):
         file = DataFile.objects.all()
         print(file)
-        k_means.main(file[0].get_file_name())
+        k_means.main(filename=file[0].get_file_name())
         with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read())
 
@@ -276,14 +282,13 @@ class k_mean(APIView):
 
         print(encoded_string1)
 
-
         os.remove(file[0].get_file_name())
         file[0].delete()
         image = ImageFile.objects.all()
         os.remove(image[0].get_file_name())
-        image[1].delete()
-        os.remove(image[1].get_file_name())
-        image[1].delete()
+        image[0].delete()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
         return Response([{'result_image': encoded_string1},{'preview_image': encoded_string}])
 
 
@@ -301,7 +306,7 @@ class t_Sne(APIView):
         file = DataFile.objects.all()
         print(file)
 
-        chart_reg = logistic_regression.func(file[0].get_file_name())[2]
+        t_sne.main()
         print(ImageFile.objects.all()[0].image)
 
 
@@ -309,7 +314,10 @@ class t_Sne(APIView):
         with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read())
 
-        print(encoded_string)
+        with open(ImageFile.objects.all()[1].get_file_name(), "rb") as image_file:
+            encoded_string1 = base64.b64encode(image_file.read())
+
+
 
 
         os.remove(file[0].get_file_name())
@@ -317,6 +325,9 @@ class t_Sne(APIView):
         image = ImageFile.objects.all()
         os.remove(image[0].get_file_name())
         image[0].delete()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
+        return Response([{'result_image': encoded_string1},{'preview_image': encoded_string}])
 
 class simple_ma_info(APIView):
     permission_classes = [permissions.AllowAny, ]
@@ -330,6 +341,7 @@ class simple_ma_info(APIView):
         return Response(status=200)
 
     def get(self, request):
+        print(request)
         file = DataFile.objects.all()
 
         x,chart_reg_y,y = simple_ma.main(file[0].get_file_name())
@@ -345,6 +357,7 @@ class simple_ma_info(APIView):
 
 class distribution_info(APIView):
     permission_classes = [permissions.AllowAny, ]
+    parser_classes = (JSONParser,)
     def post(self, request):
 
         distr_serializer = DistributionSerializer(data=request.data)
@@ -366,31 +379,32 @@ class distribution_info(APIView):
             response.append('low')
         return Response([{'features': response}])
 
+
     def get(self, request):
         distribution = Distribution.objects.all()[0]
-        print(type(request.data.get('scale')))
-        if distribution.distribution_type in 'anglit':
-            result = anglit.anglit(distribution.n, int(request.data.get('location')),int(request.data.get('scale')))
-        elif distribution.distribution_type in 'arcsine':
-            result = arcsine.arcsine(distribution.n, float(request.data.get('location')), float(request.data.get('scale')))
-        elif distribution.distribution_type in 'bernoulli':
-            result = bernoulli.test(distribution.n, float(request.data.get('probability')))
-        elif distribution.distribution_type in 'dweibull':
-            result = dweibull.dweibull(distribution.n, int(request.data.get('c')),int(request.data.get('location')),
-                                    float(request.data.get('scale')))
-        elif distribution.distribution_type in 'expon':
+
+        if distribution.distribution_type in 'Anglit':
+            result = anglit.anglit(distribution.n, int(request.GET.get('location')),int(request.GET.get('scale')))
+        elif distribution.distribution_type in 'Arcsine':
+            result = arcsine.arcsine(distribution.n, float(request.GET.get('location')), float(request.GET.get('scale')))
+        elif distribution.distribution_type in 'Bernoulli':
+            result = bernoulli.test(distribution.n, float(request.GET.get('probability')))
+        elif distribution.distribution_type in 'Double Weibull':
+            result = dweibull.dweibull(distribution.n, float(request.GET.get('c')),int(request.GET.get('location')),
+                                    float(request.GET.get('scale')))
+        elif distribution.distribution_type in 'Exponential':
             result = expon.expon(distribution.n)
-        elif distribution.distribution_type in 'normal':
+        elif distribution.distribution_type in 'Normal':
             print('##########################################')
-            result = normal.normal(10, 2, 2)
+            result = normal.normal(distribution.n, float(request.GET.get('location')), float(request.GET.get('scale')))
             print('##########################################')
-        elif distribution.distribution_type in 'triang':
-            result = triang.triang(distribution.n, int(request.data.get('c')), int(request.data.get('location')),
-                                    int(request.data.get('scale')))
-        elif distribution.distribution_type in 'uniform':
-            result = uniform.uniform(distribution.n, float(request.data.get('high')), float(request.data.get('low')))
+        elif distribution.distribution_type in 'Triangular':
+            result = triang.triang(distribution.n,  loc = int(request.GET.get('location')),
+                                    scale = int(request.GET.get('scale')))
+        elif distribution.distribution_type in 'Uniform':
+            result = uniform.uniform(distribution.n)
         else:
-            result = wald.wald(distribution.n, int(request.data.get('location')), int(request.data.get('scale')))
+            result = wald.wald(distribution.n, int(request.GET.get('location')), int(request.GET.get('scale')))
         distribution.delete()
 
         return Response([{'result': result}])
@@ -413,9 +427,9 @@ class weighted_ma_info(APIView):
 
 
         x,chart_reg_y,y = weighted.main(file[0].get_file_name())
-        chart_reg_y = chart_reg_y[4:-2]
-        x = x[4:-2]
-        y = y[4:-2]
+        chart_reg_y = chart_reg_y[6:-2]
+        x = x[6:-2]
+        y = y[6:-2]
         print(chart_reg_y)
         print(y)
 
@@ -477,5 +491,165 @@ class exp_ma_info(APIView):
         return Response([{'chart_reg_x': x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
 
 
+
+
+class kalman_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        kalman.main()
+        print(ImageFile.objects.all()[0].image)
+
+
+
+        with open(ImageFile.objects.all()[0].get_file_name(), "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+
+        print(encoded_string)
+
+
+
+
+        image = ImageFile.objects.all()
+        os.remove(image[0].get_file_name())
+        image[0].delete()
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'reg_image': encoded_string}])
+
+
+
+
+class svm_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        data = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                for i in range(len(tmp) - 1):
+                    tmp[i] = int(tmp[i])
+                data.append(tmp)
+        inpt = data.pop(len(data) - 1)
+        svm_2.fit(data)
+        answer = svm_2.predict(inpt)
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'data': data},{'answer': answer}])
+
+
+
+
+
+class sgd_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+        data = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                for i in range(len(tmp) - 1):
+                    tmp[i] = int(tmp[i])
+                data.append(tmp)
+        inpt = data.pop(len(data) - 1)
+        sgd.fit(data)
+        answer = sgd.predict(inpt)
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'data': data}, {'answer': answer}])
+
+
+
+
+class general_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+
+        x = []
+        y = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                x.append(float(tmp[0]))
+                y.append(float(tmp[1]))
+
+        chart_reg_y = polynomial_regression.func(file[0].get_file_name(), 3)
+        chart_reg_x = x
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'chart_reg_x': chart_reg_x}, {'chart_reg_y': chart_reg_y}, {'chart_x': x}, {'chart_y': y}])
+
+
+class tree_info(APIView):
+    permission_classes = [permissions.AllowAny, ]
+
+    def post(self, request):
+        file_serializer = FileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+
+        return Response(status=200)
+
+    def get(self, request):
+        file = DataFile.objects.all()
+
+
+        data = []
+        with open(file[0].get_file_name()) as f:
+            for line in f:
+                tmp = line.split(',')
+                for i in range(len(tmp)-1):
+                    tmp[i] = int(tmp[i])
+                data.append(tmp)
+        inpt = data.pop(len(data)-1)
+        tree.fit(data)
+        answer = tree.predict(inpt)
+        os.remove(file[0].get_file_name())
+        file[0].delete()
+        return Response([{'data': data},{'answer': answer}])
 
 

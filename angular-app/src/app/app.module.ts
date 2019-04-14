@@ -33,6 +33,7 @@ import {FormsModule} from "@angular/forms";
 import { KMeansComponent } from './components/kmeans/kmeans.component';
 import { HClasterComponent } from './components/h-claster/h-claster.component';
 import {TSneComponent} from "./components/tsne/tsne.component";
+import { KalmanComponent } from './components/kalman/kalman.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {TSneComponent} from "./components/tsne/tsne.component";
     DisributionsComponent,
     KMeansComponent,
     HClasterComponent,
-    TSneComponent
+    TSneComponent,
+    KalmanComponent
   ],
   imports: [
     // BsDropdownModule.forRoot(),

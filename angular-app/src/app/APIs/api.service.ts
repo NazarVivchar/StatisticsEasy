@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 export class ApiService {
 
   baseurl = 'http://127.0.0.1:8000';
-  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json', 'Accept':'application/json'});
   constructor(private http: HttpClient) {
   }
   getDemoRegression(): Observable<any> {
@@ -57,21 +57,24 @@ export class ApiService {
     return this.http.get(this.baseurl + '/h_claster_info/',
       {headers: this.httpHeaders});
   }
-  getTSNA(): Observable<any> {
-    return this.http.get(this.baseurl + '/t_sn/',
+  getTSNE(): Observable<any> {
+    return this.http.get(this.baseurl + '/t_sne_info/',
       {headers: this.httpHeaders});
   }
-  getLMeans(): Observable<any> {
-    return this.http.get(this.baseurl + '/k_means_info//',
+  getKMeans(): Observable<any> {
+    return this.http.get(this.baseurl + '/k_means_info/',
       {headers: this.httpHeaders});
   }
-
+  getKalman(): Observable<any> {
+    return this.http.get(this.baseurl + '/kalman_info/',
+      {headers: this.httpHeaders});
+  }
   sendDistributionData(data): Observable<any> {
     return this.http.post(this.baseurl + '/distribution_info/',
       data,{headers: this.httpHeaders});
   }
   getDistributionData(httpParams:HttpParams): Observable<any> {
     return this.http.get(this.baseurl + '/distribution_info/',
-      {params: httpParams,headers: this.httpHeaders});
+      {params: httpParams,headers: this.httpHeaders });
   }
 }

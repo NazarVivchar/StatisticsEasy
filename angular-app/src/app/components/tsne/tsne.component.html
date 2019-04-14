@@ -1,3 +1,108 @@
-<p>
-  tsne works!
-</p>
+<html>
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#flip").click(function () {
+        $("#panel").slideDown("slow");
+      });
+    });
+  </script>
+  <style>
+    #flip {
+
+    }
+
+    #panel {
+      display: none;
+      width: 60%;
+      height: 400px;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+
+<app-nav-bar></app-nav-bar>
+<div class="d-flex flex-column align-items-center justify-content-center"
+     style=" padding-bottom: 10vh; margin-bottom: 18em; width: 100%; min-height: 150vh; box-shadow: 0 0.3em 0.2em 0 white;">
+
+  <div class="d-flex align-items-center justify-content-center"
+       style=" padding-top: 20vh; margin-bottom: 18em; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>T-clustering</em>
+    </h1>
+  </div>
+
+  <div class="d-flex  align-items-center flex-column justify-content-center"
+       style="margin-bottom: 10vh; width: 90%; z-index: 2">
+    <button (click)="changeElement()" (mouseleave)="hover1 =false" (mouseover)="hover1 =true"
+            [ngClass]="{'btn-hover-active':(visible1 || hover1) && !hover2}" class="my-btn btn-lg btn-block">Details
+    </button>
+    <button (click)="changeElement()" (mouseleave)="hover2 =false" (mouseover)="hover2 =true"
+            [ngClass]="{'btn-hover-active':(visible2 || hover2) && !hover1}"
+            [style.background-color]="(visible2 || hover2) && !hover1? '#919eba':'white'"
+            class="my-btn btn-lg btn-block">Generation
+    </button>
+  </div>
+
+  <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-center justify-content-center"
+       style=" width: 90%">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+    Vitae turpis massa sed elementum tempus egestas sed sed. Maecenas sed enim ut sem viverra aliquet.
+    Lectus proin nibh nisl condimentum id venenatis.
+    Ultrices in iaculis nunc sed augue lacus viverra vitae congue. Nunc sed augue lacus viverra vitae congue.
+    Sollicitudin nibh sit amet commodo nulla facilisi nullam. Urna molestie at elementum eu. A iaculis at erat
+    pellentesque.
+    Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Velit aliquet sagittis id
+    consectetur purus ut faucibus pulvinar elementum.
+    Et ligula ullamcorper malesuada proin libero. Augue mauris augue neque gravida in fermentum et. Ipsum faucibus vitae
+    aliquet nec ullamcorper sit amet.
+  </div>
+
+  <div class="d-flex  align-items-center justify-content-center"
+       style="width: 100%; height: 34vh;margin-bottom: 10vh; z-index: 1">
+
+    <div *ngIf="visible2" [@enterAnimationLeft] class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
+      <h1>Step 1</h1>
+      <h4>Choose your .csv file with input data</h4>
+
+      <input [uploader]="uploader" accept=".csv" class="input-group-text" ng2FileSelect
+             type="file"/>
+
+    </div>
+
+    <div *ngIf="visible2" [@enterAnimationRight] class="d-flex flex-column align-items-center justify-content-around"
+         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30% ">
+      <h1>Step 2</h1>
+      <h4>Build regression</h4>
+      <button (click)="getReg()" class="btn btn-dark">Build</button>
+    </div>
+  </div>
+
+  <div [hidden]="visible1" [style.border]="visible1?  'none' : 'dashed 0.2em #919eba' "
+       class="d-flex flex-column justify-content-center align-items-center"
+       style="width: 90%; margin-bottom: 10vh; z-index: 0; min-height: 70vh">
+    <div *ngIf="visible2" [hidden]="image_visible" [@enterAnimationLeft] style="z-index:0; ">
+      <h1 style="font-size: 2em">
+        Your chart will be displayed here
+      </h1>
+    </div>
+    <h2 *ngIf="image_visible" style="font-size: 1.4em">Preview Image</h2>
+    <img *ngIf="image_visible" [src] = "transform()" style=" 70vh; display: block; z-index: 1"
+         alt="Mistake("/>
+    <h2 *ngIf="image_visible" style="font-size: 1.4em">Result Image</h2>
+    <img *ngIf="image_visible" [src] = "transform1()" style=" 70vh; display: block; z-index: 1"
+         alt="Mistake("/>
+
+  </div>
+  <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
+      <p>Scroll for footer</p>
+      <p><i class="arrow down dark"></i></p>
+    </div>
+</div>
+<app-footer></app-footer>
+</body>
+</html>

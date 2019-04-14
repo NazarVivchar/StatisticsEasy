@@ -9,7 +9,7 @@
 
   <div class="d-flex align-items-center justify-content-center"
        style=" padding-top: 20vh; margin-bottom: 15vh; border-bottom: 0.2em dashed #919eba; width: 100%; background-image:url('/assets/headerBlured.png'); background-size: cover; background-repeat: no-repeat; background-position: center;  background-attachment: fixed; color: white">
-    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Exponential moving Averages</em></h1>
+    <h1 *ngIf="visible" [@enterAnimationTop] style="font-size: 4em; padding-bottom: 1em"><em>Distributions</em></h1>
   </div>
 
   <div class="d-flex  align-items-center flex-column justify-content-center"
@@ -27,30 +27,87 @@
   <div *ngIf="visible1" [@enterAnimationBottom] class="d-flex  align-items-start justify-content-center"
        style=" width: 90%">
     <p style="margin: 1em">
-      Deep learning (also known as deep structured learning or hierarchical learning) is part of a broader family of
-      machine
-      learning methods based on learning data representations, as opposed to task-specific algorithms. Learning can be
-      supervised,
-      semi-supervised or unsupervised.
+      In probability theory and statistics, a probability distribution is a mathematical function that provides
+      the probabilities of occurrence of different possible outcomes in an experiment. In more technical terms,
+      the probability distribution is a description of a random phenomenon in terms of the probabilities of events.
     </p>
     <p style="margin: 1em">
-      Deep learning architectures such as deep neural networks, deep belief networks and recurrent neural networks have
-      been applied
-      to fields including computer vision, speech recognition, natural language processing, audio recognition, social
-      network filtering,
-      machine translation, bioinformatics, drug design, medical image analysis, material inspection and board game
-      programs, where they
-      have produced results comparable to and in some cases superior to human experts.
-    </p>
-    <p style="margin: 1em">
-      In our case, DNN is used to predict most probable next values, based on the data provided. It can be used for high
-      credibility
-      assumptions about value of any possible variable, that changes based on unknown rule.
+      Probability distributions are generally divided into two classes. A discrete probability distribution
+      (applicable to the scenarios where the set of possible outcomes is discrete, such as a coin toss or a roll of dice)
+      can be encoded by a discrete list of the probabilities of the outcomes, known as a probability mass function. On
+      the other hand, a continuous probability distribution (applicable to the scenarios where the set of possible outcomes
+      can take on values in a continuous range (e.g. real numbers), such as the temperature on a given day) is typically described
+      by probability density functions (with the probability of any individual outcome actually being 0). The normal distribution is a
+      commonly encountered continuous probability distribution. More complex experiments, such as those involving stochastic processes
+      defined in continuous time, may demand the use of more general probability measures.
     </p>
   </div>
+  
+  <div *ngIf="visible1" [@enterAnimationLeft] class="d-flex flex-column justify-items-center align-items-center" style="padding: 2em">
+<h1>Distributions we implemented:</h1>
+  <div class="d-flex align-items-center justify-content-around">
+      <div style="padding: 2em">
+        <h4 style="margin: 1em">Bernoulli</h4>
+        <img style="width: 130%" src="../../../assets/BernoulliPMF.PNG" alt="">
+      </div>
+        <div style="padding: 2em">
+        <h4 style="margin: 1em">Normal</h4>
+        <img style="width: 130%" src="../../../assets/NormalPDF.PNG" alt="">
+      </div>
+        <div style="padding: 2em">
+        <h4 style="margin: 2em">Uniform</h4>
+        <img style="width: 130%" src="../../../assets/UniformPDF.PNG" alt="">
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="d-flex align-items-center justify-content-around" >
+
+     <div style="padding: 2em">
+        <h4 style="margin: 1em"> Triangular</h4>
+        <img  style="width: 130%" src="../../../assets/TriangularPDF.PNG" alt="">
+      </div>
+        <div style="padding: 2em">
+        <h4 style="margin: 1em">Arcsine</h4>
+        <img style="width: 130%" src="../../../assets/ArcsinePDF.PNG" alt="">
+      </div>
+         <div style="padding: 2em">
+        <h4 style="margin: 1em">Exponential</h4>
+        <img style="width: 130%" src="../../../assets/ExponentialPDF.PNG" alt="">
+      </div>
+  </div>
+
+
+
+
+
+        <div class="d-flex align-items-center justify-content-around" >
+    <div style="padding: 2em">
+        <h4 style="margin: 1em">Double Weibull</h4>
+        <img style="width: 130%" src="../../../assets/DoubleWeibullPDF.PNG" alt="">
+      </div>
+      <div style="padding: 2em">
+
+        <h4 style="margin: 1em">Wald</h4>
+        <img style="width: 130%" src="../../../assets/WaldPDF.png" alt="">
+      </div>
+
+    <div style="padding: 2em">
+        <h4 style="margin: 1em">Anglit</h4>
+        <img style="width: 130%" src="../../../assets/AnglitPDF.PNG" alt="">
+      </div>
+    </div>
+    </div>
 
   <div class="d-flex  align-items-center justify-content-center"
-       style="width: 100%; height: 30vh;margin-bottom: 10vh;">
+       style="width: 100%; height: 30vh;margin-bottom: 10vh; margin-top: 5em">
 
     <div *ngIf="visible2" [@enterAnimationLeft] class="d-flex flex-column align-items-center justify-content-between"
          style="height: 15em; padding: 1em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">
@@ -83,8 +140,8 @@
         </div>
 
         <div *ngIf="selectedValue === 'Bernoulli'" class="d-flex flex-column align-items-center justify-content-around" >
-        <label [(ngModel)]="valueToSend1" for="probability">C</label>
-        <input [(ngModel)]="valueToSend2" id="probability" type="number" >
+        <label  for="probability">Probability</label>
+        <input [(ngModel)]="valueToSend1" id="probability" type="number" >
         </div>
         <div *ngIf="selectedValue === 'Double Weibull'" class="d-flex flex-column align-items-center justify-content-around" >
         <label for="c">C</label>
@@ -102,44 +159,22 @@
       </div>
 
 
-<!--      this.distributions[0] = 'Bernoulli';-->
-<!--    this.selectedValue = this.distributions[0];-->
-<!--    this.distributions[1] = 'Arcsine';-->
-<!--    this.distributions[2] = 'Double Weibull';-->
-<!--    this.distributions[3] = 'Normal';-->
-<!--    this.distributions[4] = 'Triangular';-->
-<!--    this.distributions[5] = 'Wald';-->
-<!--    this.distributions[6] = 'Anglit';-->
-<!--    this.distributions[7] = 'Uniform';-->
-
-<!--    this.distributions[8] = 'Exponential';-->
-
-<!--       if tp in 'anglit' or tp in 'arcsine' or tp in 'dweibull' or tp in 'norm' or tp in 'triang' or tp in 'wald':-->
-<!--            response.append('location')-->
-<!--            response.append('scale')-->
-<!--        if tp in 'bernoulli':-->
-<!--            response.append('probability')-->
-<!--        if tp in 'dweilbull' or tp in 'triang':-->
-<!--            response.append('c')-->
-<!--        if tp in 'uniform':-->
-<!--            response.append('high')-->
-<!--            response.append('low')-->
-<!--        return Response([{'features': response}])-->
-
 
 
       <button [hidden]="wait" (click)="submit2()" class="btn btn-dark" style="margin-left:10px;">Build!</button>
     </div>
 
-<!--    <div *ngIf="visible2" [@enterAnimationRight] class="d-flex flex-column align-items-center justify-content-around"-->
-<!--         style="height: 34vh; padding: 3em; margin: 1em;  box-shadow: 0 0.1em 1.5em 0.1em #919eba; border-radius: 1em; width: 30%">-->
-<!--      <h1>Step 3</h1>-->
-<!--      <h4>Build final chart</h4>-->
-<!--      <button (click)="" class="btn btn-dark">Build</button>-->
-<!--    </div>-->
+
 
   </div>
 
+
+        <highcharts-chart
+                          [Highcharts]="Highcharts"
+                          [options]="chartOptions"
+                          [update]="updateFlag"
+                          style="width: 100%; height: 70vh; display: block; z-index: 1">
+        </highcharts-chart>
 
   <div class="d-flex flex-column align-items-center justify-content-center" style="width: 100%; height: auto">
     <p>Scroll for footer</p>
